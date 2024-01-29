@@ -1,7 +1,6 @@
 import 'dart:typed_data';
 
 import 'package:sixam_mart/controller/auth_controller.dart';
-import 'package:sixam_mart/controller/cart_controller.dart';
 import 'package:sixam_mart/controller/wishlist_controller.dart';
 import 'package:sixam_mart/data/api/api_checker.dart';
 import 'package:sixam_mart/data/model/response/conversation_model.dart';

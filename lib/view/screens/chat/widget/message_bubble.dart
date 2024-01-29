@@ -150,7 +150,7 @@ class MessageBubble extends StatelessWidget {
                         return  message.files!.isNotEmpty ?
                         InkWell(
                           onTap: () => showDialog(context: context, builder: (context) {
-                            return ImageDialog(imageUrl: '${baseUrl!.chatImageUrl}/${message.files![index]}');
+                            return ImageDialog(imageUrl: '${baseUrl.chatImageUrl}/${message.files![index]}');
                           }),
                           child: Padding(
                             padding: EdgeInsets.only(

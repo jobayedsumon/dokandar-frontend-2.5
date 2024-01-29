@@ -14,7 +14,7 @@ class Gallery3D extends StatefulWidget {
   final EdgeInsetsGeometry? padding;
   final bool isClip;
 
-  Gallery3D(
+  const Gallery3D(
       {Key? key,
         this.onClickItem,
         this.onItemChanged,
@@ -55,7 +55,7 @@ class _Gallery3DState extends State<Gallery3D>
 
     _updateWidgetIndexOnStack();
     if (controller.autoLoop) {
-      this._timer =
+      _timer =
           Timer.periodic(Duration(milliseconds: controller.delayTime), (timer) {
             if (!mounted) return;
             if (appLifecycleState != AppLifecycleState.resumed) return;
@@ -236,9 +236,9 @@ class _Gallery3DState extends State<Gallery3D>
     return nextIndex;
   }
 
-  List<GalleryItem> _leftWidgetList = [];
-  List<GalleryItem> _rightWidgetList = [];
-  List<GalleryItem> _tempList = [];
+  final List<GalleryItem> _leftWidgetList = [];
+  final List<GalleryItem> _rightWidgetList = [];
+  final List<GalleryItem> _tempList = [];
 
   ///改变的widget的在Stack中的顺序
   void _updateWidgetIndexOnStack() {
@@ -315,7 +315,7 @@ class GalleryItem extends StatelessWidget {
   final _GalleryItemTransformInfo transformInfo;
 
   final double minScale; //最小缩放值
-  GalleryItem({
+  const GalleryItem({
     Key? key,
     required this.index,
     required this.transformInfo,
@@ -327,7 +327,7 @@ class GalleryItem extends StatelessWidget {
   }) : super(key: key);
 
   Widget _buildItem(BuildContext context) {
-    return Container(
+    return SizedBox(
         width: config.width,
         height: config.height,
         child: builder(context, index));
@@ -363,7 +363,7 @@ class GalleryItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Transform.translate(
       offset: transformInfo.offset,
-      child: Container(
+      child: SizedBox(
         width: config.width,
         height: config.height,
         child: Transform.scale(
@@ -410,7 +410,7 @@ class Gallery3DController {
   final int scrollTime;
   final bool autoLoop;
   late Gallery3DMixin vsync;
-  List<_GalleryItemTransformInfo> _galleryItemTransformInfoList = [];
+  final List<_GalleryItemTransformInfo> _galleryItemTransformInfoList = [];
   double baseAngleOffset = 0; //180度的基准角度偏差
   Gallery3DController(
       {required this.itemCount,

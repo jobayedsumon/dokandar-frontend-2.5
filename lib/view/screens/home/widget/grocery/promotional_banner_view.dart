@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shimmer_animation/shimmer_animation.dart';
 import 'package:sixam_mart/controller/banner_controller.dart';
-import 'package:sixam_mart/data/model/response/video_content_model.dart';
 import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/util/images.dart';
 import 'package:sixam_mart/view/base/custom_image.dart';
 
 class PromotionalBannerView extends StatelessWidget {

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sixam_mart/controller/auth_controller.dart';
-import 'package:sixam_mart/util/dimensions.dart';
 import 'package:sixam_mart/util/images.dart';
 import 'package:sixam_mart/view/screens/home/widget/bad_weather_widget.dart';
 import 'package:sixam_mart/view/screens/home/widget/grocery/best_reviewed_item_view.dart';

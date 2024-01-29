@@ -9,7 +9,6 @@ import 'package:sixam_mart/util/dimensions.dart';
 import 'package:sixam_mart/util/styles.dart';
 import 'package:sixam_mart/view/screens/home/web/widgets/arrow_icon_button.dart';
 import 'package:sixam_mart/view/screens/home/web/widgets/medicine_item_card.dart';
-import 'package:sixam_mart/view/screens/home/web/widgets/sorting_text_button.dart';
 
 class WebBasicMedicineNearbyView extends StatefulWidget {
   const WebBasicMedicineNearbyView({Key? key}) : super(key: key);

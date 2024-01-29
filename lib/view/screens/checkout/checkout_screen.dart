@@ -463,7 +463,7 @@ class CheckoutScreenState extends State<CheckoutScreen> {
                   cart.discountedPrice.toString(), '',
                   Get.find<SplashController>().getModuleConfig(cart.item!.moduleType).newVariation! ? null : cart.variation,
                   Get.find<SplashController>().getModuleConfig(cart.item!.moduleType).newVariation! ? variations : null,
-                  cart.quantity, addOnIdList, cart.addOns, addOnQtyList, 'Item', itemType: !widget.fromCart ? "App\Models\ItemCampaign" : null,
+                  cart.quantity, addOnIdList, cart.addOns, addOnQtyList, 'Item', itemType: !widget.fromCart ? "AppModelsItemCampaign" : null,
                 ));
               }
 

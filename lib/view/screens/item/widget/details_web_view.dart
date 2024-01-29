@@ -16,7 +16,6 @@ import 'package:sixam_mart/view/base/cart_snackbar.dart';
 import 'package:sixam_mart/view/base/confirmation_dialog.dart';
 import 'package:sixam_mart/view/base/custom_button.dart';
 import 'package:sixam_mart/view/base/custom_image.dart';
-import 'package:sixam_mart/view/base/custom_snackbar.dart';
 import 'package:sixam_mart/view/base/footer_view.dart';
 import 'package:sixam_mart/view/screens/checkout/checkout_screen.dart';
 import 'package:sixam_mart/view/screens/item/item_details_screen.dart';

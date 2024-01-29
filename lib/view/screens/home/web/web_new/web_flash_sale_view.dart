@@ -3,13 +3,11 @@ import 'package:get/get.dart';
 import 'package:shimmer_animation/shimmer_animation.dart';
 import 'package:sixam_mart/controller/flash_sale_controller.dart';
 import 'package:sixam_mart/controller/item_controller.dart';
-import 'package:sixam_mart/controller/splash_controller.dart';
 import 'package:sixam_mart/data/model/response/item_model.dart';
 import 'package:sixam_mart/helper/price_converter.dart';
 import 'package:sixam_mart/helper/route_helper.dart';
 import 'package:sixam_mart/util/dimensions.dart';
 import 'package:sixam_mart/util/styles.dart';
-import 'package:sixam_mart/view/screens/flash_sale/flash_sale_view.dart';
 import 'package:sixam_mart/view/screens/home/grocery/widget/components/flash_sale_card.dart';
 import 'package:sixam_mart/view/screens/flash_sale/widgets/flash_sale_timer_view.dart';
 

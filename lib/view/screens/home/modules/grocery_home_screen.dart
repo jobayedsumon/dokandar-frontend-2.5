@@ -5,7 +5,6 @@ import 'package:sixam_mart/view/screens/flash_sale/flash_sale_view.dart';
 import 'package:sixam_mart/view/screens/home/widget/bad_weather_widget.dart';
 import 'package:sixam_mart/view/screens/home/widget/grocery/banner_view.dart';
 import 'package:sixam_mart/view/screens/home/widget/grocery/best_reviewed_item_view.dart';
-import 'package:sixam_mart/view/screens/home/widget/grocery/store_wise_banner_view.dart';
 import 'package:sixam_mart/view/screens/home/widget/grocery/best_store_nearby_view.dart';
 import 'package:sixam_mart/view/screens/home/widget/grocery/category_view.dart';
 import 'package:sixam_mart/view/screens/home/widget/grocery/promo_code_banner_view.dart';

@@ -14,7 +14,6 @@ import 'package:sixam_mart/view/base/custom_image.dart';
 import 'package:sixam_mart/view/base/discount_tag.dart';
 import 'package:sixam_mart/view/base/hover/on_hover.dart';
 import 'package:sixam_mart/view/screens/home/grocery/widget/components/item_that_you_love_card.dart';
-import 'package:sixam_mart/view/screens/home/web/web_new/web_best_review_item_view.dart';
 import 'package:sixam_mart/view/screens/home/web/widgets/arrow_icon_button.dart';
 
 class WebItemThatYouLoveView extends StatefulWidget {
@@ -78,7 +77,7 @@ class _WebItemThatYouLoveViewState extends State<WebItemThatYouLoveView> {
                           width: 210, height: 285,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(Dimensions.radiusSmall),
-                            color: Theme.of(context).errorColor,
+                            color: Theme.of(context).colorScheme.error,
                           ),
                           child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
 

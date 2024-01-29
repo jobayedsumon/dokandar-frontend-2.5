@@ -7,7 +7,6 @@ import 'package:sixam_mart/helper/route_helper.dart';
 import 'package:sixam_mart/util/dimensions.dart';
 import 'package:sixam_mart/util/styles.dart';
 import 'package:sixam_mart/view/base/custom_image.dart';
-import 'package:sixam_mart/view/base/title_widget.dart';
 import 'package:sixam_mart/view/screens/store/store_screen.dart';
 
 class PopularStoreCard extends StatelessWidget {

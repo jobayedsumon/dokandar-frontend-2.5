@@ -1,14 +1,14 @@
-import 'package:sixam_mart/controller/splash_controller.dart';
-import 'package:sixam_mart/data/model/response/item_model.dart';
-import 'package:sixam_mart/data/model/response/store_model.dart';
-import 'package:sixam_mart/helper/responsive_helper.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/view/base/no_data_screen.dart';
-import 'package:sixam_mart/view/base/item_shimmer.dart';
+import 'package:dokandar/controller/splash_controller.dart';
+import 'package:dokandar/data/model/response/item_model.dart';
+import 'package:dokandar/data/model/response/store_model.dart';
+import 'package:dokandar/helper/responsive_helper.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/view/base/no_data_screen.dart';
+import 'package:dokandar/view/base/item_shimmer.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sixam_mart/view/base/web_item_widget.dart';
-import 'package:sixam_mart/view/screens/home/web/web_store_widget.dart';
+import 'package:dokandar/view/base/web_item_widget.dart';
+import 'package:dokandar/view/screens/home/web/web_store_widget.dart';
 
 class WebItemsView extends StatefulWidget {
   final List<Item?>? items;

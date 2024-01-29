@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:sixam_mart/data/model/response/conversation_model.dart';
+import 'package:dokandar/data/model/response/conversation_model.dart';
 
 class ChatModel {
   int? totalSize;

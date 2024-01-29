@@ -1,6 +1,6 @@
-import 'package:sixam_mart/data/model/response/basic_campaign_model.dart';
-import 'package:sixam_mart/data/model/response/item_model.dart';
-import 'package:sixam_mart/data/model/response/store_model.dart';
+import 'package:dokandar/data/model/response/basic_campaign_model.dart';
+import 'package:dokandar/data/model/response/item_model.dart';
+import 'package:dokandar/data/model/response/store_model.dart';
 
 class BannerModel {
   List<BasicCampaignModel>? campaigns;

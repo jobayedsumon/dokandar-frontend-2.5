@@ -1,4 +1,4 @@
-import 'package:sixam_mart/data/model/response/module_model.dart';
+import 'package:dokandar/data/model/response/module_model.dart';
 
 class ConfigModel {
   String? businessName;

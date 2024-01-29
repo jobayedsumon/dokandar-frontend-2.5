@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sixam_mart/helper/responsive_helper.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/util/styles.dart';
+import 'package:dokandar/helper/responsive_helper.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/util/styles.dart';
 
 class TipsWidget extends StatelessWidget {
   final String title;

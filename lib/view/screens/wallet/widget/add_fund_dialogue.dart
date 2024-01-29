@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sixam_mart/controller/splash_controller.dart';
-import 'package:sixam_mart/controller/wallet_controller.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/util/styles.dart';
-import 'package:sixam_mart/view/base/custom_button.dart';
-import 'package:sixam_mart/view/base/custom_image.dart';
-import 'package:sixam_mart/view/base/custom_snackbar.dart';
-import 'package:sixam_mart/view/base/custom_text_field.dart';
+import 'package:dokandar/controller/splash_controller.dart';
+import 'package:dokandar/controller/wallet_controller.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/util/styles.dart';
+import 'package:dokandar/view/base/custom_button.dart';
+import 'package:dokandar/view/base/custom_image.dart';
+import 'package:dokandar/view/base/custom_snackbar.dart';
+import 'package:dokandar/view/base/custom_text_field.dart';
 class AddFundDialogue extends StatefulWidget {
   const AddFundDialogue({Key? key}) : super(key: key);
 

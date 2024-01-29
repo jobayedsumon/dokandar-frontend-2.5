@@ -1,10 +1,10 @@
 import 'package:country_code_picker/country_code.dart';
-import 'package:sixam_mart/helper/responsive_helper.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/util/styles.dart';
+import 'package:dokandar/helper/responsive_helper.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/util/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:sixam_mart/view/base/code_picker_widget.dart';
+import 'package:dokandar/view/base/code_picker_widget.dart';
 
 class CustomTextField extends StatefulWidget {
   final String titleText;

@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sixam_mart/controller/auth_controller.dart';
-import 'package:sixam_mart/controller/cart_controller.dart';
-import 'package:sixam_mart/controller/localization_controller.dart';
-import 'package:sixam_mart/controller/splash_controller.dart';
-import 'package:sixam_mart/controller/user_controller.dart';
-import 'package:sixam_mart/controller/wishlist_controller.dart';
-import 'package:sixam_mart/helper/responsive_helper.dart';
-import 'package:sixam_mart/helper/route_helper.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/util/images.dart';
-import 'package:sixam_mart/util/styles.dart';
-import 'package:sixam_mart/view/base/confirmation_dialog.dart';
-import 'package:sixam_mart/view/screens/auth/sign_in_screen.dart';
-import 'package:sixam_mart/view/base/hover/on_hover.dart';
+import 'package:dokandar/controller/auth_controller.dart';
+import 'package:dokandar/controller/cart_controller.dart';
+import 'package:dokandar/controller/localization_controller.dart';
+import 'package:dokandar/controller/splash_controller.dart';
+import 'package:dokandar/controller/user_controller.dart';
+import 'package:dokandar/controller/wishlist_controller.dart';
+import 'package:dokandar/helper/responsive_helper.dart';
+import 'package:dokandar/helper/route_helper.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/util/images.dart';
+import 'package:dokandar/util/styles.dart';
+import 'package:dokandar/view/base/confirmation_dialog.dart';
+import 'package:dokandar/view/screens/auth/sign_in_screen.dart';
+import 'package:dokandar/view/base/hover/on_hover.dart';
 
 class MenuDrawer extends StatefulWidget {
   const MenuDrawer({Key? key}) : super(key: key);

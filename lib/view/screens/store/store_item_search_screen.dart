@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sixam_mart/controller/cart_controller.dart';
-import 'package:sixam_mart/controller/store_controller.dart';
-import 'package:sixam_mart/helper/responsive_helper.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/util/styles.dart';
-import 'package:sixam_mart/view/base/footer_view.dart';
-import 'package:sixam_mart/view/base/item_view.dart';
-import 'package:sixam_mart/view/base/paginated_list_view.dart';
-import 'package:sixam_mart/view/base/veg_filter_widget.dart';
-import 'package:sixam_mart/view/screens/store/widget/bottom_cart_widget.dart';
+import 'package:dokandar/controller/cart_controller.dart';
+import 'package:dokandar/controller/store_controller.dart';
+import 'package:dokandar/helper/responsive_helper.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/util/styles.dart';
+import 'package:dokandar/view/base/footer_view.dart';
+import 'package:dokandar/view/base/item_view.dart';
+import 'package:dokandar/view/base/paginated_list_view.dart';
+import 'package:dokandar/view/base/veg_filter_widget.dart';
+import 'package:dokandar/view/screens/store/widget/bottom_cart_widget.dart';
 
 class StoreItemSearchScreen extends StatefulWidget {
   final String? storeID;

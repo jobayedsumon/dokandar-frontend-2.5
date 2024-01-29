@@ -1,9 +1,9 @@
-import 'package:sixam_mart/controller/location_controller.dart';
-import 'package:sixam_mart/controller/parcel_controller.dart';
-import 'package:sixam_mart/controller/rider_controller.dart';
-import 'package:sixam_mart/data/model/response/prediction_model.dart';
-import 'package:sixam_mart/helper/responsive_helper.dart';
-import 'package:sixam_mart/util/dimensions.dart';
+import 'package:dokandar/controller/location_controller.dart';
+import 'package:dokandar/controller/parcel_controller.dart';
+import 'package:dokandar/controller/rider_controller.dart';
+import 'package:dokandar/data/model/response/prediction_model.dart';
+import 'package:dokandar/helper/responsive_helper.dart';
+import 'package:dokandar/util/dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
 import 'package:get/get.dart';

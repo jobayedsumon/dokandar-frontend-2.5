@@ -1,5 +1,5 @@
 
-import 'package:sixam_mart/data/model/response/item_model.dart';
+import 'package:dokandar/data/model/response/item_model.dart';
 
 class RecommendedItemModel {
   int? totalSize;

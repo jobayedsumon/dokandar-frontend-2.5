@@ -1,5 +1,5 @@
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/view/screens/order/widget/custom_stepper.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/view/screens/order/widget/custom_stepper.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

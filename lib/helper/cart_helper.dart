@@ -1,11 +1,11 @@
 import 'package:get/get.dart';
-import 'package:sixam_mart/controller/splash_controller.dart';
-import 'package:sixam_mart/data/model/body/place_order_body.dart';
-import 'package:sixam_mart/data/model/response/cart_model.dart';
-import 'package:sixam_mart/data/model/response/item_model.dart';
-import 'package:sixam_mart/data/model/response/item_model.dart' as other_variation;
-import 'package:sixam_mart/data/model/response/online_cart_model.dart';
-import 'package:sixam_mart/helper/price_converter.dart';
+import 'package:dokandar/controller/splash_controller.dart';
+import 'package:dokandar/data/model/body/place_order_body.dart';
+import 'package:dokandar/data/model/response/cart_model.dart';
+import 'package:dokandar/data/model/response/item_model.dart';
+import 'package:dokandar/data/model/response/item_model.dart' as other_variation;
+import 'package:dokandar/data/model/response/online_cart_model.dart';
+import 'package:dokandar/helper/price_converter.dart';
 
 class CartHelper {
 

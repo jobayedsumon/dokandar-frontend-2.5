@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sixam_mart/controller/car_selection_controller.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/util/styles.dart';
+import 'package:dokandar/controller/car_selection_controller.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/util/styles.dart';
 
 class FilterCarSortingWidget extends StatelessWidget {
    const FilterCarSortingWidget({Key? key}) : super(key: key);

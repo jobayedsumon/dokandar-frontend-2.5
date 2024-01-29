@@ -1,13 +1,13 @@
 import 'package:get/get.dart';
-import 'package:sixam_mart/controller/user_controller.dart';
-import 'package:sixam_mart/data/api/api_checker.dart';
-import 'package:sixam_mart/data/model/body/wallet_filter_body.dart';
-import 'package:sixam_mart/data/model/response/fund_bonus_body.dart';
-import 'package:sixam_mart/data/model/response/wallet_model.dart';
-import 'package:sixam_mart/data/repository/wallet_repo.dart';
-import 'package:sixam_mart/helper/route_helper.dart';
-import 'package:sixam_mart/util/app_constants.dart';
-import 'package:sixam_mart/view/base/custom_snackbar.dart';
+import 'package:dokandar/controller/user_controller.dart';
+import 'package:dokandar/data/api/api_checker.dart';
+import 'package:dokandar/data/model/body/wallet_filter_body.dart';
+import 'package:dokandar/data/model/response/fund_bonus_body.dart';
+import 'package:dokandar/data/model/response/wallet_model.dart';
+import 'package:dokandar/data/repository/wallet_repo.dart';
+import 'package:dokandar/helper/route_helper.dart';
+import 'package:dokandar/util/app_constants.dart';
+import 'package:dokandar/view/base/custom_snackbar.dart';
 import 'package:universal_html/html.dart' as html;
 
 class WalletController extends GetxController implements GetxService{

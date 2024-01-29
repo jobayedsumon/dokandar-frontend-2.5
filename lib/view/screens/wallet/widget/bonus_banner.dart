@@ -1,14 +1,14 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sixam_mart/controller/splash_controller.dart';
-import 'package:sixam_mart/controller/wallet_controller.dart';
-import 'package:sixam_mart/helper/date_converter.dart';
-import 'package:sixam_mart/helper/price_converter.dart';
-import 'package:sixam_mart/helper/responsive_helper.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/util/images.dart';
-import 'package:sixam_mart/util/styles.dart';
+import 'package:dokandar/controller/splash_controller.dart';
+import 'package:dokandar/controller/wallet_controller.dart';
+import 'package:dokandar/helper/date_converter.dart';
+import 'package:dokandar/helper/price_converter.dart';
+import 'package:dokandar/helper/responsive_helper.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/util/images.dart';
+import 'package:dokandar/util/styles.dart';
 class BonusBanner extends StatelessWidget {
   const BonusBanner({Key? key}) : super(key: key);
 

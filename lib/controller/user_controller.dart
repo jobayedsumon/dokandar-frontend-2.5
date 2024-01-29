@@ -1,18 +1,18 @@
 import 'dart:typed_data';
 
-import 'package:sixam_mart/controller/auth_controller.dart';
-import 'package:sixam_mart/controller/cart_controller.dart';
-import 'package:sixam_mart/controller/wishlist_controller.dart';
-import 'package:sixam_mart/data/api/api_checker.dart';
-import 'package:sixam_mart/data/model/response/conversation_model.dart';
-import 'package:sixam_mart/data/model/response/response_model.dart';
-import 'package:sixam_mart/data/repository/user_repo.dart';
-import 'package:sixam_mart/data/model/response/userinfo_model.dart';
+import 'package:dokandar/controller/auth_controller.dart';
+import 'package:dokandar/controller/cart_controller.dart';
+import 'package:dokandar/controller/wishlist_controller.dart';
+import 'package:dokandar/data/api/api_checker.dart';
+import 'package:dokandar/data/model/response/conversation_model.dart';
+import 'package:dokandar/data/model/response/response_model.dart';
+import 'package:dokandar/data/repository/user_repo.dart';
+import 'package:dokandar/data/model/response/userinfo_model.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:sixam_mart/helper/network_info.dart';
-import 'package:sixam_mart/helper/route_helper.dart';
-import 'package:sixam_mart/view/base/custom_snackbar.dart';
+import 'package:dokandar/helper/network_info.dart';
+import 'package:dokandar/helper/route_helper.dart';
+import 'package:dokandar/view/base/custom_snackbar.dart';
 
 class UserController extends GetxController implements GetxService {
   final UserRepo userRepo;

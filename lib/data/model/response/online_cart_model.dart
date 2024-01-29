@@ -1,4 +1,4 @@
-import 'package:sixam_mart/data/model/response/item_model.dart' as product_variation;
+import 'package:dokandar/data/model/response/item_model.dart' as product_variation;
 
 class OnlineCartModel {
   int? id;

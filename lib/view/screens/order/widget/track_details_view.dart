@@ -1,16 +1,16 @@
-import 'package:sixam_mart/controller/splash_controller.dart';
-import 'package:sixam_mart/data/model/response/order_model.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/util/images.dart';
-import 'package:sixam_mart/util/styles.dart';
-import 'package:sixam_mart/view/base/custom_divider.dart';
-import 'package:sixam_mart/view/base/custom_image.dart';
-import 'package:sixam_mart/view/base/custom_snackbar.dart';
-import 'package:sixam_mart/view/base/rating_bar.dart';
+import 'package:dokandar/controller/splash_controller.dart';
+import 'package:dokandar/data/model/response/order_model.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/util/images.dart';
+import 'package:dokandar/util/styles.dart';
+import 'package:dokandar/view/base/custom_divider.dart';
+import 'package:dokandar/view/base/custom_image.dart';
+import 'package:dokandar/view/base/custom_snackbar.dart';
+import 'package:dokandar/view/base/rating_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
-import 'package:sixam_mart/view/screens/order/widget/address_details.dart';
+import 'package:dokandar/view/screens/order/widget/address_details.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class TrackDetailsView extends StatelessWidget {

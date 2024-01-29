@@ -1,7 +1,7 @@
-import 'package:sixam_mart/controller/auth_controller.dart';
-import 'package:sixam_mart/controller/wishlist_controller.dart';
-import 'package:sixam_mart/helper/route_helper.dart';
-import 'package:sixam_mart/view/base/custom_snackbar.dart';
+import 'package:dokandar/controller/auth_controller.dart';
+import 'package:dokandar/controller/wishlist_controller.dart';
+import 'package:dokandar/helper/route_helper.dart';
+import 'package:dokandar/view/base/custom_snackbar.dart';
 import 'package:get/get.dart';
 
 class ApiChecker {

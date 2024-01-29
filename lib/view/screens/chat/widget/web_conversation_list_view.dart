@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shimmer_animation/shimmer_animation.dart';
-import 'package:sixam_mart/controller/auth_controller.dart';
-import 'package:sixam_mart/controller/chat_controller.dart';
-import 'package:sixam_mart/controller/localization_controller.dart';
-import 'package:sixam_mart/controller/splash_controller.dart';
-import 'package:sixam_mart/controller/user_controller.dart';
-import 'package:sixam_mart/data/model/body/notification_body.dart';
-import 'package:sixam_mart/data/model/response/conversation_model.dart';
-import 'package:sixam_mart/helper/date_converter.dart';
-import 'package:sixam_mart/util/app_constants.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/util/styles.dart';
-import 'package:sixam_mart/view/base/custom_image.dart';
-import 'package:sixam_mart/view/base/custom_ink_well.dart';
-import 'package:sixam_mart/view/base/paginated_list_view.dart';
+import 'package:dokandar/controller/auth_controller.dart';
+import 'package:dokandar/controller/chat_controller.dart';
+import 'package:dokandar/controller/localization_controller.dart';
+import 'package:dokandar/controller/splash_controller.dart';
+import 'package:dokandar/controller/user_controller.dart';
+import 'package:dokandar/data/model/body/notification_body.dart';
+import 'package:dokandar/data/model/response/conversation_model.dart';
+import 'package:dokandar/helper/date_converter.dart';
+import 'package:dokandar/util/app_constants.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/util/styles.dart';
+import 'package:dokandar/view/base/custom_image.dart';
+import 'package:dokandar/view/base/custom_ink_well.dart';
+import 'package:dokandar/view/base/paginated_list_view.dart';
 
 class WebConversationListView extends StatefulWidget {
   final ScrollController scrollController;

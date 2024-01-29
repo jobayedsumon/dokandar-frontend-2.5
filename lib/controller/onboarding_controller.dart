@@ -1,6 +1,6 @@
-import 'package:sixam_mart/data/api/api_checker.dart';
-import 'package:sixam_mart/data/model/response/onboarding_model.dart';
-import 'package:sixam_mart/data/repository/onboarding_repo.dart';
+import 'package:dokandar/data/api/api_checker.dart';
+import 'package:dokandar/data/model/response/onboarding_model.dart';
+import 'package:dokandar/data/repository/onboarding_repo.dart';
 import 'package:get/get.dart';
 
 class OnBoardingController extends GetxController implements GetxService {

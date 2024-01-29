@@ -1,12 +1,12 @@
-import 'package:sixam_mart/controller/location_controller.dart';
-import 'package:sixam_mart/data/api/api_checker.dart';
-import 'package:sixam_mart/data/model/response/banner_model.dart';
-import 'package:sixam_mart/data/model/response/others_banner_model.dart';
-import 'package:sixam_mart/data/model/response/promotional_banner_model.dart';
-import 'package:sixam_mart/data/model/response/zone_response_model.dart';
-import 'package:sixam_mart/data/repository/banner_repo.dart';
+import 'package:dokandar/controller/location_controller.dart';
+import 'package:dokandar/data/api/api_checker.dart';
+import 'package:dokandar/data/model/response/banner_model.dart';
+import 'package:dokandar/data/model/response/others_banner_model.dart';
+import 'package:dokandar/data/model/response/promotional_banner_model.dart';
+import 'package:dokandar/data/model/response/zone_response_model.dart';
+import 'package:dokandar/data/repository/banner_repo.dart';
 import 'package:get/get.dart';
-import 'package:sixam_mart/helper/responsive_helper.dart';
+import 'package:dokandar/helper/responsive_helper.dart';
 
 class BannerController extends GetxController implements GetxService {
   final BannerRepo bannerRepo;

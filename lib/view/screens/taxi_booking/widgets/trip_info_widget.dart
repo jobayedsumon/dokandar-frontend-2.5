@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sixam_mart/controller/theme_controller.dart';
-import 'package:sixam_mart/data/model/body/user_information_body.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/util/styles.dart';
-import 'package:sixam_mart/view/screens/taxi_booking/select_map_location/widgets/dotted_line.dart';
-import 'package:sixam_mart/view/screens/taxi_booking/widgets/see_details_widget.dart';
+import 'package:dokandar/controller/theme_controller.dart';
+import 'package:dokandar/data/model/body/user_information_body.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/util/styles.dart';
+import 'package:dokandar/view/screens/taxi_booking/select_map_location/widgets/dotted_line.dart';
+import 'package:dokandar/view/screens/taxi_booking/widgets/see_details_widget.dart';
 class TripInfoWidget extends StatelessWidget {
   final UserInformationBody filterBody;
   const TripInfoWidget({Key? key, required this.filterBody}) : super(key: key);

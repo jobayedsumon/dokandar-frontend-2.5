@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sixam_mart/controller/auth_controller.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/view/base/custom_dropdown.dart';
+import 'package:dokandar/controller/auth_controller.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/view/base/custom_dropdown.dart';
 class ModuleViewWidget extends StatelessWidget {
   const ModuleViewWidget({Key? key}) : super(key: key);
 

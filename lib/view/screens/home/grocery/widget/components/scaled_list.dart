@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 class ScaledList extends StatefulWidget {
-  const ScaledList({super.key, 
-    Key? key,
+  const ScaledList({super.key,
     required this.itemBuilder,
     required this.itemCount,
     required this.itemColor,

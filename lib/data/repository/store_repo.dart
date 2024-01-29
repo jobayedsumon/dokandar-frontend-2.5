@@ -1,12 +1,12 @@
 
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:sixam_mart/controller/localization_controller.dart';
-import 'package:sixam_mart/controller/location_controller.dart';
-import 'package:sixam_mart/controller/splash_controller.dart';
-import 'package:sixam_mart/data/api/api_client.dart';
-import 'package:sixam_mart/data/model/response/address_model.dart';
-import 'package:sixam_mart/util/app_constants.dart';
+import 'package:dokandar/controller/localization_controller.dart';
+import 'package:dokandar/controller/location_controller.dart';
+import 'package:dokandar/controller/splash_controller.dart';
+import 'package:dokandar/data/api/api_client.dart';
+import 'package:dokandar/data/model/response/address_model.dart';
+import 'package:dokandar/util/app_constants.dart';
 
 class StoreRepo {
   final ApiClient apiClient;

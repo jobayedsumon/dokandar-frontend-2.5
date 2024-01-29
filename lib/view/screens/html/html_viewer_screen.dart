@@ -1,15 +1,15 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
-import 'package:sixam_mart/controller/splash_controller.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/util/html_type.dart';
-import 'package:sixam_mart/view/base/custom_app_bar.dart';
+import 'package:dokandar/controller/splash_controller.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/util/html_type.dart';
+import 'package:dokandar/view/base/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sixam_mart/view/base/footer_view.dart';
-import 'package:sixam_mart/view/base/menu_drawer.dart';
-import 'package:sixam_mart/view/base/web_page_title_widget.dart';
+import 'package:dokandar/view/base/footer_view.dart';
+import 'package:dokandar/view/base/menu_drawer.dart';
+import 'package:dokandar/view/base/web_page_title_widget.dart';
 import 'package:universal_html/html.dart' as html;
 import 'package:url_launcher/url_launcher_string.dart';
 

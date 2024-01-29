@@ -2,21 +2,21 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sixam_mart/controller/order_controller.dart';
-import 'package:sixam_mart/controller/parcel_controller.dart';
-import 'package:sixam_mart/data/model/body/place_order_body.dart';
-import 'package:sixam_mart/data/model/response/offline_method_model.dart';
-import 'package:sixam_mart/helper/price_converter.dart';
-import 'package:sixam_mart/helper/responsive_helper.dart';
-import 'package:sixam_mart/helper/route_helper.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/util/images.dart';
-import 'package:sixam_mart/util/styles.dart';
-import 'package:sixam_mart/view/base/custom_app_bar.dart';
-import 'package:sixam_mart/view/base/custom_button.dart';
-import 'package:sixam_mart/view/base/custom_snackbar.dart';
-import 'package:sixam_mart/view/base/custom_text_field.dart';
-import 'package:sixam_mart/view/base/footer_view.dart';
+import 'package:dokandar/controller/order_controller.dart';
+import 'package:dokandar/controller/parcel_controller.dart';
+import 'package:dokandar/data/model/body/place_order_body.dart';
+import 'package:dokandar/data/model/response/offline_method_model.dart';
+import 'package:dokandar/helper/price_converter.dart';
+import 'package:dokandar/helper/responsive_helper.dart';
+import 'package:dokandar/helper/route_helper.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/util/images.dart';
+import 'package:dokandar/util/styles.dart';
+import 'package:dokandar/view/base/custom_app_bar.dart';
+import 'package:dokandar/view/base/custom_button.dart';
+import 'package:dokandar/view/base/custom_snackbar.dart';
+import 'package:dokandar/view/base/custom_text_field.dart';
+import 'package:dokandar/view/base/footer_view.dart';
 
 class OfflinePaymentScreen extends StatefulWidget {
   final PlaceOrderBody placeOrderBody;

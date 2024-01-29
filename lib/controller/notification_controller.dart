@@ -1,7 +1,7 @@
-import 'package:sixam_mart/data/api/api_checker.dart';
-import 'package:sixam_mart/data/model/response/notification_model.dart';
-import 'package:sixam_mart/data/repository/notification_repo.dart';
-import 'package:sixam_mart/helper/date_converter.dart';
+import 'package:dokandar/data/api/api_checker.dart';
+import 'package:dokandar/data/model/response/notification_model.dart';
+import 'package:dokandar/data/repository/notification_repo.dart';
+import 'package:dokandar/helper/date_converter.dart';
 import 'package:get/get.dart';
 
 class NotificationController extends GetxController implements GetxService {

@@ -2,14 +2,14 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shimmer_animation/shimmer_animation.dart';
-import 'package:sixam_mart/controller/campaign_controller.dart';
-import 'package:sixam_mart/controller/item_controller.dart';
-import 'package:sixam_mart/controller/splash_controller.dart';
-import 'package:sixam_mart/data/model/response/item_model.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/view/base/custom_image.dart';
-import 'package:sixam_mart/view/base/title_widget.dart';
-import 'package:sixam_mart/view/screens/home/grocery/widget/components/custom_circle_list_view_package.dart';
+import 'package:dokandar/controller/campaign_controller.dart';
+import 'package:dokandar/controller/item_controller.dart';
+import 'package:dokandar/controller/splash_controller.dart';
+import 'package:dokandar/data/model/response/item_model.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/view/base/custom_image.dart';
+import 'package:dokandar/view/base/title_widget.dart';
+import 'package:dokandar/view/screens/home/grocery/widget/components/custom_circle_list_view_package.dart';
 
 class CircleListView extends StatefulWidget {
   const CircleListView({super.key});

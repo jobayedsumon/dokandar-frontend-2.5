@@ -2,12 +2,12 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shimmer_animation/shimmer_animation.dart';
-import 'package:sixam_mart/controller/campaign_controller.dart';
-import 'package:sixam_mart/controller/splash_controller.dart';
-import 'package:sixam_mart/helper/route_helper.dart';
-import 'package:sixam_mart/util/app_constants.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/view/base/custom_image.dart';
+import 'package:dokandar/controller/campaign_controller.dart';
+import 'package:dokandar/controller/splash_controller.dart';
+import 'package:dokandar/helper/route_helper.dart';
+import 'package:dokandar/util/app_constants.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/view/base/custom_image.dart';
 
 class MiddleSectionBannerView extends StatefulWidget {
   const MiddleSectionBannerView({Key? key}) : super(key: key);

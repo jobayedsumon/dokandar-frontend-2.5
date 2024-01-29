@@ -1,4 +1,4 @@
-import 'package:sixam_mart/data/model/response/zone_response_model.dart';
+import 'package:dokandar/data/model/response/zone_response_model.dart';
 
 class AddressModel {
   int? id;

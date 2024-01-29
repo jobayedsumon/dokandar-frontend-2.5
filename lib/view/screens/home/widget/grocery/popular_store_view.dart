@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sixam_mart/controller/store_controller.dart';
-import 'package:sixam_mart/data/model/response/store_model.dart';
-import 'package:sixam_mart/helper/route_helper.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/view/base/title_widget.dart';
-import 'package:sixam_mart/view/screens/home/grocery/widget/components/popular_store_card.dart';
+import 'package:dokandar/controller/store_controller.dart';
+import 'package:dokandar/data/model/response/store_model.dart';
+import 'package:dokandar/helper/route_helper.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/view/base/title_widget.dart';
+import 'package:dokandar/view/screens/home/grocery/widget/components/popular_store_card.dart';
 
 import '../../web/web_new/web_populer_store_view.dart';
 

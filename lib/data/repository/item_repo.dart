@@ -1,6 +1,6 @@
-import 'package:sixam_mart/data/api/api_client.dart';
-import 'package:sixam_mart/data/model/body/review_body.dart';
-import 'package:sixam_mart/util/app_constants.dart';
+import 'package:dokandar/data/api/api_client.dart';
+import 'package:dokandar/data/model/body/review_body.dart';
+import 'package:dokandar/util/app_constants.dart';
 import 'package:get/get.dart';
 
 class ItemRepo extends GetxService {

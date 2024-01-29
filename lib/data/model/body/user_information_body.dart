@@ -1,4 +1,4 @@
-import 'package:sixam_mart/data/model/response/address_model.dart';
+import 'package:dokandar/data/model/response/address_model.dart';
 
 class UserInformationBody{
   AddressModel? from;

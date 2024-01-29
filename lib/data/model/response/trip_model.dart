@@ -1,4 +1,4 @@
-import 'package:sixam_mart/data/model/response/order_model.dart';
+import 'package:dokandar/data/model/response/order_model.dart';
 
 class TripModel {
   int? totalSize;

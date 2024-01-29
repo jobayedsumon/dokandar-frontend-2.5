@@ -1,4 +1,4 @@
-import 'package:sixam_mart/data/model/response/store_model.dart';
+import 'package:dokandar/data/model/response/store_model.dart';
 
 class BasicCampaignModel {
   int? id;

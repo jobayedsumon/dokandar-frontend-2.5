@@ -2,10 +2,10 @@ import 'dart:async';
 
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:sixam_mart/data/api/api_checker.dart';
-import 'package:sixam_mart/data/model/response/flash_sale_model.dart';
-import 'package:sixam_mart/data/model/response/product_flash_sale.dart';
-import 'package:sixam_mart/data/repository/flash_sale_repo.dart';
+import 'package:dokandar/data/api/api_checker.dart';
+import 'package:dokandar/data/model/response/flash_sale_model.dart';
+import 'package:dokandar/data/model/response/product_flash_sale.dart';
+import 'package:dokandar/data/repository/flash_sale_repo.dart';
 
 class FlashSaleController extends GetxController implements GetxService {
   final FlashSaleRepo flashSaleRepo;

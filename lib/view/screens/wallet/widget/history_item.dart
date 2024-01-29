@@ -1,12 +1,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sixam_mart/data/model/response/wallet_model.dart';
-import 'package:sixam_mart/helper/date_converter.dart';
-import 'package:sixam_mart/helper/price_converter.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/util/images.dart';
-import 'package:sixam_mart/util/styles.dart';
+import 'package:dokandar/data/model/response/wallet_model.dart';
+import 'package:dokandar/helper/date_converter.dart';
+import 'package:dokandar/helper/price_converter.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/util/images.dart';
+import 'package:dokandar/util/styles.dart';
 class HistoryItem extends StatelessWidget {
   final int index;
   final bool fromWallet;

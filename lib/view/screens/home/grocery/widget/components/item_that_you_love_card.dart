@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sixam_mart/controller/item_controller.dart';
-import 'package:sixam_mart/controller/localization_controller.dart';
-import 'package:sixam_mart/controller/splash_controller.dart';
-import 'package:sixam_mart/data/model/response/item_model.dart';
-import 'package:sixam_mart/helper/price_converter.dart';
-import 'package:sixam_mart/helper/responsive_helper.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/util/styles.dart';
-import 'package:sixam_mart/view/base/add_favourite_view.dart';
-import 'package:sixam_mart/view/base/cart_count_view.dart';
-import 'package:sixam_mart/view/base/custom_image.dart';
-import 'package:sixam_mart/view/base/discount_tag.dart';
-import 'package:sixam_mart/view/base/hover/on_hover.dart';
-import 'package:sixam_mart/view/base/not_available_widget.dart';
+import 'package:dokandar/controller/item_controller.dart';
+import 'package:dokandar/controller/localization_controller.dart';
+import 'package:dokandar/controller/splash_controller.dart';
+import 'package:dokandar/data/model/response/item_model.dart';
+import 'package:dokandar/helper/price_converter.dart';
+import 'package:dokandar/helper/responsive_helper.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/util/styles.dart';
+import 'package:dokandar/view/base/add_favourite_view.dart';
+import 'package:dokandar/view/base/cart_count_view.dart';
+import 'package:dokandar/view/base/custom_image.dart';
+import 'package:dokandar/view/base/discount_tag.dart';
+import 'package:dokandar/view/base/hover/on_hover.dart';
+import 'package:dokandar/view/base/not_available_widget.dart';
 
 class ItemThatYouLoveCard extends StatelessWidget {
   final Item item;

@@ -1,12 +1,12 @@
-import 'package:sixam_mart/controller/item_controller.dart';
-import 'package:sixam_mart/data/model/response/order_details_model.dart';
-import 'package:sixam_mart/data/model/response/order_model.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/util/styles.dart';
-import 'package:sixam_mart/view/base/custom_app_bar.dart';
-import 'package:sixam_mart/view/base/menu_drawer.dart';
-import 'package:sixam_mart/view/screens/review/widget/deliver_man_review_widget.dart';
-import 'package:sixam_mart/view/screens/review/widget/item_review_widget.dart';
+import 'package:dokandar/controller/item_controller.dart';
+import 'package:dokandar/data/model/response/order_details_model.dart';
+import 'package:dokandar/data/model/response/order_model.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/util/styles.dart';
+import 'package:dokandar/view/base/custom_app_bar.dart';
+import 'package:dokandar/view/base/menu_drawer.dart';
+import 'package:dokandar/view/screens/review/widget/deliver_man_review_widget.dart';
+import 'package:dokandar/view/screens/review/widget/item_review_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

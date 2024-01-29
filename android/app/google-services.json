@@ -47,7 +47,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:1000163153346:android:7d49ab307cc6e18406b25b",
         "android_client_info": {
-          "package_name": "com.sixamtech.sixam_mart"
+          "package_name": "com.sixamtech.dokandar"
         }
       },
       "oauth_client": [
@@ -55,7 +55,7 @@
           "client_id": "1000163153346-8h3825qftiorhelafakqhl559fubeteb.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.sixamtech.sixam_mart",
+            "package_name": "com.sixamtech.dokandar",
             "certificate_hash": "79c2a092588f1ab2728e007cee5dbac37941dcca"
           }
         },
@@ -63,7 +63,7 @@
           "client_id": "1000163153346-gsa2tm8gi02fhlv56j14ih7dclm0brk2.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.sixamtech.sixam_mart",
+            "package_name": "com.sixamtech.dokandar",
             "certificate_hash": "140f4f38899f0c9938d86dd6ed3cba995e5724d3"
           }
         },

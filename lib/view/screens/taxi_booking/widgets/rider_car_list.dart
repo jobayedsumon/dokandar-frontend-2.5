@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sixam_mart/data/model/body/user_information_body.dart';
-import 'package:sixam_mart/data/model/response/vehicle_model.dart';
-import 'package:sixam_mart/helper/responsive_helper.dart';
-import 'package:sixam_mart/util/dimensions.dart';
+import 'package:dokandar/data/model/body/user_information_body.dart';
+import 'package:dokandar/data/model/response/vehicle_model.dart';
+import 'package:dokandar/helper/responsive_helper.dart';
+import 'package:dokandar/util/dimensions.dart';
 import 'rider_car_card.dart';
 
 class RiderCarList extends StatelessWidget {

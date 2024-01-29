@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sixam_mart/data/model/response/vehicle_model.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/util/images.dart';
-import 'package:sixam_mart/util/styles.dart';
-import 'package:sixam_mart/view/base/ripple_button.dart';
-import 'package:sixam_mart/view/screens/taxi_booking/widgets/cost_variations_dialog.dart';
+import 'package:dokandar/data/model/response/vehicle_model.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/util/images.dart';
+import 'package:dokandar/util/styles.dart';
+import 'package:dokandar/view/base/ripple_button.dart';
+import 'package:dokandar/view/screens/taxi_booking/widgets/cost_variations_dialog.dart';
 
 
 class CarInfo extends StatelessWidget {

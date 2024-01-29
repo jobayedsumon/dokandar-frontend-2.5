@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animarker/widgets/animarker.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:sixam_mart/controller/rider_controller.dart';
-import 'package:sixam_mart/helper/date_converter.dart';
-import 'package:sixam_mart/helper/responsive_helper.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/util/images.dart';
-import 'package:sixam_mart/util/styles.dart';
-import 'package:sixam_mart/view/screens/taxi_booking/select_map_location/widgets/dotted_line.dart';
-import 'package:sixam_mart/view/screens/taxi_booking/select_map_location/widgets/pick_and_destination_address_info.dart';
+import 'package:dokandar/controller/rider_controller.dart';
+import 'package:dokandar/helper/date_converter.dart';
+import 'package:dokandar/helper/responsive_helper.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/util/images.dart';
+import 'package:dokandar/util/styles.dart';
+import 'package:dokandar/view/screens/taxi_booking/select_map_location/widgets/dotted_line.dart';
+import 'package:dokandar/view/screens/taxi_booking/select_map_location/widgets/pick_and_destination_address_info.dart';
 class SeeDetailsWidget extends StatefulWidget {
   const SeeDetailsWidget({Key? key}) : super(key: key);
 

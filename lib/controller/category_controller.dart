@@ -1,8 +1,8 @@
-import 'package:sixam_mart/data/api/api_checker.dart';
-import 'package:sixam_mart/data/model/response/category_model.dart';
-import 'package:sixam_mart/data/model/response/item_model.dart';
-import 'package:sixam_mart/data/model/response/store_model.dart';
-import 'package:sixam_mart/data/repository/category_repo.dart';
+import 'package:dokandar/data/api/api_checker.dart';
+import 'package:dokandar/data/model/response/category_model.dart';
+import 'package:dokandar/data/model/response/item_model.dart';
+import 'package:dokandar/data/model/response/store_model.dart';
+import 'package:dokandar/data/repository/category_repo.dart';
 import 'package:get/get.dart';
 
 class CategoryController extends GetxController implements GetxService {

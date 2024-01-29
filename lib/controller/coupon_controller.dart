@@ -1,9 +1,9 @@
 import 'package:just_the_tooltip/just_the_tooltip.dart';
-import 'package:sixam_mart/data/api/api_checker.dart';
-import 'package:sixam_mart/data/model/response/coupon_model.dart';
-import 'package:sixam_mart/data/repository/coupon_repo.dart';
-import 'package:sixam_mart/helper/price_converter.dart';
-import 'package:sixam_mart/view/base/custom_snackbar.dart';
+import 'package:dokandar/data/api/api_checker.dart';
+import 'package:dokandar/data/model/response/coupon_model.dart';
+import 'package:dokandar/data/repository/coupon_repo.dart';
+import 'package:dokandar/helper/price_converter.dart';
+import 'package:dokandar/view/base/custom_snackbar.dart';
 import 'package:get/get.dart';
 
 class CouponController extends GetxController implements GetxService {

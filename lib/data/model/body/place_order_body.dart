@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:sixam_mart/data/model/response/address_model.dart';
-import 'package:sixam_mart/data/model/response/item_model.dart';
+import 'package:dokandar/data/model/response/address_model.dart';
+import 'package:dokandar/data/model/response/item_model.dart';
 
 class PlaceOrderBody {
   List<OnlineCart>? _cart;

@@ -2,22 +2,22 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:sixam_mart/controller/auth_controller.dart';
-import 'package:sixam_mart/controller/location_controller.dart';
-import 'package:sixam_mart/controller/order_controller.dart';
-import 'package:sixam_mart/data/api/api_checker.dart';
-import 'package:sixam_mart/data/model/response/address_model.dart';
-import 'package:sixam_mart/data/model/response/parcel_category_model.dart';
-import 'package:sixam_mart/data/model/response/parcel_instruction_model.dart';
-import 'package:sixam_mart/data/model/response/place_details_model.dart';
-import 'package:sixam_mart/data/model/response/video_content_model.dart';
-import 'package:sixam_mart/data/model/response/why_choose_model.dart';
-import 'package:sixam_mart/data/model/response/zone_response_model.dart';
-import 'package:sixam_mart/data/repository/parcel_repo.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/view/base/custom_dropdown.dart';
-import 'package:sixam_mart/view/base/custom_snackbar.dart';
-import 'package:sixam_mart/view/screens/address/widget/address_widget.dart';
+import 'package:dokandar/controller/auth_controller.dart';
+import 'package:dokandar/controller/location_controller.dart';
+import 'package:dokandar/controller/order_controller.dart';
+import 'package:dokandar/data/api/api_checker.dart';
+import 'package:dokandar/data/model/response/address_model.dart';
+import 'package:dokandar/data/model/response/parcel_category_model.dart';
+import 'package:dokandar/data/model/response/parcel_instruction_model.dart';
+import 'package:dokandar/data/model/response/place_details_model.dart';
+import 'package:dokandar/data/model/response/video_content_model.dart';
+import 'package:dokandar/data/model/response/why_choose_model.dart';
+import 'package:dokandar/data/model/response/zone_response_model.dart';
+import 'package:dokandar/data/repository/parcel_repo.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/view/base/custom_dropdown.dart';
+import 'package:dokandar/view/base/custom_snackbar.dart';
+import 'package:dokandar/view/screens/address/widget/address_widget.dart';
 
 class ParcelController extends GetxController implements GetxService {
   final ParcelRepo parcelRepo;

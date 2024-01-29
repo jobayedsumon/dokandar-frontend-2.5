@@ -1,12 +1,12 @@
-import 'package:sixam_mart/controller/auth_controller.dart';
-import 'package:sixam_mart/controller/order_controller.dart';
-import 'package:sixam_mart/helper/responsive_helper.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/util/styles.dart';
-import 'package:sixam_mart/view/base/custom_app_bar.dart';
-import 'package:sixam_mart/view/base/menu_drawer.dart';
-import 'package:sixam_mart/view/screens/order/guest_track_order_input_view.dart';
-import 'package:sixam_mart/view/screens/order/widget/order_view.dart';
+import 'package:dokandar/controller/auth_controller.dart';
+import 'package:dokandar/controller/order_controller.dart';
+import 'package:dokandar/helper/responsive_helper.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/util/styles.dart';
+import 'package:dokandar/view/base/custom_app_bar.dart';
+import 'package:dokandar/view/base/menu_drawer.dart';
+import 'package:dokandar/view/screens/order/guest_track_order_input_view.dart';
+import 'package:dokandar/view/screens/order/widget/order_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

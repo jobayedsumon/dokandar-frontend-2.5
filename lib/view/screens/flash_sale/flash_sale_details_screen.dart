@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shimmer_animation/shimmer_animation.dart';
-import 'package:sixam_mart/controller/flash_sale_controller.dart';
-import 'package:sixam_mart/helper/responsive_helper.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/util/styles.dart';
-import 'package:sixam_mart/view/base/custom_app_bar.dart';
-import 'package:sixam_mart/view/base/footer_view.dart';
-import 'package:sixam_mart/view/base/paginated_list_view.dart';
-import 'package:sixam_mart/view/screens/flash_sale/widgets/flash_product_card.dart';
-import 'package:sixam_mart/view/screens/flash_sale/widgets/flash_sale_timer_view.dart';
+import 'package:dokandar/controller/flash_sale_controller.dart';
+import 'package:dokandar/helper/responsive_helper.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/util/styles.dart';
+import 'package:dokandar/view/base/custom_app_bar.dart';
+import 'package:dokandar/view/base/footer_view.dart';
+import 'package:dokandar/view/base/paginated_list_view.dart';
+import 'package:dokandar/view/screens/flash_sale/widgets/flash_product_card.dart';
+import 'package:dokandar/view/screens/flash_sale/widgets/flash_sale_timer_view.dart';
 
 class FlashSaleDetailsScreen extends StatefulWidget {
   final int id;

@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:sixam_mart/controller/splash_controller.dart';
-import 'package:sixam_mart/data/model/response/basic_medicine_model.dart';
+import 'package:dokandar/controller/splash_controller.dart';
+import 'package:dokandar/data/model/response/basic_medicine_model.dart';
 
 class ItemModel {
   int? totalSize;

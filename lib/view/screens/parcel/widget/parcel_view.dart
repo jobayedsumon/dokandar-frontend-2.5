@@ -1,19 +1,19 @@
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sixam_mart/controller/location_controller.dart';
-import 'package:sixam_mart/controller/parcel_controller.dart';
-import 'package:sixam_mart/data/model/response/address_model.dart';
-import 'package:sixam_mart/data/model/response/zone_response_model.dart';
-import 'package:sixam_mart/helper/responsive_helper.dart';
-import 'package:sixam_mart/helper/route_helper.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/util/styles.dart';
-import 'package:sixam_mart/view/base/custom_dropdown.dart';
-import 'package:sixam_mart/view/base/custom_text_field.dart';
-import 'package:sixam_mart/view/base/footer_view.dart';
-import 'package:sixam_mart/view/screens/address/widget/address_widget.dart';
-import 'package:sixam_mart/view/screens/location/pick_map_screen.dart';
+import 'package:dokandar/controller/location_controller.dart';
+import 'package:dokandar/controller/parcel_controller.dart';
+import 'package:dokandar/data/model/response/address_model.dart';
+import 'package:dokandar/data/model/response/zone_response_model.dart';
+import 'package:dokandar/helper/responsive_helper.dart';
+import 'package:dokandar/helper/route_helper.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/util/styles.dart';
+import 'package:dokandar/view/base/custom_dropdown.dart';
+import 'package:dokandar/view/base/custom_text_field.dart';
+import 'package:dokandar/view/base/footer_view.dart';
+import 'package:dokandar/view/screens/address/widget/address_widget.dart';
+import 'package:dokandar/view/screens/location/pick_map_screen.dart';
 
 class ParcelView extends StatelessWidget {
   final bool isSender ;

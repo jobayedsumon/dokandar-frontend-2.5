@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sixam_mart/controller/coupon_controller.dart';
-import 'package:sixam_mart/controller/localization_controller.dart';
-import 'package:sixam_mart/controller/order_controller.dart';
-import 'package:sixam_mart/controller/store_controller.dart';
-import 'package:sixam_mart/helper/price_converter.dart';
-import 'package:sixam_mart/helper/responsive_helper.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/util/images.dart';
-import 'package:sixam_mart/util/styles.dart';
-import 'package:sixam_mart/view/base/custom_snackbar.dart';
-import 'package:sixam_mart/view/screens/checkout/widget/coupon_bottom_sheet.dart';
+import 'package:dokandar/controller/coupon_controller.dart';
+import 'package:dokandar/controller/localization_controller.dart';
+import 'package:dokandar/controller/order_controller.dart';
+import 'package:dokandar/controller/store_controller.dart';
+import 'package:dokandar/helper/price_converter.dart';
+import 'package:dokandar/helper/responsive_helper.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/util/images.dart';
+import 'package:dokandar/util/styles.dart';
+import 'package:dokandar/view/base/custom_snackbar.dart';
+import 'package:dokandar/view/screens/checkout/widget/coupon_bottom_sheet.dart';
 class CouponSection extends StatelessWidget {
   final int? storeId;
   final OrderController orderController;

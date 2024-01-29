@@ -1,7 +1,7 @@
-import 'package:sixam_mart/controller/wishlist_controller.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/view/base/footer_view.dart';
-import 'package:sixam_mart/view/base/item_view.dart';
+import 'package:dokandar/controller/wishlist_controller.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/view/base/footer_view.dart';
+import 'package:dokandar/view/base/item_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

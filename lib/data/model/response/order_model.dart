@@ -1,8 +1,8 @@
 import 'dart:convert';
 
-import 'package:sixam_mart/data/model/response/address_model.dart';
-import 'package:sixam_mart/data/model/response/parcel_category_model.dart';
-import 'package:sixam_mart/data/model/response/store_model.dart';
+import 'package:dokandar/data/model/response/address_model.dart';
+import 'package:dokandar/data/model/response/parcel_category_model.dart';
+import 'package:dokandar/data/model/response/store_model.dart';
 
 class PaginatedOrderModel {
   int? totalSize;

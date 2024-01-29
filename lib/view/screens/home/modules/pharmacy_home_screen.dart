@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sixam_mart/controller/auth_controller.dart';
-import 'package:sixam_mart/view/screens/home/widget/bad_weather_widget.dart';
-import 'package:sixam_mart/view/screens/home/widget/grocery/basic_medicine_nearby_view.dart';
-import 'package:sixam_mart/view/screens/home/widget/grocery/best_store_nearby_view.dart';
-import 'package:sixam_mart/view/screens/home/widget/grocery/common_condition_view.dart';
-import 'package:sixam_mart/view/screens/home/widget/grocery/just_for_you_view.dart';
-import 'package:sixam_mart/view/screens/home/widget/grocery/middle_section_banner_view.dart';
-import 'package:sixam_mart/view/screens/home/widget/grocery/new_on_mart_view.dart';
-import 'package:sixam_mart/view/screens/home/widget/grocery/promotional_banner_view.dart';
-import 'package:sixam_mart/view/screens/home/widget/grocery/visit_again_view.dart';
-import 'package:sixam_mart/view/screens/home/widget/banner_view.dart';
-import 'package:sixam_mart/view/screens/home/widget/grocery/category_view.dart';
+import 'package:dokandar/controller/auth_controller.dart';
+import 'package:dokandar/view/screens/home/widget/bad_weather_widget.dart';
+import 'package:dokandar/view/screens/home/widget/grocery/basic_medicine_nearby_view.dart';
+import 'package:dokandar/view/screens/home/widget/grocery/best_store_nearby_view.dart';
+import 'package:dokandar/view/screens/home/widget/grocery/common_condition_view.dart';
+import 'package:dokandar/view/screens/home/widget/grocery/just_for_you_view.dart';
+import 'package:dokandar/view/screens/home/widget/grocery/middle_section_banner_view.dart';
+import 'package:dokandar/view/screens/home/widget/grocery/new_on_mart_view.dart';
+import 'package:dokandar/view/screens/home/widget/grocery/promotional_banner_view.dart';
+import 'package:dokandar/view/screens/home/widget/grocery/visit_again_view.dart';
+import 'package:dokandar/view/screens/home/widget/banner_view.dart';
+import 'package:dokandar/view/screens/home/widget/grocery/category_view.dart';
 
 class PharmacyHomeScreen extends StatelessWidget {
   const PharmacyHomeScreen({Key? key}) : super(key: key);

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sixam_mart/controller/booking_checkout_controller.dart';
-import 'package:sixam_mart/controller/theme_controller.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/util/images.dart';
-import 'package:sixam_mart/util/styles.dart';
-import 'package:sixam_mart/view/screens/taxi_booking/booking_checkout_screen/widgets/taxi_payment_button.dart';
+import 'package:dokandar/controller/booking_checkout_controller.dart';
+import 'package:dokandar/controller/theme_controller.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/util/images.dart';
+import 'package:dokandar/util/styles.dart';
+import 'package:dokandar/view/screens/taxi_booking/booking_checkout_screen/widgets/taxi_payment_button.dart';
 
 class SelectPaymentMethod extends StatelessWidget {
   const SelectPaymentMethod({Key? key}) : super(key: key);

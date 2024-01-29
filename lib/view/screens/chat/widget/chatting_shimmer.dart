@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shimmer_animation/shimmer_animation.dart';
-import 'package:sixam_mart/util/dimensions.dart';
+import 'package:dokandar/util/dimensions.dart';
 
 class ChattingShimmer extends StatelessWidget {
   const ChattingShimmer({Key? key}) : super(key: key);

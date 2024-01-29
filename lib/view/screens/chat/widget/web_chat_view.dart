@@ -2,25 +2,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:sixam_mart/controller/auth_controller.dart';
-import 'package:sixam_mart/controller/chat_controller.dart';
-import 'package:sixam_mart/controller/splash_controller.dart';
-import 'package:sixam_mart/controller/user_controller.dart';
-import 'package:sixam_mart/data/model/body/notification_body.dart';
-import 'package:sixam_mart/data/model/response/conversation_model.dart';
-import 'package:sixam_mart/util/app_constants.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/util/images.dart';
-import 'package:sixam_mart/util/styles.dart';
-import 'package:sixam_mart/view/base/custom_image.dart';
-import 'package:sixam_mart/view/base/custom_snackbar.dart';
-import 'package:sixam_mart/view/base/footer_view.dart';
-import 'package:sixam_mart/view/base/not_logged_in_screen.dart';
-import 'package:sixam_mart/view/base/paginated_list_view.dart';
-import 'package:sixam_mart/view/base/web_search_field.dart';
-import 'package:sixam_mart/view/screens/chat/widget/chatting_shimmer.dart';
-import 'package:sixam_mart/view/screens/chat/widget/message_bubble.dart';
-import 'package:sixam_mart/view/screens/chat/widget/web_conversation_list_view.dart';
+import 'package:dokandar/controller/auth_controller.dart';
+import 'package:dokandar/controller/chat_controller.dart';
+import 'package:dokandar/controller/splash_controller.dart';
+import 'package:dokandar/controller/user_controller.dart';
+import 'package:dokandar/data/model/body/notification_body.dart';
+import 'package:dokandar/data/model/response/conversation_model.dart';
+import 'package:dokandar/util/app_constants.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/util/images.dart';
+import 'package:dokandar/util/styles.dart';
+import 'package:dokandar/view/base/custom_image.dart';
+import 'package:dokandar/view/base/custom_snackbar.dart';
+import 'package:dokandar/view/base/footer_view.dart';
+import 'package:dokandar/view/base/not_logged_in_screen.dart';
+import 'package:dokandar/view/base/paginated_list_view.dart';
+import 'package:dokandar/view/base/web_search_field.dart';
+import 'package:dokandar/view/screens/chat/widget/chatting_shimmer.dart';
+import 'package:dokandar/view/screens/chat/widget/message_bubble.dart';
+import 'package:dokandar/view/screens/chat/widget/web_conversation_list_view.dart';
 
 
 class WebChatView extends StatefulWidget {

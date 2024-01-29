@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shimmer_animation/shimmer_animation.dart';
-import 'package:sixam_mart/controller/item_controller.dart';
-import 'package:sixam_mart/data/model/response/basic_medicine_model.dart';
-import 'package:sixam_mart/data/model/response/item_model.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/util/styles.dart';
-import 'package:sixam_mart/view/screens/home/grocery/widget/components/review_item_card.dart';
+import 'package:dokandar/controller/item_controller.dart';
+import 'package:dokandar/data/model/response/basic_medicine_model.dart';
+import 'package:dokandar/data/model/response/item_model.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/util/styles.dart';
+import 'package:dokandar/view/screens/home/grocery/widget/components/review_item_card.dart';
 
 class FeaturedCategoriesView extends StatelessWidget {
   const FeaturedCategoriesView({Key? key}) : super(key: key);

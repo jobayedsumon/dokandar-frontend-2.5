@@ -3,13 +3,13 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:sixam_mart/controller/coupon_controller.dart';
-import 'package:sixam_mart/helper/price_converter.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/util/images.dart';
-import 'package:sixam_mart/util/styles.dart';
-import 'package:sixam_mart/view/base/custom_snackbar.dart';
-import 'package:sixam_mart/view/screens/home/widget/grocery/promo_code_banner_view.dart';
+import 'package:dokandar/controller/coupon_controller.dart';
+import 'package:dokandar/helper/price_converter.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/util/images.dart';
+import 'package:dokandar/util/styles.dart';
+import 'package:dokandar/view/base/custom_snackbar.dart';
+import 'package:dokandar/view/screens/home/widget/grocery/promo_code_banner_view.dart';
 
 class WebCouponBannerView extends StatefulWidget {
   const WebCouponBannerView({Key? key}) : super(key: key);

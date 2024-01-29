@@ -1,4 +1,4 @@
-import 'package:sixam_mart/util/dimensions.dart';
+import 'package:dokandar/util/dimensions.dart';
 import 'package:flutter/material.dart';
 
 class QuantityButton extends StatelessWidget {

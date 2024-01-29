@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:photo_view/photo_view.dart';
 import 'package:photo_view/photo_view_gallery.dart';
-import 'package:sixam_mart/controller/item_controller.dart';
-import 'package:sixam_mart/controller/splash_controller.dart';
-import 'package:sixam_mart/data/model/response/item_model.dart';
-import 'package:sixam_mart/view/base/custom_app_bar.dart';
+import 'package:dokandar/controller/item_controller.dart';
+import 'package:dokandar/controller/splash_controller.dart';
+import 'package:dokandar/data/model/response/item_model.dart';
+import 'package:dokandar/view/base/custom_app_bar.dart';
 
 class ImageViewerScreen extends StatelessWidget {
   final Item item;

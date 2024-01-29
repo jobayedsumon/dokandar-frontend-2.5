@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sixam_mart/helper/responsive_helper.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/view/base/custom_app_bar.dart';
-import 'package:sixam_mart/view/base/footer_view.dart';
-import 'package:sixam_mart/view/base/menu_drawer.dart';
+import 'package:dokandar/helper/responsive_helper.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/view/base/custom_app_bar.dart';
+import 'package:dokandar/view/base/footer_view.dart';
+import 'package:dokandar/view/base/menu_drawer.dart';
 class DigitalPaymentScreen extends StatefulWidget {
   const DigitalPaymentScreen({Key? key}) : super(key: key);
 

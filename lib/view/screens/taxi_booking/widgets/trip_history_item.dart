@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sixam_mart/data/model/response/trip_model.dart';
-import 'package:sixam_mart/helper/price_converter.dart';
-import 'package:sixam_mart/helper/responsive_helper.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/util/styles.dart';
-import 'package:sixam_mart/view/base/custom_button.dart';
-import 'package:sixam_mart/view/base/custom_image.dart';
-import 'package:sixam_mart/view/screens/taxi_booking/select_map_location/widgets/dotted_line.dart';
+import 'package:dokandar/data/model/response/trip_model.dart';
+import 'package:dokandar/helper/price_converter.dart';
+import 'package:dokandar/helper/responsive_helper.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/util/styles.dart';
+import 'package:dokandar/view/base/custom_button.dart';
+import 'package:dokandar/view/base/custom_image.dart';
+import 'package:dokandar/view/screens/taxi_booking/select_map_location/widgets/dotted_line.dart';
 
 class TripHistoryItem extends StatelessWidget {
   final Data trip;

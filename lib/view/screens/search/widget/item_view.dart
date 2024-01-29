@@ -1,11 +1,11 @@
-import 'package:sixam_mart/controller/search_controller.dart';
-import 'package:sixam_mart/helper/responsive_helper.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/view/base/footer_view.dart';
+import 'package:dokandar/controller/search_controller.dart';
+import 'package:dokandar/helper/responsive_helper.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/view/base/footer_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sixam_mart/view/base/item_view.dart';
-import 'package:sixam_mart/view/base/web_item_view.dart';
+import 'package:dokandar/view/base/item_view.dart';
+import 'package:dokandar/view/base/web_item_view.dart';
 
 class ItemView extends StatelessWidget {
   final bool isItem;

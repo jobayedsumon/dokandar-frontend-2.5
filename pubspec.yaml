@@ -1,7 +1,7 @@
-name: sixam_mart
+name: dokandar
 description: A Multi-vendor Food. Grocery, eCommerce, Pharmacy & Parcel service.
 publish_to: 'none' #
-version: 1.0.0+1
+version: 5.0.0+5
 
 environment:
   sdk: '>=3.0.6 <4.0.0'
@@ -60,6 +60,7 @@ dependency_overrides:
   modal_bottom_sheet: ^3.0.0-pre
 
 dev_dependencies:
+  change_app_package_name: ^1.1.0
   flutter_test:
     sdk: flutter
 

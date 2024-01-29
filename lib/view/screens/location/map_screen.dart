@@ -1,16 +1,16 @@
-import 'package:sixam_mart/data/model/response/address_model.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/util/images.dart';
-import 'package:sixam_mart/util/styles.dart';
-import 'package:sixam_mart/view/base/custom_app_bar.dart';
+import 'package:dokandar/data/model/response/address_model.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/util/images.dart';
+import 'package:dokandar/util/styles.dart';
+import 'package:dokandar/view/base/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:get/get.dart';
 import 'dart:ui';
 
-import 'package:sixam_mart/view/base/menu_drawer.dart';
-import 'package:sixam_mart/view/screens/order/widget/address_details.dart';
+import 'package:dokandar/view/base/menu_drawer.dart';
+import 'package:dokandar/view/screens/order/widget/address_details.dart';
 
 class MapScreen extends StatefulWidget {
   final AddressModel address;

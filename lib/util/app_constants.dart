@@ -1,18 +1,18 @@
 import 'package:get/get.dart';
-import 'package:sixam_mart/data/model/response/choose_us_model.dart';
-import 'package:sixam_mart/data/model/response/language_model.dart';
-import 'package:sixam_mart/util/images.dart';
+import 'package:dokandar/data/model/response/choose_us_model.dart';
+import 'package:dokandar/data/model/response/language_model.dart';
+import 'package:dokandar/util/images.dart';
 
 class AppConstants {
-  static const String appName = '6amMart';
+  static const String appName = 'Dokandar';
   static const double appVersion = 2.5;
 
   static const String fontFamily = 'Roboto';
   static const bool payInWevView = false;
   static const int balanceInputLen = 10;
-  static const String webHostedUrl = 'https://6ammart-web.6amtech.com';
+  static const String webHostedUrl = 'https://dokandar.xyz';
 
-  static const String baseUrl = 'https://6ammart-admin.6amtech.com';
+  static const String baseUrl = 'https://admin.dokandar.xyz';
   static const String categoryUri = '/api/v1/categories';
   static const String bannerUri = '/api/v1/banners';
   static const String storeItemUri = '/api/v1/items/latest';

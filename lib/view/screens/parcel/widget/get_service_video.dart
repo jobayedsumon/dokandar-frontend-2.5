@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sixam_mart/util/dimensions.dart';
+import 'package:dokandar/util/dimensions.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 class GetServiceVideo extends StatefulWidget {

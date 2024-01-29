@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sixam_mart/controller/auth_controller.dart';
-import 'package:sixam_mart/controller/coupon_controller.dart';
-import 'package:sixam_mart/controller/location_controller.dart';
-import 'package:sixam_mart/controller/order_controller.dart';
-import 'package:sixam_mart/controller/parcel_controller.dart';
-import 'package:sixam_mart/controller/splash_controller.dart';
-import 'package:sixam_mart/data/model/response/address_model.dart';
-import 'package:sixam_mart/data/model/response/cart_model.dart';
-import 'package:sixam_mart/data/model/response/item_model.dart';
-import 'package:sixam_mart/data/model/response/parcel_category_model.dart';
-import 'package:sixam_mart/data/model/response/store_model.dart';
-import 'package:sixam_mart/data/model/response/zone_response_model.dart';
-import 'package:sixam_mart/helper/date_converter.dart';
-import 'package:sixam_mart/helper/price_converter.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/view/base/custom_dropdown.dart';
-import 'package:sixam_mart/view/screens/address/widget/address_widget.dart';
+import 'package:dokandar/controller/auth_controller.dart';
+import 'package:dokandar/controller/coupon_controller.dart';
+import 'package:dokandar/controller/location_controller.dart';
+import 'package:dokandar/controller/order_controller.dart';
+import 'package:dokandar/controller/parcel_controller.dart';
+import 'package:dokandar/controller/splash_controller.dart';
+import 'package:dokandar/data/model/response/address_model.dart';
+import 'package:dokandar/data/model/response/cart_model.dart';
+import 'package:dokandar/data/model/response/item_model.dart';
+import 'package:dokandar/data/model/response/parcel_category_model.dart';
+import 'package:dokandar/data/model/response/store_model.dart';
+import 'package:dokandar/data/model/response/zone_response_model.dart';
+import 'package:dokandar/helper/date_converter.dart';
+import 'package:dokandar/helper/price_converter.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/view/base/custom_dropdown.dart';
+import 'package:dokandar/view/screens/address/widget/address_widget.dart';
 
 class CheckoutHelper {
 

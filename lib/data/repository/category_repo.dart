@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:sixam_mart/controller/localization_controller.dart';
-import 'package:sixam_mart/data/api/api_client.dart';
-import 'package:sixam_mart/util/app_constants.dart';
+import 'package:dokandar/controller/localization_controller.dart';
+import 'package:dokandar/data/api/api_client.dart';
+import 'package:dokandar/util/app_constants.dart';
 
 class CategoryRepo {
   final ApiClient apiClient;

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sixam_mart/controller/order_controller.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/util/styles.dart';
-import 'package:sixam_mart/view/base/custom_button.dart';
-import 'package:sixam_mart/view/base/custom_snackbar.dart';
+import 'package:dokandar/controller/order_controller.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/util/styles.dart';
+import 'package:dokandar/view/base/custom_button.dart';
+import 'package:dokandar/view/base/custom_snackbar.dart';
 class CancellationDialogue extends StatelessWidget {
   final int? orderId;
   const CancellationDialogue({Key? key, required this.orderId}) : super(key: key);

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sixam_mart/util/dimensions.dart';
+import 'package:dokandar/util/dimensions.dart';
 
 class CardWidget extends StatelessWidget {
   final Widget child;

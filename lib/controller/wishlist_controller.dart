@@ -1,11 +1,11 @@
-import 'package:sixam_mart/controller/location_controller.dart';
-import 'package:sixam_mart/controller/splash_controller.dart';
-import 'package:sixam_mart/data/api/api_checker.dart';
-import 'package:sixam_mart/data/model/response/item_model.dart';
-import 'package:sixam_mart/data/model/response/store_model.dart';
-import 'package:sixam_mart/data/repository/item_repo.dart';
-import 'package:sixam_mart/data/repository/wishlist_repo.dart';
-import 'package:sixam_mart/view/base/custom_snackbar.dart';
+import 'package:dokandar/controller/location_controller.dart';
+import 'package:dokandar/controller/splash_controller.dart';
+import 'package:dokandar/data/api/api_checker.dart';
+import 'package:dokandar/data/model/response/item_model.dart';
+import 'package:dokandar/data/model/response/store_model.dart';
+import 'package:dokandar/data/repository/item_repo.dart';
+import 'package:dokandar/data/repository/wishlist_repo.dart';
+import 'package:dokandar/view/base/custom_snackbar.dart';
 import 'package:get/get.dart';
 
 class WishListController extends GetxController implements GetxService {

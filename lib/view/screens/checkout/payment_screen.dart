@@ -4,17 +4,17 @@ import 'dart:collection';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sixam_mart/controller/location_controller.dart';
-import 'package:sixam_mart/controller/order_controller.dart';
-import 'package:sixam_mart/controller/splash_controller.dart';
-import 'package:sixam_mart/data/model/response/order_model.dart';
-import 'package:sixam_mart/data/model/response/zone_response_model.dart';
-import 'package:sixam_mart/util/app_constants.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/view/base/custom_app_bar.dart';
+import 'package:dokandar/controller/location_controller.dart';
+import 'package:dokandar/controller/order_controller.dart';
+import 'package:dokandar/controller/splash_controller.dart';
+import 'package:dokandar/data/model/response/order_model.dart';
+import 'package:dokandar/data/model/response/zone_response_model.dart';
+import 'package:dokandar/util/app_constants.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/view/base/custom_app_bar.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
-import 'package:sixam_mart/view/screens/checkout/widget/payment_failed_dialog.dart';
-import 'package:sixam_mart/view/screens/wallet/widget/fund_payment_dialog.dart';
+import 'package:dokandar/view/screens/checkout/widget/payment_failed_dialog.dart';
+import 'package:dokandar/view/screens/wallet/widget/fund_payment_dialog.dart';
 
 class PaymentScreen extends StatefulWidget {
   final OrderModel orderModel;

@@ -1,8 +1,8 @@
-import 'package:sixam_mart/controller/rider_controller.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/view/base/footer_view.dart';
-import 'package:sixam_mart/view/base/no_data_screen.dart';
-import 'package:sixam_mart/view/base/paginated_list_view.dart';
+import 'package:dokandar/controller/rider_controller.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/view/base/footer_view.dart';
+import 'package:dokandar/view/base/no_data_screen.dart';
+import 'package:dokandar/view/base/paginated_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../widgets/trip_history_item.dart';

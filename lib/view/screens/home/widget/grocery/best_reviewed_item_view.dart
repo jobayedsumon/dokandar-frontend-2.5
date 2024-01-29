@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shimmer_animation/shimmer_animation.dart';
-import 'package:sixam_mart/controller/item_controller.dart';
-import 'package:sixam_mart/data/model/response/item_model.dart';
-import 'package:sixam_mart/helper/route_helper.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/view/base/title_widget.dart';
-import 'package:sixam_mart/view/screens/home/grocery/widget/components/review_item_card.dart';
+import 'package:dokandar/controller/item_controller.dart';
+import 'package:dokandar/data/model/response/item_model.dart';
+import 'package:dokandar/helper/route_helper.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/view/base/title_widget.dart';
+import 'package:dokandar/view/screens/home/grocery/widget/components/review_item_card.dart';
 
 class BestReviewItemView extends StatefulWidget {
   const BestReviewItemView({Key? key}) : super(key: key);

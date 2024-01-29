@@ -1,5 +1,5 @@
-import 'package:sixam_mart/data/model/response/language_model.dart';
-import 'package:sixam_mart/util/app_constants.dart';
+import 'package:dokandar/data/model/response/language_model.dart';
+import 'package:dokandar/util/app_constants.dart';
 import 'package:flutter/material.dart';
 
 class LanguageRepo {

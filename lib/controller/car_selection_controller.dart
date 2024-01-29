@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sixam_mart/data/api/api_checker.dart';
-import 'package:sixam_mart/data/model/body/user_information_body.dart';
-import 'package:sixam_mart/data/model/response/brand_model.dart';
-import 'package:sixam_mart/data/model/response/vehicle_model.dart';
-import 'package:sixam_mart/data/repository/car_selection_repo.dart';
+import 'package:dokandar/data/api/api_checker.dart';
+import 'package:dokandar/data/model/body/user_information_body.dart';
+import 'package:dokandar/data/model/response/brand_model.dart';
+import 'package:dokandar/data/model/response/vehicle_model.dart';
+import 'package:dokandar/data/repository/car_selection_repo.dart';
 
 
 /*receive car list based on hourly and km , also filter car and select car function will be placed here*/

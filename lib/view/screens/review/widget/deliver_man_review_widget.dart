@@ -1,13 +1,13 @@
-import 'package:sixam_mart/controller/item_controller.dart';
-import 'package:sixam_mart/data/model/body/review_body.dart';
-import 'package:sixam_mart/data/model/response/order_model.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/util/styles.dart';
-import 'package:sixam_mart/view/base/custom_button.dart';
-import 'package:sixam_mart/view/base/custom_snackbar.dart';
-import 'package:sixam_mart/view/base/footer_view.dart';
-import 'package:sixam_mart/view/base/my_text_field.dart';
-import 'package:sixam_mart/view/screens/review/widget/delivery_man_widget.dart';
+import 'package:dokandar/controller/item_controller.dart';
+import 'package:dokandar/data/model/body/review_body.dart';
+import 'package:dokandar/data/model/response/order_model.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/util/styles.dart';
+import 'package:dokandar/view/base/custom_button.dart';
+import 'package:dokandar/view/base/custom_snackbar.dart';
+import 'package:dokandar/view/base/footer_view.dart';
+import 'package:dokandar/view/base/my_text_field.dart';
+import 'package:dokandar/view/screens/review/widget/delivery_man_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

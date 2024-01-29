@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sixam_mart/controller/cart_controller.dart';
-import 'package:sixam_mart/data/model/response/cart_model.dart';
-import 'package:sixam_mart/data/model/response/store_model.dart';
-import 'package:sixam_mart/helper/route_helper.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/util/styles.dart';
-import 'package:sixam_mart/view/base/web_constrained_box.dart';
-import 'package:sixam_mart/view/screens/cart/widget/cart_item_widget.dart';
-import 'package:sixam_mart/view/screens/store/store_screen.dart';
+import 'package:dokandar/controller/cart_controller.dart';
+import 'package:dokandar/data/model/response/cart_model.dart';
+import 'package:dokandar/data/model/response/store_model.dart';
+import 'package:dokandar/helper/route_helper.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/util/styles.dart';
+import 'package:dokandar/view/base/web_constrained_box.dart';
+import 'package:dokandar/view/screens/cart/widget/cart_item_widget.dart';
+import 'package:dokandar/view/screens/store/store_screen.dart';
 
 class WebCardItemsWidget extends StatelessWidget {
   final List<CartModel> cartList;

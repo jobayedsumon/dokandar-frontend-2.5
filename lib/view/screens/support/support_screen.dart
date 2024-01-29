@@ -1,15 +1,15 @@
-import 'package:sixam_mart/controller/splash_controller.dart';
-import 'package:sixam_mart/helper/responsive_helper.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/util/images.dart';
-import 'package:sixam_mart/view/base/custom_app_bar.dart';
-import 'package:sixam_mart/view/base/custom_snackbar.dart';
-import 'package:sixam_mart/view/base/footer_view.dart';
-import 'package:sixam_mart/view/base/menu_drawer.dart';
-import 'package:sixam_mart/view/screens/support/widget/support_button.dart';
+import 'package:dokandar/controller/splash_controller.dart';
+import 'package:dokandar/helper/responsive_helper.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/util/images.dart';
+import 'package:dokandar/view/base/custom_app_bar.dart';
+import 'package:dokandar/view/base/custom_snackbar.dart';
+import 'package:dokandar/view/base/footer_view.dart';
+import 'package:dokandar/view/base/menu_drawer.dart';
+import 'package:dokandar/view/screens/support/widget/support_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sixam_mart/view/screens/support/widget/web_help_support_widget.dart';
+import 'package:dokandar/view/screens/support/widget/web_help_support_widget.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class SupportScreen extends StatefulWidget {

@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:sixam_mart/util/app_constants.dart';
-import 'package:sixam_mart/util/dimensions.dart';
+import 'package:dokandar/util/app_constants.dart';
+import 'package:dokandar/util/dimensions.dart';
 import 'package:flutter/material.dart';
 
 final robotoRegular = TextStyle(

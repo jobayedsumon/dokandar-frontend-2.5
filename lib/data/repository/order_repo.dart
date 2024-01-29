@@ -1,10 +1,10 @@
 import 'dart:convert';
 
 import 'package:image_picker/image_picker.dart';
-import 'package:sixam_mart/controller/auth_controller.dart';
-import 'package:sixam_mart/data/api/api_client.dart';
-import 'package:sixam_mart/data/model/body/place_order_body.dart';
-import 'package:sixam_mart/util/app_constants.dart';
+import 'package:dokandar/controller/auth_controller.dart';
+import 'package:dokandar/data/api/api_client.dart';
+import 'package:dokandar/data/model/body/place_order_body.dart';
+import 'package:dokandar/util/app_constants.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';

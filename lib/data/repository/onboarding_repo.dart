@@ -1,5 +1,5 @@
-import 'package:sixam_mart/data/model/response/onboarding_model.dart';
-import 'package:sixam_mart/util/images.dart';
+import 'package:dokandar/data/model/response/onboarding_model.dart';
+import 'package:dokandar/util/images.dart';
 import 'package:get/get.dart';
 
 class OnBoardingRepo {

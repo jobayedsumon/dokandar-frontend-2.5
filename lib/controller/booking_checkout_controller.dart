@@ -1,10 +1,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
-import 'package:sixam_mart/data/api/api_checker.dart';
-import 'package:sixam_mart/data/model/body/user_information_body.dart';
-import 'package:sixam_mart/data/model/response/vehicle_model.dart';
-import 'package:sixam_mart/data/repository/rider_repo.dart';
-import 'package:sixam_mart/view/base/custom_snackbar.dart';
+import 'package:dokandar/data/api/api_checker.dart';
+import 'package:dokandar/data/model/body/user_information_body.dart';
+import 'package:dokandar/data/model/response/vehicle_model.dart';
+import 'package:dokandar/data/repository/rider_repo.dart';
+import 'package:dokandar/view/base/custom_snackbar.dart';
 
 enum PageState {orderDetails, payment, complete}
 

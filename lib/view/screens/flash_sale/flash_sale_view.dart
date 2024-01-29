@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shimmer_animation/shimmer_animation.dart';
-import 'package:sixam_mart/controller/flash_sale_controller.dart';
-import 'package:sixam_mart/controller/item_controller.dart';
-import 'package:sixam_mart/controller/splash_controller.dart';
-import 'package:sixam_mart/data/model/response/item_model.dart';
-import 'package:sixam_mart/helper/price_converter.dart';
-import 'package:sixam_mart/helper/responsive_helper.dart';
-import 'package:sixam_mart/helper/route_helper.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/util/styles.dart';
-import 'package:sixam_mart/view/screens/home/grocery/widget/components/flash_sale_card.dart';
-import 'package:sixam_mart/view/screens/home/grocery/widget/components/timer_widget.dart';
-import 'package:sixam_mart/view/screens/flash_sale/widgets/flash_sale_timer_view.dart';
+import 'package:dokandar/controller/flash_sale_controller.dart';
+import 'package:dokandar/controller/item_controller.dart';
+import 'package:dokandar/controller/splash_controller.dart';
+import 'package:dokandar/data/model/response/item_model.dart';
+import 'package:dokandar/helper/price_converter.dart';
+import 'package:dokandar/helper/responsive_helper.dart';
+import 'package:dokandar/helper/route_helper.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/util/styles.dart';
+import 'package:dokandar/view/screens/home/grocery/widget/components/flash_sale_card.dart';
+import 'package:dokandar/view/screens/home/grocery/widget/components/timer_widget.dart';
+import 'package:dokandar/view/screens/flash_sale/widgets/flash_sale_timer_view.dart';
 
 class FlashSaleView extends StatefulWidget {
   const FlashSaleView({Key? key}) : super(key: key);

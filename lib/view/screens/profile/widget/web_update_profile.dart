@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sixam_mart/controller/auth_controller.dart';
-import 'package:sixam_mart/controller/splash_controller.dart';
-import 'package:sixam_mart/controller/user_controller.dart';
-import 'package:sixam_mart/data/model/response/response_model.dart';
-import 'package:sixam_mart/data/model/response/userinfo_model.dart';
-import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/util/styles.dart';
-import 'package:sixam_mart/view/base/custom_button.dart';
-import 'package:sixam_mart/view/base/custom_snackbar.dart';
-import 'package:sixam_mart/view/base/custom_text_field.dart';
-import 'package:sixam_mart/view/base/image_picker_widget.dart';
+import 'package:dokandar/controller/auth_controller.dart';
+import 'package:dokandar/controller/splash_controller.dart';
+import 'package:dokandar/controller/user_controller.dart';
+import 'package:dokandar/data/model/response/response_model.dart';
+import 'package:dokandar/data/model/response/userinfo_model.dart';
+import 'package:dokandar/util/dimensions.dart';
+import 'package:dokandar/util/styles.dart';
+import 'package:dokandar/view/base/custom_button.dart';
+import 'package:dokandar/view/base/custom_snackbar.dart';
+import 'package:dokandar/view/base/custom_text_field.dart';
+import 'package:dokandar/view/base/image_picker_widget.dart';
 
 
 class WebUpdateProfileWidget extends StatefulWidget {

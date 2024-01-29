@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:sixam_mart/data/api/api_client.dart';
-import 'package:sixam_mart/helper/route_helper.dart';
-import 'package:sixam_mart/util/app_constants.dart';
+import 'package:dokandar/data/api/api_client.dart';
+import 'package:dokandar/helper/route_helper.dart';
+import 'package:dokandar/util/app_constants.dart';
 import 'package:universal_html/html.dart' as html;
 
 class WalletRepo {

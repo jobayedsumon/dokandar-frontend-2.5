@@ -132,7 +132,7 @@ class SearchingController extends GetxController implements GetxService {
       }else {
         _searchItemList!.sort((a, b) => a.name!.toLowerCase().compareTo(b.name!.toLowerCase()));
         Iterable iterable = _searchItemList!.reversed;
-        _searchItemList = iterable.toList();
+        _searchItemList = iterable.cast<Item>().toList();
       }
     }
     update();
@@ -164,7 +164,7 @@ class SearchingController extends GetxController implements GetxService {
       }else {
         _searchStoreList!.sort((a, b) => a.name!.toLowerCase().compareTo(b.name!.toLowerCase()));
         Iterable iterable = _searchStoreList!.reversed;
-        _searchStoreList = iterable.toList();
+        _searchStoreList = iterable.cast<Store>().toList();
       }
     }
     update();

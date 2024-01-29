@@ -23,7 +23,7 @@ class NotificationController extends GetxController implements GetxService {
           return DateConverter.isoStringToLocalDate(a.updatedAt!).compareTo(DateConverter.isoStringToLocalDate(b.updatedAt!));
         });
         Iterable iterable = _notificationList!.reversed;
-        _notificationList = iterable.toList();
+        _notificationList = iterable.cast<NotificationModel>().toList();
         _hasNotification = _notificationList!.length != getSeenNotificationCount();
       } else {
         ApiChecker.checkApi(response);

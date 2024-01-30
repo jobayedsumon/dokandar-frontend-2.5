@@ -90,7 +90,7 @@
         </activity>
 
         <activity
-            android:name="com.sixamtech.sixam_mart_user.sign_in_with_apple.SignInWithAppleCallback"
+            android:name="user.dokandar.xyz.sign_in_with_apple.SignInWithAppleCallback"
             android:exported="true"
             >
             <intent-filter>

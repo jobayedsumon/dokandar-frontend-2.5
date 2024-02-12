@@ -10,9 +10,9 @@ class AppConstants {
   static const String fontFamily = 'Roboto';
   static const bool payInWevView = false;
   static const int balanceInputLen = 10;
-  static const String webHostedUrl = 'https://dokandar.xyz';
+  static const String webHostedUrl = 'https://staging.dokandar.xyz';
 
-  static const String baseUrl = 'http://admin.dokandar.xyz';
+  static const String baseUrl = 'https://staging.admin.dokandar.xyz';
   static const String categoryUri = '/api/v1/categories';
   static const String bannerUri = '/api/v1/banners';
   static const String storeItemUri = '/api/v1/items/latest';

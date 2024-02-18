@@ -1,3 +1,4 @@
+import 'package:country_code_picker/country_code.dart';
 import 'package:flutter/material.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:get/get.dart';
@@ -26,7 +27,14 @@ import 'package:dokandar/view/screens/checkout/widget/payment_section.dart';
 import 'package:dokandar/view/screens/checkout/widget/time_slot_section.dart';
 import 'package:dokandar/view/screens/checkout/widget/web_delivery_instruction_view.dart';
 import 'package:dokandar/view/screens/store/widget/camera_button_sheet.dart';
+import 'package:phone_number/phone_number.dart';
 import 'dart:io';
+
+import '../../../../controller/localization_controller.dart';
+import '../../../base/code_picker_widget.dart';
+import '../../../base/custom_button.dart';
+import '../../../base/custom_snackbar.dart';
+import '../../../base/custom_text_field.dart';
 
 class TopSection extends StatelessWidget {
   final StoreController storeController;
@@ -72,9 +80,34 @@ class TopSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool takeAway = (orderController.orderType == 'take_away');
+    bool takeAway = (orderController.orderType == 'send_gift');
     bool isDesktop = ResponsiveHelper.isDesktop(context);
     bool isGuestLoggedIn = Get.find<AuthController>().isGuestLoggedIn();
+    String countryDialCode = '+880';
+    final TextEditingController phoneController = TextEditingController();
+    final FocusNode phoneFocus = FocusNode();
+
+    void updateGiftAddress(LocationController locationController) async {
+      String phone = phoneController.text.trim();
+      String numberWithCountryCode = countryDialCode+phone;
+      bool isValid = GetPlatform.isWeb ? true : false;
+      if(!GetPlatform.isWeb) {
+        try {
+          PhoneNumber phoneNumber = await PhoneNumberUtil().parse(numberWithCountryCode);
+          numberWithCountryCode = '+${phoneNumber.countryCode}${phoneNumber.nationalNumber}';
+          isValid = true;
+        } catch (e) {
+          isValid = false;
+        }
+      }
+      if (phone.isEmpty) {
+        showCustomSnackBar('enter_phone_number'.tr);
+      }else if (!isValid) {
+        showCustomSnackBar('invalid_phone_number'.tr);
+      }else {
+        locationController.updateGiftAddress(numberWithCountryCode);
+      }
+    }
 
     return Container(
       decoration: ResponsiveHelper.isDesktop(context) ? BoxDecoration(
@@ -219,8 +252,8 @@ class TopSection extends StatelessWidget {
                 ) : const SizedBox(),
                 const SizedBox(width: Dimensions.paddingSizeDefault),
 
-                Get.find<SplashController>().configModel!.takeawayStatus == 1 && storeController.store!.takeAway! ? DeliveryOptionButton(
-                  value: 'take_away', title: 'take_away'.tr, charge: deliveryCharge, isFree: true,  fromWeb: true, total: total,
+                Get.find<SplashController>().configModel!.takeawayStatus == 1 ? DeliveryOptionButton(
+                  value: 'send_gift', title: 'send_gift'.tr, charge: deliveryCharge, isFree: true,  fromWeb: true, total: total,
                 ) : const SizedBox(),
               ]),
               ),
@@ -229,8 +262,54 @@ class TopSection extends StatelessWidget {
         ),
         const SizedBox(height: Dimensions.paddingSizeDefault),
 
+        orderController.orderType == 'send_gift' ?
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('Gift To', style: robotoMedium),
+              const SizedBox(height: Dimensions.paddingSizeSmall),
+              Row(children: [
+                CodePickerWidget(
+                  onChanged: (CountryCode countryCode) {
+                    countryDialCode = countryCode.dialCode ?? '+880';
+                  },
+                  initialSelection: 'BD',
+                  favorite: const ['+880', 'BD'],
+                  showDropDownButton: true,
+                  padding: EdgeInsets.zero,
+                  showFlagMain: true,
+                  flagWidth: 30,
+                  dialogBackgroundColor: Theme.of(context).cardColor,
+                  textStyle: robotoRegular.copyWith(
+                    fontSize: Dimensions.fontSizeLarge, color: Theme.of(context).textTheme.bodyLarge?.color,
+                  ),
+                ),
+                Expanded(flex: 1, child: CustomTextField(
+                  hintText: 'phone'.tr,
+                  controller: phoneController,
+                  focusNode: phoneFocus,
+                  inputType: TextInputType.phone,
+                )),
+
+              ]),
+              const SizedBox(height: Dimensions.paddingSizeSmall),
+              CustomButton(
+                  buttonText: 'Update Address',
+                  width: 200.0,
+                  onPressed: () {
+                    updateGiftAddress(locationController);
+                  }
+              )
+            ],
+          ),
+        ) : const SizedBox(),
+
+        const SizedBox(height: Dimensions.paddingSizeSmall),
+
         ///Delivery_fee
-        !takeAway && !isGuestLoggedIn ? Center(child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+        !isGuestLoggedIn ? Center(child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
           Text('${'delivery_charge'.tr}: '),
           Text(
             storeController.store!.freeDelivery! ? 'free'.tr
@@ -238,7 +317,7 @@ class TopSection extends StatelessWidget {
             textDirection: TextDirection.ltr,
           ),
         ])) : const SizedBox(),
-        SizedBox(height: !takeAway && !isGuestLoggedIn ? Dimensions.paddingSizeLarge : 0),
+        SizedBox(height: !isGuestLoggedIn ? Dimensions.paddingSizeLarge : 0),
 
         ///delivery section
         DeliverySection(orderController: orderController, storeController: storeController, address: address, addressList: addressList,
@@ -246,12 +325,12 @@ class TopSection extends StatelessWidget {
           guestNumberNode: guestNumberNode, guestEmailController: guestEmailController, guestEmailNode: guestEmailNode,
         ),
 
-        SizedBox(height: !takeAway ? isDesktop ? Dimensions.paddingSizeLarge : Dimensions.paddingSizeSmall : 0),
+        SizedBox(height: isDesktop ? Dimensions.paddingSizeLarge : Dimensions.paddingSizeSmall),
 
         ///delivery instruction
-        !takeAway ? isDesktop ? const WebDeliveryInstructionView() : const DeliveryInstructionView() : const SizedBox(),
+        isDesktop ? const WebDeliveryInstructionView() : const DeliveryInstructionView(),
 
-        SizedBox(height: !takeAway ? Dimensions.paddingSizeSmall : 0),
+        const SizedBox(height: Dimensions.paddingSizeSmall),
 
         /// Time Slot
         TimeSlotSection(

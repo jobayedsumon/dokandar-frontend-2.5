@@ -366,11 +366,11 @@ class CheckoutScreenState extends State<CheckoutScreen> {
             }
           }
 
-          if(isGuestLogIn && orderController.guestAddress == null && orderController.orderType != 'take_away') {
+          if(isGuestLogIn && orderController.guestAddress == null) {
             showCustomSnackBar('please_setup_your_delivery_address_first'.tr);
-          } else if(isGuestLogIn && orderController.orderType == 'take_away' && guestContactPersonNameController.text.isEmpty) {
+          } else if(isGuestLogIn && orderController.orderType == 'send_gift' && guestContactPersonNameController.text.isEmpty) {
             showCustomSnackBar('please_enter_contact_person_name'.tr);
-          } else if(isGuestLogIn && orderController.orderType == 'take_away' && guestContactPersonNumberController.text.isEmpty) {
+          } else if(isGuestLogIn && orderController.orderType == 'send_gift' && guestContactPersonNumberController.text.isEmpty) {
             showCustomSnackBar('please_enter_contact_person_number'.tr);
           } else if(!_isCashOnDeliveryActive! && !_isDigitalPaymentActive! && !_isWalletActive) {
             showCustomSnackBar('no_payment_method_is_enabled'.tr);
@@ -409,7 +409,7 @@ class CheckoutScreenState extends State<CheckoutScreen> {
             }
           }else if (!isAvailable) {
             showCustomSnackBar('one_or_more_products_are_not_available_for_this_selected_time'.tr);
-          }else if (orderController.orderType != 'take_away' && orderController.distance == -1 && deliveryCharge == -1) {
+          }else if (orderController.distance == -1 && deliveryCharge == -1) {
             showCustomSnackBar('delivery_fee_not_set_yet'.tr);
           }else if (widget.storeId != null && storeController.pickedPrescriptions.isEmpty) {
             showCustomSnackBar('please_upload_your_prescription_images'.tr);
@@ -420,7 +420,7 @@ class CheckoutScreenState extends State<CheckoutScreen> {
 
             AddressModel? finalAddress = isGuestLogIn ? orderController.guestAddress : address[orderController.addressIndex!];
 
-            if(isGuestLogIn && orderController.orderType == 'take_away') {
+            if(isGuestLogIn && orderController.orderType == 'send_gift') {
               String number = orderController.countryDialCode! + guestContactPersonNumberController.text;
               finalAddress = AddressModel(contactPersonName: guestContactPersonNameController.text, contactPersonNumber: number,
                 address: Get.find<LocationController>().getUserAddress()!.address!, latitude: Get.find<LocationController>().getUserAddress()!.latitude,
@@ -486,7 +486,7 @@ class CheckoutScreenState extends State<CheckoutScreen> {
                 house: isGuestLogIn ? finalAddress.house??'' : orderController.houseController.text.trim(),
                 floor: isGuestLogIn ? finalAddress.floor??'' : orderController.floorController.text.trim(),
                 discountAmount: discount, taxAmount: tax, receiverDetails: null, parcelCategoryId: null,
-                chargePayer: null, dmTips: (orderController.orderType == 'take_away' || orderController.tipController.text == 'not_now') ? '' : orderController.tipController.text.trim(),
+                chargePayer: null, dmTips: (orderController.tipController.text == 'not_now') ? '' : orderController.tipController.text.trim(),
                 cutlery: Get.find<CartController>().addCutlery ? 1 : 0,
                 unavailableItemNote: Get.find<CartController>().notAvailableIndex != -1 ? Get.find<CartController>().notAvailableList[Get.find<CartController>().notAvailableIndex] : '',
                 deliveryInstruction: orderController.selectedInstruction != -1 ? AppConstants.deliveryInstructionList[orderController.selectedInstruction] : '',
@@ -503,7 +503,7 @@ class CheckoutScreenState extends State<CheckoutScreen> {
 
               orderController.placePrescriptionOrder(widget.storeId, storeController.store!.zoneId, orderController.distance,
                   finalAddress!.address!, finalAddress.longitude!, finalAddress.latitude!, orderController.noteController.text,
-                  storeController.pickedPrescriptions, (orderController.orderType == 'take_away' || orderController.tipController.text == 'not_now')
+                  storeController.pickedPrescriptions, (orderController.orderType == 'send_gift' || orderController.tipController.text == 'not_now')
                       ? '' : orderController.tipController.text.trim(), orderController.selectedInstruction != -1
                       ? AppConstants.deliveryInstructionList[orderController.selectedInstruction] : '', 0, 0, widget.fromCart, _isCashOnDeliveryActive!
               );

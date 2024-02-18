@@ -17,10 +17,10 @@ class FilterView extends StatelessWidget {
             color: storeController.storeType == 'all'
                 ? Theme.of(context).textTheme.bodyLarge!.color : Theme.of(context).disabledColor,
           ), child: Text('all'.tr)),
-          PopupMenuItem(value: 'take_away', textStyle: robotoMedium.copyWith(
-            color: storeController.storeType == 'take_away'
+          PopupMenuItem(value: 'send_gift', textStyle: robotoMedium.copyWith(
+            color: storeController.storeType == 'send_gift'
                 ? Theme.of(context).textTheme.bodyLarge!.color : Theme.of(context).disabledColor,
-          ), child: Text('take_away'.tr)),
+          ), child: Text('send_gift'.tr)),
           PopupMenuItem(value: 'delivery', textStyle: robotoMedium.copyWith(
             color: storeController.storeType == 'delivery'
                 ? Theme.of(context).textTheme.bodyLarge!.color : Theme.of(context).disabledColor,

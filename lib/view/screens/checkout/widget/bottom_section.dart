@@ -43,7 +43,7 @@ class BottomSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool takeAway = orderController.orderType == 'take_away';
+    bool takeAway = orderController.orderType == 'send_gift';
     bool isDesktop = ResponsiveHelper.isDesktop(context);
     bool isGuestLoggedIn = Get.find<AuthController>().isGuestLoggedIn();
     return Container(
@@ -176,14 +176,14 @@ class BottomSection extends StatelessWidget {
             ]) : const SizedBox(),
             SizedBox(height: storeId == null ? Dimensions.paddingSizeSmall : 0),
 
-            (!takeAway && Get.find<SplashController>().configModel!.dmTipsStatus == 1) ? Row(
+            (Get.find<SplashController>().configModel!.dmTipsStatus == 1) ? Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text('delivery_man_tips'.tr, style: robotoRegular),
                 Text('(+) ${PriceConverter.convertPrice(orderController.tips)}', style: robotoRegular, textDirection: TextDirection.ltr),
               ],
             ) : const SizedBox.shrink(),
-            SizedBox(height: !takeAway && Get.find<SplashController>().configModel!.dmTipsStatus == 1 ? Dimensions.paddingSizeSmall : 0.0),
+            SizedBox(height: Get.find<SplashController>().configModel!.dmTipsStatus == 1 ? Dimensions.paddingSizeSmall : 0.0),
 
             (Get.find<AuthController>().isGuestLoggedIn() && orderController.guestAddress == null)
             ? const SizedBox() : Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [

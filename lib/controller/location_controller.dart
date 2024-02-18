@@ -654,4 +654,20 @@ class LocationController extends GetxController implements GetxService {
       }
     }
   }
+
+  Future<void> updateGiftAddress(String phone) async {
+    Response response = await locationRepo.updateGiftAddress(phone);
+    if (response.statusCode == 200) {
+      _addressList = [];
+      _allAddressList = [];
+      response.body['addresses'].forEach((address) {
+        _addressList?.add(AddressModel.fromJson(address));
+        _allAddressList.add(AddressModel.fromJson(address));
+      });
+      showCustomSnackBar('Select Gift Address from below', isError: false);
+    } else {
+      ApiChecker.checkApi(response);
+    }
+    update();
+  }
 }

@@ -35,7 +35,7 @@ class _DeliveryManTipsSectionState extends State<DeliveryManTipsSection> {
       builder: (orderController) {
         return Column(
           children: [
-            (!widget.takeAway && Get.find<SplashController>().configModel!.dmTipsStatus == 1) ? Container(
+            (Get.find<SplashController>().configModel!.dmTipsStatus == 1) ? Container(
               decoration: BoxDecoration(
                 color: Theme.of(context).cardColor,
                 boxShadow: [BoxShadow(color: Theme.of(context).primaryColor.withOpacity(0.05), blurRadius: 10)],
@@ -185,7 +185,7 @@ class _DeliveryManTipsSectionState extends State<DeliveryManTipsSection> {
               ]),
             ) : const SizedBox.shrink(),
 
-            SizedBox(height: (!widget.takeAway && widget.storeId == null && Get.find<SplashController>().configModel!.dmTipsStatus == 1)
+            SizedBox(height: (widget.storeId == null && Get.find<SplashController>().configModel!.dmTipsStatus == 1)
                 ? Dimensions.paddingSizeSmall : 0),
           ],
         );

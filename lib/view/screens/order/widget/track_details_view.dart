@@ -22,7 +22,7 @@ class TrackDetailsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double distance = 0;
-    bool takeAway = track.orderType == 'take_away';
+    bool takeAway = track.orderType == 'send_gift';
     if(track.deliveryMan != null) {
       distance = Geolocator.distanceBetween(
         double.parse(track.deliveryAddress!.latitude!), double.parse(track.deliveryAddress!.longitude!),
@@ -37,7 +37,7 @@ class TrackDetailsView extends StatelessWidget {
         color: Theme.of(context).cardColor,
       ),
       alignment: Alignment.center,
-      child: (!takeAway && track.deliveryMan == null) ? Padding(
+      child: (track.deliveryMan == null) ? Padding(
         padding: const EdgeInsets.all(Dimensions.paddingSizeSmall),
         child: Text(
           'delivery_man_not_assigned'.tr, style: robotoMedium, textAlign: TextAlign.center,

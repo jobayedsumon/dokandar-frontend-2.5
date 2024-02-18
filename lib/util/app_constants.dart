@@ -39,6 +39,7 @@ class AppConstants {
   static const String placeOrderUri = '/api/v1/customer/order/place';
   static const String placePrescriptionOrderUri = '/api/v1/customer/order/prescription/place';
   static const String addressListUri = '/api/v1/customer/address/list';
+  static const String updateGiftAddress = '/api/v1/customer/address/update-gift-address';
   static const String zoneUri = '/api/v1/config/get-zone-id';
   static const String removeAddressUri = '/api/v1/customer/address/delete?address_id=';
   static const String addAddressUri = '/api/v1/customer/address/add';

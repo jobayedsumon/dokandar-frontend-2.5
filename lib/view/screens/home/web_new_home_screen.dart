@@ -235,10 +235,10 @@ class _WebNewHomeScreenState extends State<WebNewHomeScreen> {
                           color: storeController.storeType == 'all'
                               ? Theme.of(context).textTheme.bodyLarge!.color : Theme.of(context).disabledColor,
                         ), child: Text('all'.tr)),
-                        PopupMenuItem(value: 'take_away', textStyle: robotoMedium.copyWith(
-                          color: storeController.storeType == 'take_away'
+                        PopupMenuItem(value: 'send_gift', textStyle: robotoMedium.copyWith(
+                          color: storeController.storeType == 'send_gift'
                               ? Theme.of(context).textTheme.bodyLarge!.color : Theme.of(context).disabledColor,
-                        ), child: Text('take_away'.tr)),
+                        ), child: Text('send_gift'.tr)),
                         PopupMenuItem(value: 'delivery', textStyle: robotoMedium.copyWith(
                           color: storeController.storeType == 'delivery'
                               ? Theme.of(context).textTheme.bodyLarge!.color : Theme.of(context).disabledColor,
@@ -273,10 +273,10 @@ class _WebNewHomeScreenState extends State<WebNewHomeScreen> {
                     const SizedBox(width: Dimensions.paddingSizeSmall),
 
                     InkWell(
-                      onTap: () => storeController.setStoreType('take_away'),
+                      onTap: () => storeController.setStoreType('send_gift'),
                       child: StoreSortingButton(
-                        storeType: 'take_away',
-                        storeTypeText: 'take_away'.tr,
+                        storeType: 'send_gift',
+                        storeTypeText: 'send_gift'.tr,
                       ),
                     ),
                   ]) : const SizedBox(),

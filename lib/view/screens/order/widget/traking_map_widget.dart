@@ -74,11 +74,11 @@ class _TrackingMapWidgetState extends State<TrackingMapWidget> {
                 setMarker(
                   widget.track!.orderType == 'parcel' ? Store(latitude: widget.track!.receiverDetails!.latitude, longitude: widget.track!.receiverDetails!.longitude,
                       address: widget.track!.receiverDetails!.address, name: widget.track!.receiverDetails!.contactPersonName) : widget.track!.store, widget.track!.deliveryMan,
-                  widget.track!.orderType == 'take_away' ? Get.find<LocationController>().position.latitude == 0 ? widget.track!.deliveryAddress : AddressModel(
+                  widget.track!.orderType == 'send_gift' ? Get.find<LocationController>().position.latitude == 0 ? widget.track!.deliveryAddress : AddressModel(
                     latitude: Get.find<LocationController>().position.latitude.toString(),
                     longitude: Get.find<LocationController>().position.longitude.toString(),
                     address: Get.find<LocationController>().address,
-                  ) : widget.track!.deliveryAddress, widget.track!.orderType == 'take_away', widget.track!.orderType == 'parcel', widget.track!.moduleType == 'food',
+                  ) : widget.track!.deliveryAddress, widget.track!.orderType == 'send_gift', widget.track!.orderType == 'parcel', widget.track!.moduleType == 'food',
                 );
               },
             ),

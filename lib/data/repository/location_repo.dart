@@ -71,4 +71,8 @@ class LocationRepo {
     }
   }
 
+  Future<Response> updateGiftAddress(String phone) async {
+    return await apiClient.postData(AppConstants.updateGiftAddress, {"phone": phone});
+  }
+
 }

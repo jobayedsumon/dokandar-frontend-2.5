@@ -26,7 +26,7 @@ class _DeliveryOptionButtonState extends State<DeliveryOptionButton> {
 
     Future.delayed(const Duration(milliseconds: 200), (){
       Get.find<OrderController>().setOrderType(Get.find<SplashController>().configModel!.homeDeliveryStatus == 1
-          && Get.find<StoreController>().store!.delivery! ? 'delivery' : 'take_away', notify: true);
+          && Get.find<StoreController>().store!.delivery! ? 'delivery' : 'send_gift', notify: true);
     });
   }
   @override
@@ -40,7 +40,7 @@ class _DeliveryOptionButtonState extends State<DeliveryOptionButton> {
             orderController.setOrderType(widget.value);
             orderController.setInstruction(-1);
 
-            if(orderController.orderType == 'take_away') {
+            if(orderController.orderType == 'send_gift') {
               if(orderController.isPartialPay) {
                 double tips = 0;
                 try{
@@ -83,7 +83,7 @@ class _DeliveryOptionButtonState extends State<DeliveryOptionButton> {
                 const SizedBox(width: 5),
 
                 // Text(
-                //   '(${(value == 'take_away' || isFree!) ? 'free'.tr : charge != -1 ? PriceConverter.convertPrice(charge) : 'calculating'.tr})',
+                //   '(${(value == 'send_gift' || isFree!) ? 'free'.tr : charge != -1 ? PriceConverter.convertPrice(charge) : 'calculating'.tr})',
                 //   style: robotoMedium,
                 // ),
 

@@ -76,10 +76,10 @@ class CheckoutHelper {
   static double calculateDeliveryCharge({required Store? store, required AddressModel address, required double? distance, required double? extraCharge, required double orderAmount, required String orderType}) {
     double deliveryCharge = calculateOriginalDeliveryCharge(store: store, address: address, distance: distance, extraCharge: extraCharge);
 
-    if (orderType == 'take_away' || (store != null && store.freeDelivery!)
+    if ((store != null && store.freeDelivery!)
         || (Get.find<SplashController>().configModel!.freeDeliveryOver != null && orderAmount
             >= Get.find<SplashController>().configModel!.freeDeliveryOver!)
-        || Get.find<CouponController>().freeDelivery || (Get.find<AuthController>().isGuestLoggedIn() && (Get.find<OrderController>().guestAddress == null && Get.find<OrderController>().orderType != 'take_away'))) {
+        || Get.find<CouponController>().freeDelivery || (Get.find<AuthController>().isGuestLoggedIn() && (Get.find<OrderController>().guestAddress == null))) {
       deliveryCharge = 0;
     }
 
@@ -326,12 +326,9 @@ class CheckoutHelper {
     required String orderType, required double tips, required double additionalCharge,
   }) {
 
-    // print('------total checkout : $subTotal + $deliveryCharge - $discount - $couponDiscount + ${(taxIncluded ? 0 : tax)}'
-    //     '+ ${((orderType != 'take_away' && Get.find<SplashController>().configModel!.dmTipsStatus == 1) ? tips : 0)} + $additionalCharge');
-
     return PriceConverter.toFixed(
         subTotal + deliveryCharge - discount- couponDiscount + (taxIncluded ? 0 : tax)
-        + ((orderType != 'take_away' && Get.find<SplashController>().configModel!.dmTipsStatus == 1) ? tips : 0)
+        + ((Get.find<SplashController>().configModel!.dmTipsStatus == 1) ? tips : 0)
         + additionalCharge
     );
   }

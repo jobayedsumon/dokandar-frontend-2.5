@@ -990,7 +990,7 @@ class OrderController extends GetxController implements GetxService {
   //     contactPersonNumber: finalAddress.contactPersonNumber ?? Get.find<UserController>().userInfoModel!.phone,
   //     streetNumber: orderController.streetNumberController.text.trim(), house: orderController.houseController.text.trim(), floor: orderController.floorController.text.trim(),
   //     discountAmount: discount, taxAmount: tax, receiverDetails: null, parcelCategoryId: null,
-  //     chargePayer: null, dmTips: (orderController.orderType == 'take_away' || orderController.tipController.text == 'not_now') ? '' : orderController.tipController.text.trim(),
+  //     chargePayer: null, dmTips: (orderController.orderType == 'send_gift' || orderController.tipController.text == 'not_now') ? '' : orderController.tipController.text.trim(),
   //     cutlery: Get.find<CartController>().addCutlery ? 1 : 0,
   //     unavailableItemNote: Get.find<CartController>().notAvailableIndex != -1 ? Get.find<CartController>().notAvailableList[Get.find<CartController>().notAvailableIndex] : '',
   //     deliveryInstruction: orderController.selectedInstruction != -1 ? AppConstants.deliveryInstructionList[orderController.selectedInstruction] : '',

@@ -141,7 +141,7 @@ class Store {
     freeDelivery = json['free_delivery'];
     coverPhoto = json['cover_photo'] ?? '';
     delivery = json['delivery'];
-    takeAway = json['take_away'];
+    takeAway = json['send_gift'];
     scheduleOrder = json['schedule_order'];
     avgRating = json['avg_rating'].toDouble();
     tax = json['tax']?.toDouble();
@@ -198,7 +198,7 @@ class Store {
     data['free_delivery'] = freeDelivery;
     data['cover_photo'] = coverPhoto;
     data['delivery'] = delivery;
-    data['take_away'] = takeAway;
+    data['send_gift'] = takeAway;
     data['schedule_order'] = scheduleOrder;
     data['avg_rating'] = avgRating;
     data['tax'] = tax;

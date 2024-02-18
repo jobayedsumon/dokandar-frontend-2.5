@@ -33,14 +33,14 @@ class DeliverySection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     bool isGuestLoggedIn = Get.find<AuthController>().isGuestLoggedIn();
-    bool takeAway = (orderController.orderType == 'take_away');
+    bool takeAway = (orderController.orderType == 'send_gift');
     bool isDesktop = ResponsiveHelper.isDesktop(context);
     return Column(children: [
       isGuestLoggedIn ? GuestDeliveryAddress(
         orderController: orderController, storeController: storeController, guestNumberNode: guestNumberNode,
         guestNameTextEditingController: guestNameTextEditingController, guestNumberTextEditingController: guestNumberTextEditingController,
         guestEmailController: guestEmailController, guestEmailNode: guestEmailNode,
-      ) : !takeAway ? Container(
+      ) : Container(
         decoration: BoxDecoration(
           color: Theme.of(context).cardColor,
           boxShadow: [BoxShadow(color: Theme.of(context).primaryColor.withOpacity(0.05), blurRadius: 10)],
@@ -250,7 +250,7 @@ class DeliverySection extends StatelessWidget {
           ),
           const SizedBox(height: Dimensions.paddingSizeLarge),
         ]),
-      ) : const SizedBox(),
+      ),
     ]);
   }
 }

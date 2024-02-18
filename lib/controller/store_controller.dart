@@ -323,7 +323,7 @@ class StoreController extends GetxController implements GetxService {
         ApiChecker.checkApi(response);
       }
       Get.find<OrderController>().setOrderType(
-        _store != null ? _store!.delivery! ? 'delivery' : 'take_away' : 'delivery', notify: false,
+        _store != null ? _store!.delivery! ? 'delivery' : 'send_gift' : 'delivery', notify: false,
       );
 
       _isLoading = false;

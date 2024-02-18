@@ -27,7 +27,7 @@ class GuestDeliveryAddress extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool takeAway = (orderController.orderType == 'take_away');
+    bool takeAway = (orderController.orderType == 'send_gift');
 
     return Container(
       decoration: BoxDecoration(

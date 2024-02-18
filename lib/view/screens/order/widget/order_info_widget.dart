@@ -548,7 +548,7 @@ class OrderInfoWidget extends StatelessWidget {
                   ),
                 ])),
 
-                (!parcel && order.orderType == 'take_away' && (order.orderStatus == 'pending' || order.orderStatus == 'accepted'
+                (!parcel && order.orderType == 'send_gift' && (order.orderStatus == 'pending' || order.orderStatus == 'accepted'
                 || order.orderStatus == 'confirmed' || order.orderStatus == 'processing' || order.orderStatus == 'handover'
                 || order.orderStatus == 'picked_up')) ? TextButton.icon(onPressed: () async {
                   if(!parcel) {

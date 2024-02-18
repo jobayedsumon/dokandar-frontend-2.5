@@ -118,11 +118,11 @@ class OrderTrackingScreenState extends State<OrderTrackingScreen> {
               setMarker(
                 track!.orderType == 'parcel' ? Store(latitude: track.receiverDetails!.latitude, longitude: track.receiverDetails!.longitude,
                     address: track.receiverDetails!.address, name: track.receiverDetails!.contactPersonName) : track.store, track.deliveryMan,
-                track.orderType == 'take_away' ? Get.find<LocationController>().position.latitude == 0 ? track.deliveryAddress : AddressModel(
+                track.orderType == 'send_gift' ? Get.find<LocationController>().position.latitude == 0 ? track.deliveryAddress : AddressModel(
                   latitude: Get.find<LocationController>().position.latitude.toString(),
                   longitude: Get.find<LocationController>().position.longitude.toString(),
                   address: Get.find<LocationController>().address,
-                ) : track.deliveryAddress, track.orderType == 'take_away', track.orderType == 'parcel', track.moduleType == 'food',
+                ) : track.deliveryAddress, track.orderType == 'send_gift', track.orderType == 'parcel', track.moduleType == 'food',
               );
             },
           ),
@@ -143,11 +143,11 @@ class OrderTrackingScreenState extends State<OrderTrackingScreen> {
                   setMarker(
                     track!.orderType == 'parcel' ? Store(latitude: track.receiverDetails!.latitude, longitude: track.receiverDetails!.longitude,
                         address: track.receiverDetails!.address, name: track.receiverDetails!.contactPersonName) : track.store, track.deliveryMan,
-                    track.orderType == 'take_away' ? Get.find<LocationController>().position.latitude == 0 ? track.deliveryAddress : AddressModel(
+                    track.orderType == 'send_gift' ? Get.find<LocationController>().position.latitude == 0 ? track.deliveryAddress : AddressModel(
                       latitude: Get.find<LocationController>().position.latitude.toString(),
                       longitude: Get.find<LocationController>().position.longitude.toString(),
                       address: Get.find<LocationController>().address,
-                    ) : track.deliveryAddress, track.orderType == 'take_away', track.orderType == 'parcel',
+                    ) : track.deliveryAddress, track.orderType == 'send_gift', track.orderType == 'parcel',
                   );
                 },
               );
@@ -158,7 +158,7 @@ class OrderTrackingScreenState extends State<OrderTrackingScreen> {
 
           Positioned(
             top: Dimensions.paddingSizeSmall, left: Dimensions.paddingSizeSmall, right: Dimensions.paddingSizeSmall,
-            child: TrackingStepperWidget(status: track.orderStatus, takeAway: track.orderType == 'take_away'),
+            child: TrackingStepperWidget(status: track.orderStatus, takeAway: track.orderType == 'send_gift'),
           ),
 
           Positioned(

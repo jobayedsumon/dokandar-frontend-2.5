@@ -185,4 +185,20 @@ class WalletController extends GetxController implements GetxService{
     return walletRepo.getWalletAccessToken();
   }
 
+  Future<void> transferFund(double amount, String phone) async {
+    _isLoading = true;
+    update();
+    Response response = await walletRepo.transferFund(amount, phone);
+    if (response.statusCode == 200) {
+      Get.back();
+      getWalletTransactionList('1', true, true, 'all');
+      Get.find<UserController>().getUserInfo();
+      showCustomSnackBar('Fund transferred successfully', isError: false);
+    } else {
+      ApiChecker.checkApi(response);
+    }
+    _isLoading = false;
+    update();
+  }
+
 }

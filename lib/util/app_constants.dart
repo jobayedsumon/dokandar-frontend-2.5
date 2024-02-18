@@ -91,6 +91,7 @@ class AppConstants {
   static const String subscriptionUri = '/api/v1/newsletter/subscribe';
   static const String customerRemoveUri = '/api/v1/customer/remove-account';
   static const String walletTransactionUri = '/api/v1/customer/wallet/transactions';
+  static const String fundTransferUrl = '/api/v1/customer/wallet/fund-transfer';
   static const String loyaltyTransactionUri = '/api/v1/customer/loyalty-point/transactions';
   static const String loyaltyPointTransferUri = '/api/v1/customer/loyalty-point/point-transfer';
   static const String zoneListUri = '/api/v1/zone/list';

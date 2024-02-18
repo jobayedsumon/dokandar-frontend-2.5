@@ -48,4 +48,11 @@ class WalletRepo {
     return sharedPreferences.getString(AppConstants.walletAccessToken) ?? "";
   }
 
+  Future<Response> transferFund(double amount, String phone) async {
+    return await apiClient.postData(AppConstants.fundTransferUrl, {
+      "amount": amount,
+      "phone": phone,
+    });
+  }
+
 }

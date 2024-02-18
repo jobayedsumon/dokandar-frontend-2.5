@@ -1,3 +1,4 @@
+import 'package:dokandar/view/screens/wallet/widget/wallet_fund_transfer.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:just_the_tooltip/just_the_tooltip.dart';
@@ -105,6 +106,21 @@ class WalletCardWidget extends StatelessWidget {
                   ),
                 ),
               ) : const SizedBox(),
+
+              Positioned(
+                bottom: 20, right: Get.find<LocalizationController>().isLtr ? 20 : null,
+                left: Get.find<LocalizationController>().isLtr ? null : 10,
+                child: InkWell(
+                  onTap: () {
+                    Get.bottomSheet(const WalletFundTransfer());
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(shape: BoxShape.circle, color: Theme.of(context).cardColor),
+                    padding: const EdgeInsets.all(Dimensions.paddingSizeExtraSmall),
+                    child: const Icon(Icons.send),
+                  ),
+                ),
+              ),
 
             ]),
             ResponsiveHelper.isDesktop(context) ? const SizedBox() : const SizedBox(height: Dimensions.paddingSizeLarge),

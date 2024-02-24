@@ -1,0 +1,126 @@
+{
+  "project_info": {
+    "project_number": "610443387774",
+    "project_id": "dokandar-316216",
+    "storage_bucket": "dokandar-316216.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:610443387774:android:4c6e10d5133f3a4d60892f",
+        "android_client_info": {
+          "package_name": "xyz.dokandar.driver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "610443387774-4k5qqcel0sntd7q3ap23rk1gvj9hj4oe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNtJMAKKfqKgW8cjshI9n6AWE9CKQA5KE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "610443387774-4k5qqcel0sntd7q3ap23rk1gvj9hj4oe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:610443387774:android:8fe752f322bc6daa60892f",
+        "android_client_info": {
+          "package_name": "user.dokandar.xyz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "610443387774-4k5qqcel0sntd7q3ap23rk1gvj9hj4oe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNtJMAKKfqKgW8cjshI9n6AWE9CKQA5KE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "610443387774-4k5qqcel0sntd7q3ap23rk1gvj9hj4oe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:610443387774:android:14bca6a828efa09b60892f",
+        "android_client_info": {
+          "package_name": "user.dokandar.xyzapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "610443387774-4k5qqcel0sntd7q3ap23rk1gvj9hj4oe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNtJMAKKfqKgW8cjshI9n6AWE9CKQA5KE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "610443387774-4k5qqcel0sntd7q3ap23rk1gvj9hj4oe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:610443387774:android:cd7c470c9a21f35660892f",
+        "android_client_info": {
+          "package_name": "xyz.dokandar.vendor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "610443387774-4k5qqcel0sntd7q3ap23rk1gvj9hj4oe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNtJMAKKfqKgW8cjshI9n6AWE9CKQA5KE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "610443387774-4k5qqcel0sntd7q3ap23rk1gvj9hj4oe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

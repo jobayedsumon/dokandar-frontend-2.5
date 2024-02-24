@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:dokandar/controller/theme_controller.dart';
 import 'package:dokandar/util/dimensions.dart';
 import 'package:dokandar/util/styles.dart';
 

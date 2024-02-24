@@ -30,7 +30,6 @@ import 'package:dokandar/view/screens/store/widget/camera_button_sheet.dart';
 import 'package:phone_number/phone_number.dart';
 import 'dart:io';
 
-import '../../../../controller/localization_controller.dart';
 import '../../../base/code_picker_widget.dart';
 import '../../../base/custom_button.dart';
 import '../../../base/custom_snackbar.dart';

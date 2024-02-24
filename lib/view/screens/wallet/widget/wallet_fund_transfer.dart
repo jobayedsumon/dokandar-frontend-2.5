@@ -1,10 +1,7 @@
 
 import 'package:country_code_picker/country_code.dart';
-import 'package:dokandar/view/base/custom_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:dokandar/controller/splash_controller.dart';
-import 'package:dokandar/controller/user_controller.dart';
 import 'package:dokandar/controller/wallet_controller.dart';
 import 'package:dokandar/helper/price_converter.dart';
 import 'package:dokandar/util/dimensions.dart';
@@ -14,9 +11,7 @@ import 'package:dokandar/view/base/custom_snackbar.dart';
 import 'package:dokandar/view/base/custom_text_field.dart';
 import 'package:phone_number/phone_number.dart';
 
-import '../../../../controller/localization_controller.dart';
 import '../../../base/code_picker_widget.dart';
-import '../../auth/widget/code_picker_widget.dart';
 
 class WalletFundTransfer extends StatefulWidget {
   const WalletFundTransfer({Key? key}) : super(key: key);
@@ -63,23 +58,23 @@ class _WalletFundTransferState extends State<WalletFundTransfer> {
                 onTap: () {
                   Get.back();
                 },
-                child: CircleAvatar(
+                child: const CircleAvatar(
                   radius: 14.0,
                   backgroundColor: Colors.white,
                   child: Icon(Icons.close, color: Colors.red),
                 ),
               ),
             ),
-            iconPadding: EdgeInsets.only(bottom: 8.0),
+            iconPadding: const EdgeInsets.only(bottom: 8.0),
             title: Center(child: Column(
               children: [
                 Text('Confirm to Transfer Fund', style: robotoMedium.copyWith(
                     fontSize: Dimensions.fontSizeExtraLarge, color: Theme
                     .of(context)
                     .primaryColor, fontWeight: FontWeight.bold)),
-                SizedBox(height: Dimensions.paddingSizeLarge),
+                const SizedBox(height: Dimensions.paddingSizeLarge),
                 Table(
-                  columnWidths: {0: FlexColumnWidth(1.5), 1: FlexColumnWidth(2)},
+                  columnWidths: const {0: FlexColumnWidth(1.5), 1: FlexColumnWidth(2)},
                   border: TableBorder.all(color: Theme
                       .of(context)
                       .disabledColor),
@@ -137,12 +132,12 @@ class _WalletFundTransferState extends State<WalletFundTransfer> {
   Widget build(BuildContext context) {
     return Container(
       width: 550,
-      padding: EdgeInsets.all(Dimensions.paddingSizeLarge),
+      padding: const EdgeInsets.all(Dimensions.paddingSizeLarge),
       decoration: BoxDecoration(
         color: Theme
             .of(context)
             .cardColor,
-        borderRadius: BorderRadius.vertical(
+        borderRadius: const BorderRadius.vertical(
             top: Radius.circular(Dimensions.radiusLarge)),
       ),
       child: SingleChildScrollView(
@@ -156,7 +151,7 @@ class _WalletFundTransferState extends State<WalletFundTransfer> {
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.center),
-          SizedBox(height: Dimensions.paddingSizeSmall),
+          const SizedBox(height: Dimensions.paddingSizeSmall),
 
           Row(children: [
             CodePickerWidget(
@@ -188,7 +183,7 @@ class _WalletFundTransferState extends State<WalletFundTransfer> {
             )),
           ]),
 
-          SizedBox(height: Dimensions.paddingSizeLarge),
+          const SizedBox(height: Dimensions.paddingSizeLarge),
 
           Container(
             decoration: BoxDecoration(
@@ -205,7 +200,7 @@ class _WalletFundTransferState extends State<WalletFundTransfer> {
             ),
           ),
 
-          SizedBox(height: Dimensions.paddingSizeLarge),
+          const SizedBox(height: Dimensions.paddingSizeLarge),
 
           GetBuilder<WalletController>(
               builder: (walletController) {
@@ -229,10 +224,10 @@ class _WalletFundTransferState extends State<WalletFundTransfer> {
                       showCustomSnackBar('Amount is required');
                     }
                     else {
-                      double _amount = double.parse(
+                      double amount = double.parse(
                           _amountController.text.trim());
 
-                      if (_amount < 100) {
+                      if (amount < 100) {
                         if (Get.isBottomSheetOpen!) {
                           Get.back();
                         }
@@ -240,7 +235,7 @@ class _WalletFundTransferState extends State<WalletFundTransfer> {
                             'Minimum transfer amount is 100 ৳');
                       }
                       else {
-                        transferFund(_amount, walletController);
+                        transferFund(amount, walletController);
                       }
                     }
                   },

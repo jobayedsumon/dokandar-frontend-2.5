@@ -97,6 +97,14 @@ class MenuDrawerState extends State<MenuDrawer> with SingleTickerProviderStateMi
       }));
     }
 
+    _menuList.add(Menu(icon: Images.wallet, title: 'Investment', onTap: () {
+      if(Get.currentRoute.contains('investment')){
+        Get.back();
+      }
+      Get.back();
+      Get.toNamed(RouteHelper.getInvestmentRoute());
+    }));
+
     if(Get.find<SplashController>().configModel!.loyaltyPointStatus == 1) {
       _menuList.add(Menu(icon: Images.loyal, title: 'loyalty_points'.tr, onTap: () {
         Get.back();

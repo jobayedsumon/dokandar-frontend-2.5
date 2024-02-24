@@ -1,8 +1,5 @@
 import 'dart:convert';
 
-import 'package:get/get.dart';
-import 'package:dokandar/controller/splash_controller.dart';
-import 'package:dokandar/data/model/response/item_model.dart';
 
 class StoreModel {
   int? totalSize;

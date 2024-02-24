@@ -7,7 +7,6 @@ import 'package:dokandar/helper/route_helper.dart';
 import 'package:dokandar/util/dimensions.dart';
 import 'package:dokandar/util/styles.dart';
 import 'package:dokandar/view/base/custom_image.dart';
-import 'package:dokandar/view/base/title_widget.dart';
 import 'package:dokandar/view/screens/store/store_screen.dart';
 
 class PopularStoreCard extends StatelessWidget {

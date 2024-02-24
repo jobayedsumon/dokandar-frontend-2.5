@@ -1,7 +1,6 @@
 import 'dart:typed_data';
 
 import 'package:dokandar/controller/auth_controller.dart';
-import 'package:dokandar/controller/cart_controller.dart';
 import 'package:dokandar/controller/wishlist_controller.dart';
 import 'package:dokandar/data/api/api_checker.dart';
 import 'package:dokandar/data/model/response/conversation_model.dart';

@@ -10,8 +10,8 @@ class AppConstants {
   static const String fontFamily = 'Roboto';
   static const bool payInWevView = false;
   static const int balanceInputLen = 10;
-  // static const String webHostedUrl = 'http://staging.dokandar.xyz';
-  static const String webHostedUrl = 'http://localhost:49362';
+  static const String webHostedUrl = 'http://staging.dokandar.xyz';
+  // static const String webHostedUrl = 'http://localhost:49362';
 
   // static const String baseUrl = 'http://staging.admin.dokandar.xyz';
   static const String baseUrl = 'http://dokandar-update.test';
@@ -58,6 +58,7 @@ class AppConstants {
   static const String removeWishListUri = '/api/v1/customer/wish-list/remove?';
   static const String notificationUri = '/api/v1/customer/notifications';
   static const String updateProfileUri = '/api/v1/customer/update-profile';
+  static const String investmentPackagesUri = '/api/v1/customer/investment/packages';
   static const String searchUri = '/api/v1/';
   static const String reviewUri = '/api/v1/items/reviews/submit';
   static const String itemDetailsUri = '/api/v1/items/details/';

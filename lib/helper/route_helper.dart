@@ -87,6 +87,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:dokandar/view/screens/wallet/wallet_screen.dart';
 
+import '../view/screens/investment/investment_screen.dart';
+
 class RouteHelper {
   static const String initial = '/';
   static const String splash = '/splash';
@@ -136,6 +138,7 @@ class RouteHelper {
   static const String order = '/order';
   static const String itemDetails = '/item-details';
   static const String wallet = '/wallet';
+  static const String investment = '/investment';
   static const String referAndEarn = '/refer-and-earn';
   static const String messages = '/messages';
   static const String conversation = '/conversation';
@@ -263,6 +266,7 @@ class RouteHelper {
   static String getOrderRoute() => order;
   static String getItemDetailsRoute(int? itemID, bool isRestaurant) => '$itemDetails?id=$itemID&page=${isRestaurant ? 'restaurant' : 'item'}';
   static String getWalletRoute(bool fromWallet, {String? fundStatus, String? token}) => '$wallet?page=${fromWallet ? 'wallet' : 'loyalty_points'}&payment_status=$fundStatus&token=$token';
+  static String getInvestmentRoute() => investment;
   static String getReferAndEarnRoute() => referAndEarn;
   static String getChatRoute({required NotificationBody? notificationBody, User? user, int? conversationID, int? index, bool? fromNotification}) {
     String notificationBody0 = 'null';
@@ -498,6 +502,9 @@ class RouteHelper {
         fundStatus: Get.parameters['flag'] ?? Get.parameters['payment_status'],
         token: Get.parameters['token'],
       ));
+    }),
+    GetPage(name: investment, page: () {
+      return getRoute(const InvestmentScreen());
     }),
     GetPage(name: referAndEarn, page: () => getRoute(const ReferAndEarnScreen())),
     GetPage(name: messages, page: () {

@@ -11,6 +11,7 @@ class AppConstants {
   static const bool payInWevView = false;
   static const int balanceInputLen = 10;
   static const String webHostedUrl = 'http://staging.dokandar.xyz';
+
   // static const String webHostedUrl = 'http://localhost:49362';
 
   // static const String baseUrl = 'http://staging.admin.dokandar.xyz';
@@ -37,45 +38,59 @@ class AppConstants {
   static const String loginUri = '/api/v1/auth/login';
   static const String tokenUri = '/api/v1/customer/cm-firebase-token';
   static const String placeOrderUri = '/api/v1/customer/order/place';
-  static const String placePrescriptionOrderUri = '/api/v1/customer/order/prescription/place';
+  static const String placePrescriptionOrderUri =
+      '/api/v1/customer/order/prescription/place';
   static const String addressListUri = '/api/v1/customer/address/list';
-  static const String updateGiftAddress = '/api/v1/customer/address/update-gift-address';
+  static const String updateGiftAddress =
+      '/api/v1/customer/address/update-gift-address';
   static const String zoneUri = '/api/v1/config/get-zone-id';
-  static const String removeAddressUri = '/api/v1/customer/address/delete?address_id=';
+  static const String removeAddressUri =
+      '/api/v1/customer/address/delete?address_id=';
   static const String addAddressUri = '/api/v1/customer/address/add';
   static const String updateAddressUri = '/api/v1/customer/address/update/';
   static const String setMenuUri = '/api/v1/items/set-menu';
   static const String customerInfoUri = '/api/v1/customer/info';
   static const String couponUri = '/api/v1/coupon/list';
   static const String couponApplyUri = '/api/v1/coupon/apply?code=';
-  static const String runningOrderListUri = '/api/v1/customer/order/running-orders';
+  static const String runningOrderListUri =
+      '/api/v1/customer/order/running-orders';
   static const String historyOrderListUri = '/api/v1/customer/order/list';
   static const String orderCancelUri = '/api/v1/customer/order/cancel';
   static const String codSwitchUri = '/api/v1/customer/order/payment-method';
-  static const String orderDetailsUri = '/api/v1/customer/order/details?order_id=';
+  static const String orderDetailsUri =
+      '/api/v1/customer/order/details?order_id=';
   static const String wishListGetUri = '/api/v1/customer/wish-list';
   static const String addWishListUri = '/api/v1/customer/wish-list/add?';
   static const String removeWishListUri = '/api/v1/customer/wish-list/remove?';
   static const String notificationUri = '/api/v1/customer/notifications';
   static const String updateProfileUri = '/api/v1/customer/update-profile';
-  static const String investmentPackagesUri = '/api/v1/customer/investment/packages';
+  static const String investmentPackagesUri =
+      '/api/v1/customer/investment/packages';
+  static const String investmentPackageViewUri =
+      '/api/v1/customer/investment/package/view';
+  static const String investmentInvestUri =
+      '/api/v1/customer/investment/invest';
   static const String searchUri = '/api/v1/';
   static const String reviewUri = '/api/v1/items/reviews/submit';
   static const String itemDetailsUri = '/api/v1/items/details/';
-  static const String lastLocationUri = '/api/v1/delivery-man/last-location?order_id=';
-  static const String deliveryManReviewUri = '/api/v1/delivery-man/reviews/submit';
+  static const String lastLocationUri =
+      '/api/v1/delivery-man/last-location?order_id=';
+  static const String deliveryManReviewUri =
+      '/api/v1/delivery-man/reviews/submit';
   static const String storeUri = '/api/v1/stores/get-stores';
   static const String popularStoreUri = '/api/v1/stores/popular';
   static const String latestStoreUri = '/api/v1/stores/latest';
   static const String storeDetailsUri = '/api/v1/stores/details/';
   static const String basicCampaignUri = '/api/v1/campaigns/basic';
   static const String itemCampaignUri = '/api/v1/campaigns/item';
-  static const String basicCampaignDetailsUri = '/api/v1/campaigns/basic-campaign-details?basic_campaign_id=';
+  static const String basicCampaignDetailsUri =
+      '/api/v1/campaigns/basic-campaign-details?basic_campaign_id=';
   static const String interestUri = '/api/v1/customer/update-interest';
   static const String suggestedItemUri = '/api/v1/customer/suggested-items';
   static const String storeReviewUri = '/api/v1/stores/reviews';
   static const String distanceMatrixUri = '/api/v1/config/distance-api';
-  static const String searchLocationUri = '/api/v1/config/place-api-autocomplete';
+  static const String searchLocationUri =
+      '/api/v1/config/place-api-autocomplete';
   static const String placeDetailsUri = '/api/v1/config/place-api-details';
   static const String geocodeUri = '/api/v1/config/geocode-api';
   static const String socialLoginUri = '/api/v1/auth/social-login';
@@ -91,20 +106,25 @@ class AppConstants {
   static const String shippingPolicyUri = '/shipping-policy';
   static const String subscriptionUri = '/api/v1/newsletter/subscribe';
   static const String customerRemoveUri = '/api/v1/customer/remove-account';
-  static const String walletTransactionUri = '/api/v1/customer/wallet/transactions';
+  static const String walletTransactionUri =
+      '/api/v1/customer/wallet/transactions';
   static const String fundTransferUrl = '/api/v1/customer/wallet/fund-transfer';
-  static const String loyaltyTransactionUri = '/api/v1/customer/loyalty-point/transactions';
-  static const String loyaltyPointTransferUri = '/api/v1/customer/loyalty-point/point-transfer';
+  static const String loyaltyTransactionUri =
+      '/api/v1/customer/loyalty-point/transactions';
+  static const String loyaltyPointTransferUri =
+      '/api/v1/customer/loyalty-point/point-transfer';
   static const String zoneListUri = '/api/v1/zone/list';
   static const String storeRegisterUri = '/api/v1/auth/vendor/register';
   static const String dmRegisterUri = '/api/v1/auth/delivery-man/store';
   static const String refundReasonUri = '/api/v1/customer/order/refund-reasons';
-  static const String refundRequestUri = '/api/v1/customer/order/refund-request';
+  static const String refundRequestUri =
+      '/api/v1/customer/order/refund-request';
   static const String directionUri = '/api/v1/config/direction-api';
   static const String vehicleListUri = '/api/v1/vehicles/list';
   static const String taxiCouponUri = '/api/v1/coupon/list/taxi';
   static const String taxiBannerUri = '/api/v1/banners/taxi';
-  static const String topRatedVehiclesListUri = '/api/v1/vehicles/top-rated/list';
+  static const String topRatedVehiclesListUri =
+      '/api/v1/vehicles/top-rated/list';
   static const String bandListUri = '/api/v1/vehicles/brand/list';
   static const String taxiCouponApplyUri = '/api/v1/coupon/apply/taxi?code=';
   static const String tripPlaceUri = '/api/v1/trip/place';
@@ -112,16 +132,20 @@ class AppConstants {
   static const String vehicleChargeUri = '/api/v1/vehicle/extra_charge';
   static const String vehiclesUri = '/api/v1/get-vehicles';
   static const String storeRecommendedItemUri = '/api/v1/items/recommended';
-  static const String orderCancellationUri = '/api/v1/customer/order/cancellation-reasons';
+  static const String orderCancellationUri =
+      '/api/v1/customer/order/cancellation-reasons';
   static const String cartStoreSuggestedItemsUri = '/api/v1/items/suggested';
   static const String landingPageUri = '/api/v1/flutter-landing-page';
   static const String mostTipsUri = '/api/v1/most-tips';
   static const String addFundUri = '/api/v1/customer/wallet/add-fund';
   static const String walletBonusUri = '/api/v1/customer/wallet/bonuses';
   static const String guestLoginUri = '/api/v1/auth/guest/request';
-  static const String offlineMethodListUri = '/api/v1/offline_payment_method_list';
-  static const String offlinePaymentSaveInfoUri = '/api/v1/customer/order/offline-payment';
-  static const String offlinePaymentUpdateInfoUri = '/api/v1/customer/order/offline-payment-update';
+  static const String offlineMethodListUri =
+      '/api/v1/offline_payment_method_list';
+  static const String offlinePaymentSaveInfoUri =
+      '/api/v1/customer/order/offline-payment';
+  static const String offlinePaymentUpdateInfoUri =
+      '/api/v1/customer/order/offline-payment-update';
   static const String storeBannersUri = '/api/v1/banners/';
   static const String recommendedItemsUri = '/api/v1/items/recommended?filter=';
   static const String visitAgainStoreUri = '/api/v1/customer/visit-again';
@@ -135,13 +159,16 @@ class AppConstants {
   static const String conditionWiseItemUri = '/api/v1/common-condition/items/';
   static const String flashSaleUri = '/api/v1/flash-sales';
   static const String flashSaleProductsUri = '/api/v1/flash-sales/items';
-  static const String featuredCategoriesItemsUri = '/api/v1/categories/featured/items';
+  static const String featuredCategoriesItemsUri =
+      '/api/v1/categories/featured/items';
   static const String recommendedStoreUri = '/api/v1/stores/recommended';
-  static const String parcelInstructionUri = '/api/v1/customer/order/parcel-instructions';
+  static const String parcelInstructionUri =
+      '/api/v1/customer/order/parcel-instructions';
 
   /// MESSAGING
   static const String conversationListUri = '/api/v1/customer/message/list';
-  static const String searchConversationListUri = '/api/v1/customer/message/search-list';
+  static const String searchConversationListUri =
+      '/api/v1/customer/message/search-list';
   static const String messageListUri = '/api/v1/customer/message/details';
   static const String sendMessageUri = '/api/v1/customer/message/send';
 
@@ -184,7 +211,6 @@ class AppConstants {
   static const String longitude = 'longitude';
   static const String cookiesManagement = 'cookies_management';
 
-
   ///Refer & Earn work flow list..
   static final dataList = [
     'invite_your_friends_and_business'.tr,
@@ -193,7 +219,7 @@ class AppConstants {
   ];
 
   /// Delivery Tips
-  static List<String> tips = ['0' ,'15', '10', '20', '40', 'custom'];
+  static List<String> tips = ['0', '15', '10', '20', '40', 'custom'];
   static List<String> deliveryInstructionList = [
     'deliver_to_front_door'.tr,
     'deliver_the_reception_desk'.tr,
@@ -202,10 +228,15 @@ class AppConstants {
   ];
 
   static List<ChooseUsModel> whyChooseUsList = [
-    ChooseUsModel(icon: Images.landingTrusted, title: 'trusted_by_customers_and_store_owners'),
+    ChooseUsModel(
+        icon: Images.landingTrusted,
+        title: 'trusted_by_customers_and_store_owners'),
     ChooseUsModel(icon: Images.landingStores, title: 'thousands_of_stores'),
-    ChooseUsModel(icon: Images.landingExcellent, title: 'excellent_shopping_experience'),
-    ChooseUsModel(icon: Images.landingCheckout, title: 'easy_checkout_and_payment_system'),
+    ChooseUsModel(
+        icon: Images.landingExcellent, title: 'excellent_shopping_experience'),
+    ChooseUsModel(
+        icon: Images.landingCheckout,
+        title: 'easy_checkout_and_payment_system'),
   ];
 
   /// order status..
@@ -231,8 +262,16 @@ class AppConstants {
   static const String grocery = 'grocery';
 
   static List<LanguageModel> languages = [
-    LanguageModel(imageUrl: Images.english, languageName: 'English', countryCode: 'US', languageCode: 'en'),
-    LanguageModel(imageUrl: Images.arabic, languageName: 'عربى', countryCode: 'SA', languageCode: 'ar'),
+    LanguageModel(
+        imageUrl: Images.english,
+        languageName: 'English',
+        countryCode: 'US',
+        languageCode: 'en'),
+    LanguageModel(
+        imageUrl: Images.arabic,
+        languageName: 'عربى',
+        countryCode: 'SA',
+        languageCode: 'ar'),
     // LanguageModel(imageUrl: Images.arabic, languageName: 'Spanish', countryCode: 'ES', languageCode: 'es'),
     // LanguageModel(imageUrl: Images.bengali, languageName: 'Bengali', countryCode: 'BN', languageCode: 'bn'),
   ];
@@ -244,25 +283,10 @@ class AppConstants {
   ];
 
   static final List<Map<String, String>> walletTransactionSortingList = [
-    {
-      'title' : 'all_transactions',
-      'value' : 'all'
-    },
-    {
-      'title' : 'order_transactions',
-      'value' : 'order'
-    },
-    {
-      'title' : 'converted_from_loyalty_point',
-      'value' : 'loyalty_point'
-    },
-    {
-      'title' : 'added_via_payment_method',
-      'value' : 'add_fund'
-    },
-    {
-      'title' : 'earned_by_referral',
-      'value' : 'referrer'
-    },
+    {'title': 'all_transactions', 'value': 'all'},
+    {'title': 'order_transactions', 'value': 'order'},
+    {'title': 'converted_from_loyalty_point', 'value': 'loyalty_point'},
+    {'title': 'added_via_payment_method', 'value': 'add_fund'},
+    {'title': 'earned_by_referral', 'value': 'referrer'},
   ];
 }

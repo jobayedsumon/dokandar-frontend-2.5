@@ -6,13 +6,25 @@ import 'package:shared_preferences/shared_preferences.dart';
 class InvestmentRepo {
   final ApiClient apiClient;
   final SharedPreferences sharedPreferences;
+
   InvestmentRepo({required this.apiClient, required this.sharedPreferences});
 
   Future<Response> getFlexiblePackageList(int offset) async {
-    return await apiClient.getData('${AppConstants.investmentPackagesUri}?type=flexible&offset=$offset&limit=10');
+    return await apiClient.getData(
+        '${AppConstants.investmentPackagesUri}?type=flexible&offset=$offset&limit=10');
   }
 
   Future<Response> getLockedInPackageList(int offset) async {
-    return await apiClient.getData('${AppConstants.investmentPackagesUri}?type=locked-in&offset=$offset&limit=10');
+    return await apiClient.getData(
+        '${AppConstants.investmentPackagesUri}?type=locked-in&offset=$offset&limit=10');
+  }
+
+  Future<Response> getInvestmentPackage(int id) async {
+    return await apiClient
+        .getData('${AppConstants.investmentPackageViewUri}/$id');
+  }
+
+  Future<Response> investInPackage(data) async {
+    return await apiClient.postData(AppConstants.investmentInvestUri, data);
   }
 }

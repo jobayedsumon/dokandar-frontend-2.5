@@ -15,6 +15,9 @@ class InvestmentController extends GetxController implements GetxService {
 
   PaginatedInvestmentModel? _flexibleInvestmentModel;
   PaginatedInvestmentModel? _lockedInInvestmentModel;
+  PaginatedMyInvestmentModel? _myInvestmentModel;
+  PaginatedWithdrawalModel? _withdrawalModel;
+  InvestmentWalletModel? _investmentWalletModel;
   InvestmentModel? _investmentModel;
   String? _digitalPaymentName;
 
@@ -23,6 +26,10 @@ class InvestmentController extends GetxController implements GetxService {
 
   PaginatedInvestmentModel? get lockedInInvestmentModel =>
       _lockedInInvestmentModel;
+
+  PaginatedMyInvestmentModel? get myInvestmentModel => _myInvestmentModel;
+
+  PaginatedWithdrawalModel? get withdrawalModel => _withdrawalModel;
 
   InvestmentModel? get investmentModel => _investmentModel;
 
@@ -115,6 +122,48 @@ class InvestmentController extends GetxController implements GetxService {
     _digitalPaymentName = name;
     if (isUpdate) {
       update();
+    }
+  }
+
+  Future<void> getMyInvestment(int offset, {bool isUpdate = false}) async {
+    if (offset == 1) {
+      _myInvestmentModel = null;
+      if (isUpdate) {
+        update();
+      }
+    }
+    Response response = await investmentRepo.getMyInvestment(offset);
+    if (response.statusCode == 200) {
+      var investments = response.body['investments'];
+      var withdrawals = response.body['withdrawals'];
+      var investmentWallets = response.body['investment_wallet'];
+
+      if (offset == 1) {
+        _myInvestmentModel = PaginatedMyInvestmentModel.fromJson(investments);
+        _withdrawalModel = PaginatedWithdrawalModel.fromJson(withdrawals);
+        _investmentWalletModel =
+            InvestmentWalletModel.fromJson(investmentWallets);
+      } else {
+        _myInvestmentModel!.investments!.addAll(
+            PaginatedMyInvestmentModel.fromJson(investments).investments!);
+        _myInvestmentModel!.offset =
+            PaginatedMyInvestmentModel.fromJson(investments).offset;
+        _myInvestmentModel!.totalSize =
+            PaginatedMyInvestmentModel.fromJson(investments).totalSize;
+
+        _withdrawalModel!.withdrawals!.addAll(
+            PaginatedWithdrawalModel.fromJson(withdrawals).withdrawals!);
+        _withdrawalModel!.offset =
+            PaginatedWithdrawalModel.fromJson(withdrawals).offset;
+        _withdrawalModel!.totalSize =
+            PaginatedWithdrawalModel.fromJson(withdrawals).totalSize;
+
+        _investmentWalletModel =
+            InvestmentWalletModel.fromJson(investmentWallets);
+      }
+      update();
+    } else {
+      ApiChecker.checkApi(response);
     }
   }
 }

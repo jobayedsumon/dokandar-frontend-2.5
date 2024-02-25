@@ -27,4 +27,9 @@ class InvestmentRepo {
   Future<Response> investInPackage(data) async {
     return await apiClient.postData(AppConstants.investmentInvestUri, data);
   }
+
+  Future<Response> getMyInvestment(int offset) async {
+    return await apiClient
+        .getData('${AppConstants.myInvestmentUri}?offset=$offset&limit=10');
+  }
 }

@@ -70,6 +70,8 @@ class AppConstants {
       '/api/v1/customer/investment/package/view';
   static const String investmentInvestUri =
       '/api/v1/customer/investment/invest';
+  static const String myInvestmentUri =
+      '/api/v1/customer/investment/my-investments';
   static const String searchUri = '/api/v1/';
   static const String reviewUri = '/api/v1/items/reviews/submit';
   static const String itemDetailsUri = '/api/v1/items/details/';

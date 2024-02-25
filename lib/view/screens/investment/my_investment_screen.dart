@@ -6,19 +6,20 @@ import 'package:dokandar/util/styles.dart';
 import 'package:dokandar/view/base/custom_app_bar.dart';
 import 'package:dokandar/view/base/menu_drawer.dart';
 import 'package:dokandar/view/screens/investment/widget/investment_view.dart';
+import 'package:dokandar/view/screens/investment/widget/my_investment_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../data/repository/investment_repo.dart';
 
-class InvestmentScreen extends StatefulWidget {
-  const InvestmentScreen({Key? key}) : super(key: key);
+class MyInvestmentScreen extends StatefulWidget {
+  const MyInvestmentScreen({Key? key}) : super(key: key);
 
   @override
-  InvestmentScreenState createState() => InvestmentScreenState();
+  MyInvestmentScreenState createState() => MyInvestmentScreenState();
 }
 
-class InvestmentScreenState extends State<InvestmentScreen>
+class MyInvestmentScreenState extends State<MyInvestmentScreen>
     with TickerProviderStateMixin {
   TabController? _tabController;
   bool _isLoggedIn = Get.find<AuthController>().isLoggedIn();
@@ -36,8 +37,7 @@ class InvestmentScreenState extends State<InvestmentScreen>
       Get.put(InvestmentController(
           investmentRepo: InvestmentRepo(
               apiClient: Get.find(), sharedPreferences: Get.find())));
-      Get.find<InvestmentController>().getFlexiblePackages(1);
-      Get.find<InvestmentController>().getLockedInPackages(1);
+      Get.find<InvestmentController>().getMyInvestment(1);
     }
   }
 
@@ -47,7 +47,8 @@ class InvestmentScreenState extends State<InvestmentScreen>
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       appBar: CustomAppBar(
-          title: 'Investment', backButton: ResponsiveHelper.isDesktop(context)),
+          title: 'My Investment',
+          backButton: ResponsiveHelper.isDesktop(context)),
       endDrawer: const MenuDrawer(),
       endDrawerEnableOpenDragGesture: false,
       body: GetBuilder<InvestmentController>(
@@ -64,7 +65,7 @@ class InvestmentScreenState extends State<InvestmentScreen>
                               child: Padding(
                               padding: const EdgeInsets.only(
                                   top: Dimensions.paddingSizeSmall),
-                              child: Text('Investment',
+                              child: Text('My Investment',
                                   style: robotoBold.copyWith(
                                       fontSize: 24,
                                       color: Theme.of(context).primaryColor)),
@@ -98,8 +99,8 @@ class InvestmentScreenState extends State<InvestmentScreen>
                                     fontSize: Dimensions.fontSizeSmall,
                                     color: Theme.of(context).primaryColor),
                                 tabs: [
-                                  Tab(text: 'Flexible'.tr),
-                                  Tab(text: 'Locked In'.tr),
+                                  Tab(text: 'My Investments'.tr),
+                                  Tab(text: 'My Withdrawals'.tr),
                                 ],
                               ),
                             ),
@@ -112,8 +113,8 @@ class InvestmentScreenState extends State<InvestmentScreen>
                       child: TabBarView(
                     controller: _tabController,
                     children: const [
+                      MyInvestmentView(),
                       InvestmentView(type: 'flexible'),
-                      InvestmentView(type: 'locked-in'),
                     ],
                   )),
                 ])

@@ -143,7 +143,7 @@ class MyInvestmentModel {
   String? redeemedAt;
   String? createdAt;
   String? updatedAt;
-  int? profitEarned;
+  double? profitEarned;
   InvestmentModel? package;
 
   MyInvestmentModel({
@@ -187,10 +187,10 @@ class MyInvestmentModel {
 }
 
 class InvestmentWalletModel {
-  int? profit;
-  int? redeemed;
-  int? withdrawal;
-  int? balance;
+  double? profit;
+  double? redeemed;
+  double? withdrawal;
+  double? balance;
 
   InvestmentWalletModel({
     this.profit,

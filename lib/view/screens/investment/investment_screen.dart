@@ -8,7 +8,6 @@ import 'package:dokandar/view/base/menu_drawer.dart';
 import 'package:dokandar/view/screens/investment/widget/investment_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../../data/repository/investment_repo.dart';
 
 class InvestmentScreen extends StatefulWidget {

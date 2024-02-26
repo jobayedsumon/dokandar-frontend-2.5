@@ -1,7 +1,7 @@
-import 'package:get/get.dart';
 import 'package:dokandar/data/model/response/choose_us_model.dart';
 import 'package:dokandar/data/model/response/language_model.dart';
 import 'package:dokandar/util/images.dart';
+import 'package:get/get.dart';
 
 class AppConstants {
   static const String appName = 'Dokandar';
@@ -68,6 +68,10 @@ class AppConstants {
       '/api/v1/customer/investment/packages';
   static const String investmentPackageViewUri =
       '/api/v1/customer/investment/package/view';
+  static const String myInvestmentViewUri =
+      '/api/v1/customer/investment/my-investment/view';
+  static const String redeemInvestmentUri =
+      '/api/v1/customer/investment/redeem';
   static const String investmentInvestUri =
       '/api/v1/customer/investment/invest';
   static const String myInvestmentUri =

@@ -1,12 +1,10 @@
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 import 'package:dokandar/data/api/api_checker.dart';
 import 'package:dokandar/helper/route_helper.dart';
-import 'package:dokandar/util/app_constants.dart';
 import 'package:get/get.dart';
+import 'package:universal_html/html.dart' as html;
+
 import '../data/model/response/investment_model.dart';
 import '../data/repository/investment_repo.dart';
-import 'package:universal_html/html.dart' as html;
 
 class InvestmentController extends GetxController implements GetxService {
   final InvestmentRepo investmentRepo;
@@ -16,6 +14,7 @@ class InvestmentController extends GetxController implements GetxService {
   PaginatedInvestmentModel? _flexibleInvestmentModel;
   PaginatedInvestmentModel? _lockedInInvestmentModel;
   PaginatedMyInvestmentModel? _myInvestmentModel;
+  MyInvestmentModel? _myInvestmentDetailsModel;
   PaginatedWithdrawalModel? _withdrawalModel;
   InvestmentWalletModel? _investmentWalletModel;
   InvestmentModel? _investmentModel;
@@ -29,7 +28,11 @@ class InvestmentController extends GetxController implements GetxService {
 
   PaginatedMyInvestmentModel? get myInvestmentModel => _myInvestmentModel;
 
+  MyInvestmentModel? get myInvestmentDetailsModel => _myInvestmentDetailsModel;
+
   PaginatedWithdrawalModel? get withdrawalModel => _withdrawalModel;
+
+  InvestmentWalletModel? get investmentWalletModel => _investmentWalletModel;
 
   InvestmentModel? get investmentModel => _investmentModel;
 
@@ -98,6 +101,17 @@ class InvestmentController extends GetxController implements GetxService {
     return _investmentModel!;
   }
 
+  Future<MyInvestmentModel> getMyInvestmentPackageDetails(int packageId) async {
+    Response response = await investmentRepo.getMyInvestmentPackage(packageId);
+    if (response.statusCode == 200) {
+      _myInvestmentDetailsModel = MyInvestmentModel.fromJson(response.body);
+    } else {
+      ApiChecker.checkApi(response);
+    }
+    update();
+    return _myInvestmentDetailsModel!;
+  }
+
   Future<void> investInPackage(int packageId, String paymentMethod) async {
     update();
     Response response = await investmentRepo.investInPackage(
@@ -161,6 +175,20 @@ class InvestmentController extends GetxController implements GetxService {
         _investmentWalletModel =
             InvestmentWalletModel.fromJson(investmentWallets);
       }
+      update();
+    } else {
+      ApiChecker.checkApi(response);
+    }
+  }
+
+  //redeemInvestment
+  Future<void> redeemInvestment(int investmentId) async {
+    Response response = await investmentRepo.redeemInvestment(investmentId);
+    if (response.statusCode == 200) {
+      Get.back();
+      Get.snackbar('Success', 'Investment redeemed successfully',
+          snackPosition: SnackPosition.BOTTOM);
+      myInvestmentDetailsModel!.redeemedAt = response.body['redeemed_at'];
       update();
     } else {
       ApiChecker.checkApi(response);

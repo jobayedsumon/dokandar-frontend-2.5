@@ -14,7 +14,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../helper/route_helper.dart';
-import '../investment_details_screen.dart';
+import '../my_investment_details_screen.dart';
 
 class MyInvestmentView extends StatelessWidget {
   const MyInvestmentView({Key? key}) : super(key: key);
@@ -97,22 +97,24 @@ class MyInvestmentView extends StatelessWidget {
                                         .investments!.length,
                                     itemBuilder: (context, index) {
                                       return InkWell(
-                                        // onTap: () {
-                                        //   Get.toNamed(
-                                        //     RouteHelper
-                                        //         .getInvestmentDetailsRoute(
-                                        //             paginatedMyInvestmentModel!
-                                        //                 .investments![index].id),
-                                        //     arguments: InvestmentDetailsScreen(
-                                        //       packageId:
-                                        //           paginatedMyInvestmentModel
-                                        //               .investments![index].id,
-                                        //       investmentModel:
-                                        //           paginatedMyInvestmentModel
-                                        //               .investments![index],
-                                        //     ),
-                                        //   );
-                                        // },
+                                        onTap: () {
+                                          Get.toNamed(
+                                            RouteHelper
+                                                .getMyInvestmentDetailsRoute(
+                                                    paginatedMyInvestmentModel!
+                                                        .investments![index]
+                                                        .id),
+                                            arguments:
+                                                MyInvestmentDetailsScreen(
+                                              packageId:
+                                                  paginatedMyInvestmentModel
+                                                      .investments![index].id,
+                                              myInvestmentModel:
+                                                  paginatedMyInvestmentModel
+                                                      .investments![index],
+                                            ),
+                                          );
+                                        },
                                         hoverColor: Colors.transparent,
                                         child: Container(
                                           padding: ResponsiveHelper.isDesktop(
@@ -255,9 +257,11 @@ class MyInvestmentView extends StatelessWidget {
                                                                               0.1),
                                                                     ),
                                                                     child: Text(
-                                                                        '${PriceConverter.convertPrice(paginatedMyInvestmentModel.investments![index].package!.amount as double?)} / Unit',
-                                                                        style: robotoMedium
-                                                                            .copyWith(
+                                                                        PriceConverter.convertPrice(paginatedMyInvestmentModel
+                                                                            .investments![index]
+                                                                            .package!
+                                                                            .amount as double?),
+                                                                        style: robotoMedium.copyWith(
                                                                           fontSize:
                                                                               Dimensions.fontSizeExtraSmall,
                                                                           color:
@@ -278,15 +282,31 @@ class MyInvestmentView extends StatelessWidget {
                                                               const SizedBox(
                                                                   width: Dimensions
                                                                       .paddingSizeSmall),
-                                                              Text(
-                                                                '${paginatedMyInvestmentModel.investments![index].package!.monthlyInterestRate!}%',
-                                                                style: robotoRegular.copyWith(
-                                                                    fontSize:
-                                                                        Dimensions
-                                                                            .fontSizeSmall,
-                                                                    color: Colors
-                                                                        .grey
-                                                                        .shade600),
+                                                              Row(
+                                                                children: [
+                                                                  Text(
+                                                                    '${paginatedMyInvestmentModel.investments![index].package!.monthlyInterestRate!}%',
+                                                                    style: robotoRegular.copyWith(
+                                                                        fontSize:
+                                                                            Dimensions
+                                                                                .fontSizeSmall,
+                                                                        color: Colors
+                                                                            .grey
+                                                                            .shade600),
+                                                                  ),
+                                                                  const SizedBox(
+                                                                      width: Dimensions
+                                                                          .paddingSizeSmall),
+                                                                  Text(
+                                                                      '${PriceConverter.convertPrice(paginatedMyInvestmentModel.investments![index].profitEarned)} Total Profit Earned',
+                                                                      style: robotoMedium
+                                                                          .copyWith(
+                                                                        fontSize:
+                                                                            Dimensions.fontSizeSmall,
+                                                                        color: Colors
+                                                                            .green,
+                                                                      ))
+                                                                ],
                                                               ),
                                                             ],
                                                           ),
@@ -299,7 +319,20 @@ class MyInvestmentView extends StatelessWidget {
                                                                       .package!
                                                                       .type ==
                                                                   'flexible'
-                                                              ? const SizedBox()
+                                                              ? paginatedMyInvestmentModel
+                                                                          .investments![
+                                                                              index]
+                                                                          .redeemedAt ==
+                                                                      null
+                                                                  ? const SizedBox()
+                                                                  : Text(
+                                                                      'Redeemed At: ${DateConverter.dateTimeStringToDateTime(paginatedMyInvestmentModel.investments![index].redeemedAt!)}',
+                                                                      style: robotoRegular.copyWith(
+                                                                          fontSize: Dimensions
+                                                                              .fontSizeSmall,
+                                                                          color:
+                                                                              Colors.red),
+                                                                    )
                                                               : Row(
                                                                   children: [
                                                                     Icon(
@@ -358,7 +391,7 @@ class MyInvestmentView extends StatelessWidget {
                                                                           0.1),
                                                                 ),
                                                                 child: Text(
-                                                                    '${PriceConverter.convertPrice(paginatedMyInvestmentModel.investments![index].package!.amount as double?)} / Unit',
+                                                                    '${PriceConverter.convertPrice(paginatedMyInvestmentModel.investments![index].package!.amount as double?)}',
                                                                     style: robotoMedium
                                                                         .copyWith(
                                                                       fontSize:

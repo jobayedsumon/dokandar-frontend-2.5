@@ -1,5 +1,7 @@
 import 'package:dokandar/controller/auth_controller.dart';
 import 'package:dokandar/controller/investment_controller.dart';
+import 'package:dokandar/data/model/response/investment_model.dart';
+import 'package:dokandar/helper/price_converter.dart';
 import 'package:dokandar/helper/responsive_helper.dart';
 import 'package:dokandar/util/dimensions.dart';
 import 'package:dokandar/util/styles.dart';
@@ -53,6 +55,8 @@ class MyInvestmentScreenState extends State<MyInvestmentScreen>
       endDrawerEnableOpenDragGesture: false,
       body: GetBuilder<InvestmentController>(
         builder: (investmentController) {
+          InvestmentWalletModel? investmentWallet =
+              investmentController.investmentWalletModel;
           return _isLoggedIn
               ? Column(children: [
                   Container(
@@ -65,10 +69,53 @@ class MyInvestmentScreenState extends State<MyInvestmentScreen>
                               child: Padding(
                               padding: const EdgeInsets.only(
                                   top: Dimensions.paddingSizeSmall),
-                              child: Text('My Investment',
-                                  style: robotoBold.copyWith(
-                                      fontSize: 24,
-                                      color: Theme.of(context).primaryColor)),
+                              child: Column(
+                                children: [
+                                  Text('My Investment',
+                                      style: robotoBold.copyWith(
+                                          fontSize: 24,
+                                          color:
+                                              Theme.of(context).primaryColor)),
+                                  const SizedBox(height: 10),
+                                  Container(
+                                    padding: const EdgeInsets.all(10),
+                                    decoration: BoxDecoration(
+                                        color: Theme.of(context)
+                                            .primaryColor
+                                            .withOpacity(0.1),
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                    child: Column(
+                                      children: [
+                                        Text(
+                                            'Total Profit: ${PriceConverter.convertPrice(investmentWallet!.profit)}',
+                                            style: robotoBold.copyWith(
+                                                fontSize: 16,
+                                                color: Colors.green)),
+                                        const SizedBox(height: 5),
+                                        Text(
+                                            'Total Redeemed: ${PriceConverter.convertPrice(investmentWallet.redeemed)}',
+                                            style: robotoBold.copyWith(
+                                                fontSize: 16,
+                                                color: Colors.green)),
+                                        const SizedBox(height: 5),
+                                        Text(
+                                            'Total Withdrawal: ${PriceConverter.convertPrice(investmentWallet.withdrawal)}',
+                                            style: robotoBold.copyWith(
+                                                fontSize: 16,
+                                                color: Theme.of(context)
+                                                    .primaryColor)),
+                                        const SizedBox(height: 5),
+                                        Text(
+                                            'Current Balance: ${PriceConverter.convertPrice(investmentWallet.balance)}',
+                                            style: robotoBold.copyWith(
+                                                fontSize: 18,
+                                                color: Colors.green)),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ))
                           : const SizedBox(),
                       Center(

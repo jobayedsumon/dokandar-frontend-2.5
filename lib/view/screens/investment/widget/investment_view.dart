@@ -1,6 +1,5 @@
 import 'package:dokandar/controller/investment_controller.dart';
 import 'package:dokandar/data/model/response/investment_model.dart';
-import 'package:dokandar/helper/date_converter.dart';
 import 'package:dokandar/helper/price_converter.dart';
 import 'package:dokandar/helper/responsive_helper.dart';
 import 'package:dokandar/util/dimensions.dart';
@@ -12,7 +11,6 @@ import 'package:dokandar/view/base/paginated_list_view.dart';
 import 'package:dokandar/view/screens/investment/widget/investment_shimmer.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../../../helper/route_helper.dart';
 import '../investment_details_screen.dart';
 
@@ -277,7 +275,7 @@ class InvestmentView extends StatelessWidget {
                                                                               0.1),
                                                                     ),
                                                                     child: Text(
-                                                                        '${PriceConverter.convertPrice(paginatedInvestmentModel.packages![index].amount as double?)} / Unit',
+                                                                        '${PriceConverter.convertPrice(paginatedInvestmentModel.packages![index].amount as double?)}',
                                                                         style: robotoMedium
                                                                             .copyWith(
                                                                           fontSize:
@@ -372,7 +370,7 @@ class InvestmentView extends StatelessWidget {
                                                                           0.1),
                                                                 ),
                                                                 child: Text(
-                                                                    '${PriceConverter.convertPrice(paginatedInvestmentModel.packages![index].amount as double?)} / Unit',
+                                                                    '${PriceConverter.convertPrice(paginatedInvestmentModel.packages![index].amount as double?)}',
                                                                     style: robotoMedium
                                                                         .copyWith(
                                                                       fontSize:

@@ -1,14 +1,12 @@
 import 'package:dokandar/controller/investment_controller.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:dokandar/controller/splash_controller.dart';
-import 'package:dokandar/controller/wallet_controller.dart';
 import 'package:dokandar/util/dimensions.dart';
 import 'package:dokandar/util/styles.dart';
 import 'package:dokandar/view/base/custom_button.dart';
 import 'package:dokandar/view/base/custom_image.dart';
 import 'package:dokandar/view/base/custom_snackbar.dart';
-import 'package:dokandar/view/base/custom_text_field.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class InvestmentPaymentDialogue extends StatefulWidget {
   const InvestmentPaymentDialogue({Key? key, required this.packageId})
@@ -55,8 +53,8 @@ class _InvestmentPaymentDialogueState extends State<InvestmentPaymentDialogue> {
             borderRadius: BorderRadius.circular(Dimensions.radiusDefault),
             color: Theme.of(context).cardColor,
           ),
-          width: context.width,
-          height: context.height,
+          width: context.width * 0.6,
+          height: context.height * 0.6,
           padding: const EdgeInsets.all(Dimensions.paddingSizeLarge),
           child: Column(children: [
             Flexible(
@@ -170,7 +168,8 @@ class _InvestmentPaymentDialogueState extends State<InvestmentPaymentDialogue> {
               ),
             ),
             CustomButton(
-              buttonText: 'Invest'.tr,
+              color: Colors.green,
+              buttonText: 'Pay & Invest'.tr,
               onPressed: () {
                 if (widget.packageId == null) {
                   showCustomSnackBar('No package id found!');

@@ -32,4 +32,14 @@ class InvestmentRepo {
     return await apiClient
         .getData('${AppConstants.myInvestmentUri}?offset=$offset&limit=10');
   }
+
+  Future<Response> getMyInvestmentPackage(int id) async {
+    return await apiClient.getData('${AppConstants.myInvestmentViewUri}/$id');
+  }
+
+  Future<Response> redeemInvestment(int id) async {
+    return await apiClient.postData(AppConstants.redeemInvestmentUri, {
+      'investment_id': id,
+    });
+  }
 }

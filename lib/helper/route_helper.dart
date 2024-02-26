@@ -89,6 +89,7 @@ import 'package:dokandar/view/screens/wallet/wallet_screen.dart';
 
 import '../view/screens/investment/investment_details_screen.dart';
 import '../view/screens/investment/investment_screen.dart';
+import '../view/screens/investment/my_investment_details_screen.dart';
 import '../view/screens/investment/my_investment_screen.dart';
 
 class RouteHelper {
@@ -143,6 +144,7 @@ class RouteHelper {
   static const String investment = '/investment';
   static const String myInvestment = '/my-investment';
   static const String investmentDetails = '/investment-details';
+  static const String myInvestmentDetails = '/my-investment-details';
   static const String referAndEarn = '/refer-and-earn';
   static const String messages = '/messages';
   static const String conversation = '/conversation';
@@ -362,6 +364,10 @@ class RouteHelper {
 
   static String getInvestmentDetailsRoute(int? packageId) {
     return '$investmentDetails?id=$packageId';
+  }
+
+  static String getMyInvestmentDetailsRoute(int? packageId) {
+    return '$myInvestmentDetails?id=$packageId';
   }
 
   static String getReferAndEarnRoute() => referAndEarn;
@@ -841,6 +847,14 @@ class RouteHelper {
           return getRoute(InvestmentDetailsScreen(
             packageId: int.parse(Get.parameters['id']!),
             investmentModel: null,
+          ));
+        }),
+    GetPage(
+        name: myInvestmentDetails,
+        page: () {
+          return getRoute(MyInvestmentDetailsScreen(
+            packageId: int.parse(Get.parameters['id']!),
+            myInvestmentModel: null,
           ));
         }),
     GetPage(

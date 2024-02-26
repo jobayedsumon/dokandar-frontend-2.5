@@ -1,4 +1,5 @@
 import 'package:dokandar/controller/investment_controller.dart';
+import 'package:dokandar/helper/date_converter.dart';
 import 'package:dokandar/helper/price_converter.dart';
 import 'package:dokandar/helper/responsive_helper.dart';
 import 'package:dokandar/util/dimensions.dart';
@@ -6,7 +7,6 @@ import 'package:dokandar/util/styles.dart';
 import 'package:dokandar/view/base/custom_app_bar.dart';
 import 'package:dokandar/view/base/custom_button.dart';
 import 'package:dokandar/view/base/menu_drawer.dart';
-import 'package:dokandar/view/screens/investment/widget/investment_payment_dialogue.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -16,19 +16,20 @@ import '../../../data/model/response/investment_model.dart';
 import '../../../data/repository/investment_repo.dart';
 import '../../base/custom_image.dart';
 
-class InvestmentDetailsScreen extends StatefulWidget {
-  final InvestmentModel? investmentModel;
+class MyInvestmentDetailsScreen extends StatefulWidget {
+  final MyInvestmentModel? myInvestmentModel;
   final int? packageId;
 
-  const InvestmentDetailsScreen(
-      {Key? key, required this.investmentModel, required this.packageId})
+  const MyInvestmentDetailsScreen(
+      {Key? key, required this.myInvestmentModel, required this.packageId})
       : super(key: key);
 
   @override
-  InvestmentDetailsScreenState createState() => InvestmentDetailsScreenState();
+  MyInvestmentDetailsScreenState createState() =>
+      MyInvestmentDetailsScreenState();
 }
 
-class InvestmentDetailsScreenState extends State<InvestmentDetailsScreen> {
+class MyInvestmentDetailsScreenState extends State<MyInvestmentDetailsScreen> {
   final ScrollController scrollController = ScrollController();
 
   @override
@@ -39,7 +40,7 @@ class InvestmentDetailsScreenState extends State<InvestmentDetailsScreen> {
             apiClient: Get.find<ApiClient>(),
             sharedPreferences: Get.find<SharedPreferences>())));
     Get.find<InvestmentController>()
-        .getInvestmentPackageDetails(widget.packageId ?? 0);
+        .getMyInvestmentPackageDetails(widget.packageId ?? 0);
   }
 
   @override
@@ -61,9 +62,9 @@ class InvestmentDetailsScreenState extends State<InvestmentDetailsScreen> {
       body: SafeArea(
         child:
             GetBuilder<InvestmentController>(builder: (investmentController) {
-          InvestmentModel? investmentModel =
-              investmentController.investmentModel;
-          return investmentModel != null
+          MyInvestmentModel? myInvestmentModel =
+              investmentController.myInvestmentDetailsModel;
+          return myInvestmentModel != null
               ? CustomScrollView(
                   controller: scrollController,
                   physics: const AlwaysScrollableScrollPhysics(),
@@ -91,7 +92,8 @@ class InvestmentDetailsScreenState extends State<InvestmentDetailsScreen> {
                                           fit: BoxFit.cover,
                                           height: 240,
                                           width: 590,
-                                          image: investmentModel.image!,
+                                          image:
+                                              myInvestmentModel.package!.image!,
                                         ),
                                       ),
                                     ),
@@ -132,7 +134,8 @@ class InvestmentDetailsScreenState extends State<InvestmentDetailsScreen> {
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Text(
-                                                  investmentModel.name!,
+                                                  myInvestmentModel
+                                                      .package!.name!,
                                                   style: robotoBold.copyWith(
                                                     fontSize: Dimensions
                                                         .fontSizeOverLarge,
@@ -143,8 +146,8 @@ class InvestmentDetailsScreenState extends State<InvestmentDetailsScreen> {
                                                         .paddingSizeSmall),
                                                 Text(
                                                   PriceConverter.convertPrice(
-                                                      investmentModel.amount!
-                                                          as double?),
+                                                      myInvestmentModel.package!
+                                                          .amount! as double?),
                                                   style: robotoRegular.copyWith(
                                                     fontSize: Dimensions
                                                         .fontSizeLarge,
@@ -161,27 +164,30 @@ class InvestmentDetailsScreenState extends State<InvestmentDetailsScreen> {
                                             ListTileWidget(
                                                 title: 'Return',
                                                 value:
-                                                    '${investmentModel.monthlyInterestRate!}%',
+                                                    '${myInvestmentModel.package!.monthlyInterestRate!}%',
                                                 icon: Icons.calculate),
                                             const SizedBox(
                                                 height: Dimensions
                                                     .paddingSizeSmall),
                                             ListTileWidget(
                                                 title: 'Project Type',
-                                                value: investmentModel.type ==
+                                                value: myInvestmentModel
+                                                            .package!.type ==
                                                         'flexible'
                                                     ? 'Flexible'
                                                     : 'Locked In',
                                                 icon: Icons
                                                     .settings_applications),
-                                            investmentModel.type == 'locked-in'
+                                            myInvestmentModel.package!.type ==
+                                                    'locked-in'
                                                 ? Padding(
                                                     padding:
                                                         const EdgeInsets.only(
                                                             top: 8.0),
                                                     child: ListTileWidget(
                                                         title: 'Duration',
-                                                        value: investmentModel
+                                                        value: myInvestmentModel
+                                                            .package!
                                                             .durationInMonths
                                                             .toString(),
                                                         icon: Icons
@@ -221,7 +227,8 @@ class InvestmentDetailsScreenState extends State<InvestmentDetailsScreen> {
                                           height: Dimensions.paddingSizeSmall),
                                       Text(
                                         PriceConverter.convertPrice(
-                                            investmentModel.dailyProfit!),
+                                            myInvestmentModel
+                                                .package!.dailyProfit!),
                                         style: const TextStyle(
                                           fontWeight: FontWeight.bold,
                                         ),
@@ -244,11 +251,36 @@ class InvestmentDetailsScreenState extends State<InvestmentDetailsScreen> {
                                           height: Dimensions.paddingSizeSmall),
                                       Text(
                                         PriceConverter.convertPrice(
-                                            investmentModel.monthlyProfit!),
+                                            myInvestmentModel
+                                                .package!.monthlyProfit!),
                                         style: const TextStyle(
                                           fontWeight: FontWeight.bold,
                                         ),
                                       ),
+                                    ],
+                                  ),
+                                  const SizedBox(width: 20),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'Total Profit Earned',
+                                        style: TextStyle(
+                                            fontSize:
+                                                Dimensions.fontSizeDefault,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      const SizedBox(
+                                          height: Dimensions.paddingSizeSmall),
+                                      Text(
+                                          PriceConverter.convertPrice(
+                                              myInvestmentModel.profitEarned!),
+                                          style: TextStyle(
+                                              fontSize:
+                                                  Dimensions.fontSizeDefault,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.green)),
                                     ],
                                   ),
                                 ],
@@ -256,6 +288,37 @@ class InvestmentDetailsScreenState extends State<InvestmentDetailsScreen> {
                             ),
                           ),
                           const SizedBox(height: 20),
+                          myInvestmentModel.redeemedAt != null
+                              ? SizedBox(
+                                  width: Dimensions.webMaxWidth,
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'Redeemed At',
+                                        style: TextStyle(
+                                            fontSize:
+                                                Dimensions.fontSizeDefault,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      const SizedBox(
+                                          height: Dimensions.paddingSizeSmall),
+                                      Text(
+                                          DateConverter
+                                              .dateTimeStringToDateTime(
+                                                  myInvestmentModel
+                                                      .redeemedAt!),
+                                          style: TextStyle(
+                                              fontSize:
+                                                  Dimensions.fontSizeDefault,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.red)),
+                                    ],
+                                  ),
+                                )
+                              : Container(),
+                          const SizedBox(height: Dimensions.paddingSizeLarge),
                           SizedBox(
                             width: Dimensions.webMaxWidth,
                             child: Column(
@@ -269,28 +332,58 @@ class InvestmentDetailsScreenState extends State<InvestmentDetailsScreen> {
                                 ),
                                 const SizedBox(
                                     height: Dimensions.paddingSizeSmall),
-                                Text(investmentModel.about!),
+                                Text(myInvestmentModel.package!.about!),
                                 const SizedBox(
                                     height: Dimensions.paddingSizeExtraLarge),
-                                CustomButton(
-                                  color: Colors.green,
-                                  buttonText: 'Invest Now',
-                                  width: 200,
-                                  onPressed: () {
-                                    Get.dialog(
-                                      Dialog(
-                                        backgroundColor: Colors.transparent,
-                                        child: SizedBox(
-                                          width: 500,
-                                          child: SingleChildScrollView(
-                                              child: InvestmentPaymentDialogue(
-                                                  packageId:
-                                                      investmentModel.id)),
-                                        ),
-                                      ),
-                                    );
-                                  },
-                                ),
+                                myInvestmentModel.redeemedAt == null &&
+                                        myInvestmentModel.package!.type ==
+                                            'flexible'
+                                    ? CustomButton(
+                                        buttonText: 'Redeem Now'.tr,
+                                        width: 200,
+                                        onPressed: () {
+                                          showDialog(
+                                            context: context,
+                                            builder: (BuildContext context) {
+                                              return AlertDialog(
+                                                title: const Text('Redeem Now'),
+                                                content: const Text(
+                                                    'Are you sure you want to redeem this investment?'),
+                                                actions: [
+                                                  Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceEvenly,
+                                                    children: <Widget>[
+                                                      CustomButton(
+                                                        color: Theme.of(context)
+                                                            .disabledColor,
+                                                        width: 50,
+                                                        buttonText: 'No',
+                                                        onPressed: () {
+                                                          Get.back();
+                                                        },
+                                                      ),
+                                                      CustomButton(
+                                                        width: 50,
+                                                        buttonText: 'Yes',
+                                                        onPressed: () {
+                                                          investmentController
+                                                              .redeemInvestment(
+                                                                  myInvestmentModel
+                                                                      .id!);
+                                                          Get.back();
+                                                        },
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ],
+                                              );
+                                            },
+                                          );
+                                        },
+                                      )
+                                    : Container(),
                                 const SizedBox(
                                     height: Dimensions.paddingSizeExtraLarge),
                               ],

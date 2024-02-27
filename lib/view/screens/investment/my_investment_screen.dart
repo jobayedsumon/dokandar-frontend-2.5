@@ -1,18 +1,18 @@
 import 'package:dokandar/controller/auth_controller.dart';
 import 'package:dokandar/controller/investment_controller.dart';
 import 'package:dokandar/data/model/response/investment_model.dart';
-import 'package:dokandar/helper/price_converter.dart';
 import 'package:dokandar/helper/responsive_helper.dart';
 import 'package:dokandar/util/dimensions.dart';
 import 'package:dokandar/util/styles.dart';
 import 'package:dokandar/view/base/custom_app_bar.dart';
 import 'package:dokandar/view/base/menu_drawer.dart';
-import 'package:dokandar/view/screens/investment/widget/investment_view.dart';
 import 'package:dokandar/view/screens/investment/widget/my_investment_view.dart';
+import 'package:dokandar/view/screens/investment/widget/my_withdrawal_list.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../data/repository/investment_repo.dart';
+import '../../../helper/price_converter.dart';
 
 class MyInvestmentScreen extends StatefulWidget {
   const MyInvestmentScreen({Key? key}) : super(key: key);
@@ -161,7 +161,7 @@ class MyInvestmentScreenState extends State<MyInvestmentScreen>
                     controller: _tabController,
                     children: const [
                       MyInvestmentView(),
-                      InvestmentView(type: 'flexible'),
+                      MyWithdrawalList(),
                     ],
                   )),
                 ])

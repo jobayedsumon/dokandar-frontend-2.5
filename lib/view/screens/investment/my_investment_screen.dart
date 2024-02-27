@@ -5,9 +5,11 @@ import 'package:dokandar/helper/responsive_helper.dart';
 import 'package:dokandar/util/dimensions.dart';
 import 'package:dokandar/util/styles.dart';
 import 'package:dokandar/view/base/custom_app_bar.dart';
+import 'package:dokandar/view/base/custom_button.dart';
 import 'package:dokandar/view/base/menu_drawer.dart';
 import 'package:dokandar/view/screens/investment/widget/my_investment_view.dart';
 import 'package:dokandar/view/screens/investment/widget/my_withdrawal_list.dart';
+import 'package:dokandar/view/screens/investment/widget/withdraw_dialogue.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -64,20 +66,20 @@ class MyInvestmentScreenState extends State<MyInvestmentScreen>
                         ? Theme.of(context).primaryColor.withOpacity(0.1)
                         : Colors.transparent,
                     child: Column(children: [
-                      ResponsiveHelper.isDesktop(context)
-                          ? Center(
-                              child: Padding(
-                              padding: const EdgeInsets.only(
-                                  top: Dimensions.paddingSizeSmall),
-                              child: Column(
-                                children: [
-                                  Text('My Investment',
-                                      style: robotoBold.copyWith(
-                                          fontSize: 24,
-                                          color:
-                                              Theme.of(context).primaryColor)),
-                                  const SizedBox(height: 10),
-                                  Container(
+                      Center(
+                          child: Padding(
+                        padding: const EdgeInsets.only(
+                            top: Dimensions.paddingSizeSmall),
+                        child: Column(
+                          children: [
+                            Text('My Investment',
+                                style: robotoBold.copyWith(
+                                    fontSize: 24,
+                                    color: Theme.of(context).primaryColor)),
+                            const SizedBox(height: 10),
+                            Column(
+                              children: [
+                                Container(
                                     padding: const EdgeInsets.all(10),
                                     decoration: BoxDecoration(
                                         color: Theme.of(context)
@@ -85,39 +87,70 @@ class MyInvestmentScreenState extends State<MyInvestmentScreen>
                                             .withOpacity(0.1),
                                         borderRadius:
                                             BorderRadius.circular(10)),
-                                    child: Column(
-                                      children: [
-                                        Text(
-                                            'Total Profit: ${PriceConverter.convertPrice(investmentWallet!.profit)}',
-                                            style: robotoBold.copyWith(
-                                                fontSize: 16,
-                                                color: Colors.green)),
-                                        const SizedBox(height: 5),
-                                        Text(
-                                            'Total Redeemed: ${PriceConverter.convertPrice(investmentWallet.redeemed)}',
-                                            style: robotoBold.copyWith(
-                                                fontSize: 16,
-                                                color: Colors.green)),
-                                        const SizedBox(height: 5),
-                                        Text(
-                                            'Total Withdrawal: ${PriceConverter.convertPrice(investmentWallet.withdrawal)}',
-                                            style: robotoBold.copyWith(
-                                                fontSize: 16,
-                                                color: Theme.of(context)
-                                                    .primaryColor)),
-                                        const SizedBox(height: 5),
-                                        Text(
-                                            'Current Balance: ${PriceConverter.convertPrice(investmentWallet.balance)}',
-                                            style: robotoBold.copyWith(
-                                                fontSize: 18,
-                                                color: Colors.green)),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ))
-                          : const SizedBox(),
+                                    child: investmentWallet != null
+                                        ? Column(
+                                            children: [
+                                              Text(
+                                                  'Total Profit: ${PriceConverter.convertPrice(investmentWallet!.profit)}',
+                                                  style: robotoBold.copyWith(
+                                                      fontSize: 16,
+                                                      color: Colors.green)),
+                                              const SizedBox(height: 5),
+                                              Text(
+                                                  'Total Redeemed: ${PriceConverter.convertPrice(investmentWallet.redeemed)}',
+                                                  style: robotoBold.copyWith(
+                                                      fontSize: 16,
+                                                      color: Colors.green)),
+                                              const SizedBox(height: 5),
+                                              Text(
+                                                  'Total Withdrawal: ${PriceConverter.convertPrice(investmentWallet.withdrawal)}',
+                                                  style: robotoBold.copyWith(
+                                                      fontSize: 16,
+                                                      color: Theme.of(context)
+                                                          .primaryColor)),
+                                              const SizedBox(height: 5),
+                                              Text(
+                                                  'Current Balance: ${PriceConverter.convertPrice(investmentWallet.balance)}',
+                                                  style: robotoBold.copyWith(
+                                                      fontSize: 18,
+                                                      color: Colors.green)),
+                                            ],
+                                          )
+                                        : const SizedBox()),
+                                //Send to wallet and withdraw buttons
+                              ],
+                            ),
+                            const SizedBox(height: 20),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                CustomButton(
+                                    width: ResponsiveHelper.isDesktop(context)
+                                        ? 200
+                                        : 150,
+                                    onPressed: () {},
+                                    fontSize: 16,
+                                    buttonText: 'Transfer to D-Wallet'),
+                                const SizedBox(width: 10),
+                                CustomButton(
+                                  buttonText: 'Withdraw Request',
+                                  fontSize: 16,
+                                  onPressed: () {
+                                    showDialog(
+                                        context: context,
+                                        builder: (context) {
+                                          return const WithdrawDialogue();
+                                        });
+                                  },
+                                  width: ResponsiveHelper.isDesktop(context)
+                                      ? 200
+                                      : 150,
+                                )
+                              ],
+                            )
+                          ],
+                        ),
+                      )),
                       Center(
                         child: SizedBox(
                           width: Dimensions.webMaxWidth,

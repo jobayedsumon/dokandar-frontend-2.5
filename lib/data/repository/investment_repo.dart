@@ -42,4 +42,8 @@ class InvestmentRepo {
       'investment_id': id,
     });
   }
+
+  Future<Response> sendWithdrawRequest(Map<String, dynamic> data) {
+    return apiClient.postData(AppConstants.withdrawRequestUri, data);
+  }
 }

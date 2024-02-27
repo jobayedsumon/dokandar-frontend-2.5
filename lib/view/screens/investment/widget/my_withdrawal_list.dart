@@ -146,17 +146,11 @@ class MyWithdrawalList extends StatelessWidget {
                                                             style: robotoBold),
                                                         const SizedBox(
                                                             height: 5),
-                                                        [
-                                                          'bkash',
-                                                          'nagad'
-                                                        ].contains(withdrawalModel
-                                                                .methodDetails!
-                                                                .methodType)
-                                                            ? Text(
-                                                                'Phone Number: ${withdrawalModel.methodDetails!.mobileNumber}',
-                                                                style:
-                                                                    robotoBold)
-                                                            : Column(
+                                                        withdrawalModel
+                                                                    .methodDetails!
+                                                                    .methodType ==
+                                                                'bank'
+                                                            ? Column(
                                                                 crossAxisAlignment:
                                                                     CrossAxisAlignment
                                                                         .start,
@@ -195,6 +189,10 @@ class MyWithdrawalList extends StatelessWidget {
                                                                           robotoBold),
                                                                 ],
                                                               )
+                                                            : Text(
+                                                                'Phone Number: ${withdrawalModel.methodDetails!.mobileNumber}',
+                                                                style:
+                                                                    robotoBold)
                                                       ],
                                                     ),
                                                     actions: [

@@ -1,5 +1,6 @@
 import 'package:dokandar/data/api/api_checker.dart';
 import 'package:dokandar/helper/route_helper.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:universal_html/html.dart' as html;
 
@@ -8,6 +9,8 @@ import '../data/repository/investment_repo.dart';
 
 class InvestmentController extends GetxController implements GetxService {
   final InvestmentRepo investmentRepo;
+
+  final List<String> withdrawalMethodList = ['bkash', 'nagad', 'bank'];
 
   InvestmentController({required this.investmentRepo});
 
@@ -19,6 +22,7 @@ class InvestmentController extends GetxController implements GetxService {
   InvestmentWalletModel? _investmentWalletModel;
   InvestmentModel? _investmentModel;
   String? _digitalPaymentName;
+  String? _withdrawalMethod = 'bkash';
 
   PaginatedInvestmentModel? get flexibleInvestmentModel =>
       _flexibleInvestmentModel;
@@ -37,6 +41,21 @@ class InvestmentController extends GetxController implements GetxService {
   InvestmentModel? get investmentModel => _investmentModel;
 
   String? get digitalPaymentName => _digitalPaymentName;
+
+  String? get withdrawalMethod => _withdrawalMethod;
+
+  TextEditingController withdrawalAmountController = TextEditingController();
+  TextEditingController withdrawalMobileNumberController =
+      TextEditingController();
+  TextEditingController withdrawalAccountNumberController =
+      TextEditingController();
+  TextEditingController withdrawalAccountNameController =
+      TextEditingController();
+  TextEditingController withdrawalBankNameController = TextEditingController();
+  TextEditingController withdrawalBranchNameController =
+      TextEditingController();
+  TextEditingController withdrawalRoutingNumberController =
+      TextEditingController();
 
   Future<void> getFlexiblePackages(int offset, {bool isUpdate = false}) async {
     if (offset == 1) {
@@ -139,6 +158,13 @@ class InvestmentController extends GetxController implements GetxService {
     }
   }
 
+  void changeWithdrawalMethod(String name, {bool isUpdate = true}) {
+    _withdrawalMethod = name;
+    if (isUpdate) {
+      update();
+    }
+  }
+
   Future<void> getMyInvestment(int offset, {bool isUpdate = false}) async {
     if (offset == 1) {
       _myInvestmentModel = null;
@@ -181,7 +207,6 @@ class InvestmentController extends GetxController implements GetxService {
     }
   }
 
-  //redeemInvestment
   Future<void> redeemInvestment(int investmentId) async {
     Response response = await investmentRepo.redeemInvestment(investmentId);
     if (response.statusCode == 200) {
@@ -190,6 +215,39 @@ class InvestmentController extends GetxController implements GetxService {
           snackPosition: SnackPosition.BOTTOM);
       myInvestmentDetailsModel!.redeemedAt = response.body['redeemed_at'];
       update();
+    } else {
+      ApiChecker.checkApi(response);
+    }
+  }
+
+  //send withdraw request
+  Future<void> sendWithdrawRequest() async {
+    Map<String, dynamic> data = {
+      'withdrawal_amount': withdrawalAmountController.text,
+      'method_type': withdrawalMethod,
+    };
+    if (withdrawalMethod == 'bank') {
+      data['account_number'] = withdrawalAccountNumberController.text;
+      data['account_name'] = withdrawalAccountNameController.text;
+      data['bank_name'] = withdrawalBankNameController.text;
+      data['branch_name'] = withdrawalBranchNameController.text;
+      data['routing_number'] = withdrawalRoutingNumberController.text;
+    } else {
+      data['mobile_number'] = withdrawalMobileNumberController.text;
+    }
+    Response response = await investmentRepo.sendWithdrawRequest(data);
+    if (response.statusCode == 200) {
+      Get.back();
+      Get.snackbar('Success', 'Withdrawal request sent successfully',
+          snackPosition: SnackPosition.BOTTOM);
+      withdrawalAmountController.clear();
+      withdrawalMobileNumberController.clear();
+      withdrawalAccountNumberController.clear();
+      withdrawalAccountNameController.clear();
+      withdrawalBankNameController.clear();
+      withdrawalBranchNameController.clear();
+      withdrawalRoutingNumberController.clear();
+      getMyInvestment(1);
     } else {
       ApiChecker.checkApi(response);
     }

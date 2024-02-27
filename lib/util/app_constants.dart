@@ -74,6 +74,8 @@ class AppConstants {
       '/api/v1/customer/investment/redeem';
   static const String investmentInvestUri =
       '/api/v1/customer/investment/invest';
+  static const String withdrawRequestUri =
+      '/api/v1/customer/investment/withdraw';
   static const String myInvestmentUri =
       '/api/v1/customer/investment/my-investments';
   static const String searchUri = '/api/v1/';

@@ -275,7 +275,7 @@ class InvestmentView extends StatelessWidget {
                                                                               0.1),
                                                                     ),
                                                                     child: Text(
-                                                                        '${PriceConverter.convertPrice(paginatedInvestmentModel.packages![index].amount as double?)}',
+                                                                        PriceConverter.convertPrice(paginatedInvestmentModel.packages![index].amount as double?),
                                                                         style: robotoMedium
                                                                             .copyWith(
                                                                           fontSize:
@@ -370,7 +370,7 @@ class InvestmentView extends StatelessWidget {
                                                                           0.1),
                                                                 ),
                                                                 child: Text(
-                                                                    '${PriceConverter.convertPrice(paginatedInvestmentModel.packages![index].amount as double?)}',
+                                                                    PriceConverter.convertPrice(paginatedInvestmentModel.packages![index].amount as double?),
                                                                     style: robotoMedium
                                                                         .copyWith(
                                                                       fontSize:

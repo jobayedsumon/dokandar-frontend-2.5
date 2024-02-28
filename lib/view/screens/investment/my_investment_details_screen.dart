@@ -104,288 +104,321 @@ class MyInvestmentDetailsScreenState extends State<MyInvestmentDetailsScreen> {
                               ),
                             ),
                           ),
-                          Container(
-                            color: Colors.transparent,
-                            child: Column(children: [
-                              Center(
-                                child: SizedBox(
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              children: [
+                                Container(
+                                  color: Colors.transparent,
+                                  child: Column(children: [
+                                    Center(
+                                      child: SizedBox(
+                                        width: Dimensions.webMaxWidth,
+                                        child: Align(
+                                          alignment: ResponsiveHelper.isDesktop(
+                                                  context)
+                                              ? Alignment.centerLeft
+                                              : Alignment.center,
+                                          child: Container(
+                                            width: ResponsiveHelper.isDesktop(
+                                                    context)
+                                                ? 300
+                                                : Dimensions.webMaxWidth,
+                                            color: ResponsiveHelper.isDesktop(
+                                                    context)
+                                                ? Colors.transparent
+                                                : Theme.of(context).cardColor,
+                                            child: Padding(
+                                              padding: const EdgeInsets.only(
+                                                  top: Dimensions
+                                                      .paddingSizeLarge),
+                                              child: Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    children: [
+                                                      Text(
+                                                        myInvestmentModel
+                                                            .package!.name!,
+                                                        style:
+                                                            robotoBold.copyWith(
+                                                          fontSize: Dimensions
+                                                              .fontSizeOverLarge,
+                                                        ),
+                                                      ),
+                                                      const SizedBox(
+                                                          height: Dimensions
+                                                              .paddingSizeSmall),
+                                                      Text(
+                                                        PriceConverter
+                                                            .convertPrice(
+                                                                myInvestmentModel
+                                                                        .package!
+                                                                        .amount!
+                                                                    as double?),
+                                                        style: robotoRegular
+                                                            .copyWith(
+                                                          fontSize: Dimensions
+                                                              .fontSizeLarge,
+                                                          color:
+                                                              Theme.of(context)
+                                                                  .primaryColor,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  const SizedBox(
+                                                      height: Dimensions
+                                                          .paddingSizeSmall),
+                                                  ListTileWidget(
+                                                      title: 'Return',
+                                                      value:
+                                                          '${myInvestmentModel.package!.monthlyInterestRate!}%',
+                                                      icon: Icons.calculate),
+                                                  const SizedBox(
+                                                      height: Dimensions
+                                                          .paddingSizeSmall),
+                                                  ListTileWidget(
+                                                      title: 'Project Type',
+                                                      value: myInvestmentModel
+                                                                  .package!
+                                                                  .type ==
+                                                              'flexible'
+                                                          ? 'Flexible'
+                                                          : 'Locked In',
+                                                      icon: Icons
+                                                          .settings_applications),
+                                                  myInvestmentModel
+                                                              .package!.type ==
+                                                          'locked-in'
+                                                      ? Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .only(
+                                                                  top: 8.0),
+                                                          child: ListTileWidget(
+                                                              title: 'Duration',
+                                                              value: myInvestmentModel
+                                                                  .package!
+                                                                  .durationInMonths
+                                                                  .toString(),
+                                                              icon: Icons
+                                                                  .calendar_today),
+                                                        )
+                                                      : Container(),
+                                                  const SizedBox(
+                                                      height: Dimensions
+                                                          .paddingSizeLarge),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ]),
+                                ),
+                                SizedBox(
                                   width: Dimensions.webMaxWidth,
-                                  child: Align(
-                                    alignment:
-                                        ResponsiveHelper.isDesktop(context)
-                                            ? Alignment.centerLeft
-                                            : Alignment.center,
-                                    child: Container(
-                                      width: ResponsiveHelper.isDesktop(context)
-                                          ? 300
-                                          : Dimensions.webMaxWidth,
-                                      color: ResponsiveHelper.isDesktop(context)
-                                          ? Colors.transparent
-                                          : Theme.of(context).cardColor,
-                                      child: Padding(
-                                        padding: const EdgeInsets.only(
-                                            top: Dimensions.paddingSizeLarge),
-                                        child: Column(
+                                  child: SizedBox(
+                                    width: double.infinity,
+                                    child: Row(
+                                      children: [
+                                        Column(
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: [
-                                            Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  myInvestmentModel
-                                                      .package!.name!,
-                                                  style: robotoBold.copyWith(
-                                                    fontSize: Dimensions
-                                                        .fontSizeOverLarge,
-                                                  ),
-                                                ),
-                                                const SizedBox(
-                                                    height: Dimensions
-                                                        .paddingSizeSmall),
-                                                Text(
-                                                  PriceConverter.convertPrice(
-                                                      myInvestmentModel.package!
-                                                          .amount! as double?),
-                                                  style: robotoRegular.copyWith(
-                                                    fontSize: Dimensions
-                                                        .fontSizeLarge,
-                                                    color: Theme.of(context)
-                                                        .primaryColor,
-                                                    fontWeight: FontWeight.bold,
-                                                  ),
-                                                ),
-                                              ],
+                                            Text(
+                                              'Daily Profit',
+                                              style: TextStyle(
+                                                  fontSize: Dimensions
+                                                      .fontSizeDefault,
+                                                  fontWeight: FontWeight.bold),
                                             ),
                                             const SizedBox(
                                                 height: Dimensions
                                                     .paddingSizeSmall),
-                                            ListTileWidget(
-                                                title: 'Return',
-                                                value:
-                                                    '${myInvestmentModel.package!.monthlyInterestRate!}%',
-                                                icon: Icons.calculate),
+                                            Text(
+                                              PriceConverter.convertPrice(
+                                                  myInvestmentModel
+                                                      .package!.dailyProfit!),
+                                              style: const TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        const SizedBox(width: 20),
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              'Monthly Profit',
+                                              style: TextStyle(
+                                                  fontSize: Dimensions
+                                                      .fontSizeDefault,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
                                             const SizedBox(
                                                 height: Dimensions
                                                     .paddingSizeSmall),
-                                            ListTileWidget(
-                                                title: 'Project Type',
-                                                value: myInvestmentModel
-                                                            .package!.type ==
-                                                        'flexible'
-                                                    ? 'Flexible'
-                                                    : 'Locked In',
-                                                icon: Icons
-                                                    .settings_applications),
-                                            myInvestmentModel.package!.type ==
-                                                    'locked-in'
-                                                ? Padding(
-                                                    padding:
-                                                        const EdgeInsets.only(
-                                                            top: 8.0),
-                                                    child: ListTileWidget(
-                                                        title: 'Duration',
-                                                        value: myInvestmentModel
-                                                            .package!
-                                                            .durationInMonths
-                                                            .toString(),
-                                                        icon: Icons
-                                                            .calendar_today),
-                                                  )
-                                                : Container(),
-                                            const SizedBox(
-                                                height: Dimensions
-                                                    .paddingSizeLarge),
+                                            Text(
+                                              PriceConverter.convertPrice(
+                                                  myInvestmentModel
+                                                      .package!.monthlyProfit!),
+                                              style: const TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
                                           ],
                                         ),
-                                      ),
+                                        const SizedBox(width: 20),
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              'Total Profit Earned',
+                                              style: TextStyle(
+                                                  fontSize: Dimensions
+                                                      .fontSizeDefault,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            const SizedBox(
+                                                height: Dimensions
+                                                    .paddingSizeSmall),
+                                            Text(
+                                                PriceConverter.convertPrice(
+                                                    myInvestmentModel
+                                                        .profitEarned!),
+                                                style: TextStyle(
+                                                    fontSize: Dimensions
+                                                        .fontSizeDefault,
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Colors.green)),
+                                          ],
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
-                              ),
-                            ]),
-                          ),
-                          SizedBox(
-                            width: Dimensions.webMaxWidth,
-                            child: Container(
-                              width: double.infinity,
-                              child: Row(
-                                children: [
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Daily Profit',
-                                        style: TextStyle(
-                                            fontSize:
-                                                Dimensions.fontSizeDefault,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      const SizedBox(
-                                          height: Dimensions.paddingSizeSmall),
-                                      Text(
-                                        PriceConverter.convertPrice(
-                                            myInvestmentModel
-                                                .package!.dailyProfit!),
-                                        style: const TextStyle(
-                                          fontWeight: FontWeight.bold,
+                                const SizedBox(height: 20),
+                                myInvestmentModel.redeemedAt != null
+                                    ? SizedBox(
+                                        width: Dimensions.webMaxWidth,
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              'Redeemed At',
+                                              style: TextStyle(
+                                                  fontSize: Dimensions
+                                                      .fontSizeDefault,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            const SizedBox(
+                                                height: Dimensions
+                                                    .paddingSizeSmall),
+                                            Text(
+                                                DateConverter
+                                                    .dateTimeStringToDateTime(
+                                                        myInvestmentModel
+                                                            .redeemedAt!),
+                                                style: TextStyle(
+                                                    fontSize: Dimensions
+                                                        .fontSizeDefault,
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Colors.red)),
+                                          ],
                                         ),
-                                      ),
-                                    ],
-                                  ),
-                                  const SizedBox(width: 20),
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Monthly Profit',
-                                        style: TextStyle(
-                                            fontSize:
-                                                Dimensions.fontSizeDefault,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      const SizedBox(
-                                          height: Dimensions.paddingSizeSmall),
-                                      Text(
-                                        PriceConverter.convertPrice(
-                                            myInvestmentModel
-                                                .package!.monthlyProfit!),
-                                        style: const TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  const SizedBox(width: 20),
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Total Profit Earned',
-                                        style: TextStyle(
-                                            fontSize:
-                                                Dimensions.fontSizeDefault,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      const SizedBox(
-                                          height: Dimensions.paddingSizeSmall),
-                                      Text(
-                                          PriceConverter.convertPrice(
-                                              myInvestmentModel.profitEarned!),
-                                          style: TextStyle(
-                                              fontSize:
-                                                  Dimensions.fontSizeDefault,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.green)),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          const SizedBox(height: 20),
-                          myInvestmentModel.redeemedAt != null
-                              ? SizedBox(
+                                      )
+                                    : Container(),
+                                const SizedBox(
+                                    height: Dimensions.paddingSizeLarge),
+                                SizedBox(
                                   width: Dimensions.webMaxWidth,
                                   child: Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        'Redeemed At',
+                                        'About This Project',
                                         style: TextStyle(
-                                            fontSize:
-                                                Dimensions.fontSizeDefault,
+                                            fontSize: Dimensions.fontSizeLarge,
                                             fontWeight: FontWeight.bold),
                                       ),
                                       const SizedBox(
                                           height: Dimensions.paddingSizeSmall),
-                                      Text(
-                                          DateConverter
-                                              .dateTimeStringToDateTime(
-                                                  myInvestmentModel
-                                                      .redeemedAt!),
-                                          style: TextStyle(
-                                              fontSize:
-                                                  Dimensions.fontSizeDefault,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.red)),
+                                      Text(myInvestmentModel.package!.about!),
+                                      const SizedBox(
+                                          height:
+                                              Dimensions.paddingSizeExtraLarge),
+                                      myInvestmentModel.redeemedAt == null &&
+                                              myInvestmentModel.package!.type ==
+                                                  'flexible'
+                                          ? CustomButton(
+                                              buttonText: 'Redeem Now'.tr,
+                                              width: 200,
+                                              onPressed: () {
+                                                showDialog(
+                                                  context: context,
+                                                  builder:
+                                                      (BuildContext context) {
+                                                    return AlertDialog(
+                                                      title: const Text(
+                                                          'Redeem Now'),
+                                                      content: const Text(
+                                                          'Are you sure you want to redeem this investment?'),
+                                                      actions: [
+                                                        Row(
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .spaceEvenly,
+                                                          children: <Widget>[
+                                                            CustomButton(
+                                                              color: Theme.of(
+                                                                      context)
+                                                                  .disabledColor,
+                                                              width: 50,
+                                                              buttonText: 'No',
+                                                              onPressed: () {
+                                                                Get.back();
+                                                              },
+                                                            ),
+                                                            CustomButton(
+                                                              width: 50,
+                                                              buttonText: 'Yes',
+                                                              onPressed: () {
+                                                                investmentController
+                                                                    .redeemInvestment(
+                                                                        myInvestmentModel
+                                                                            .id!);
+                                                                Get.back();
+                                                              },
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ],
+                                                    );
+                                                  },
+                                                );
+                                              },
+                                            )
+                                          : Container(),
+                                      const SizedBox(
+                                          height:
+                                              Dimensions.paddingSizeExtraLarge),
                                     ],
                                   ),
-                                )
-                              : Container(),
-                          const SizedBox(height: Dimensions.paddingSizeLarge),
-                          SizedBox(
-                            width: Dimensions.webMaxWidth,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'About This Project',
-                                  style: TextStyle(
-                                      fontSize: Dimensions.fontSizeLarge,
-                                      fontWeight: FontWeight.bold),
                                 ),
-                                const SizedBox(
-                                    height: Dimensions.paddingSizeSmall),
-                                Text(myInvestmentModel.package!.about!),
-                                const SizedBox(
-                                    height: Dimensions.paddingSizeExtraLarge),
-                                myInvestmentModel.redeemedAt == null &&
-                                        myInvestmentModel.package!.type ==
-                                            'flexible'
-                                    ? CustomButton(
-                                        buttonText: 'Redeem Now'.tr,
-                                        width: 200,
-                                        onPressed: () {
-                                          showDialog(
-                                            context: context,
-                                            builder: (BuildContext context) {
-                                              return AlertDialog(
-                                                title: const Text('Redeem Now'),
-                                                content: const Text(
-                                                    'Are you sure you want to redeem this investment?'),
-                                                actions: [
-                                                  Row(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .spaceEvenly,
-                                                    children: <Widget>[
-                                                      CustomButton(
-                                                        color: Theme.of(context)
-                                                            .disabledColor,
-                                                        width: 50,
-                                                        buttonText: 'No',
-                                                        onPressed: () {
-                                                          Get.back();
-                                                        },
-                                                      ),
-                                                      CustomButton(
-                                                        width: 50,
-                                                        buttonText: 'Yes',
-                                                        onPressed: () {
-                                                          investmentController
-                                                              .redeemInvestment(
-                                                                  myInvestmentModel
-                                                                      .id!);
-                                                          Get.back();
-                                                        },
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ],
-                                              );
-                                            },
-                                          );
-                                        },
-                                      )
-                                    : Container(),
-                                const SizedBox(
-                                    height: Dimensions.paddingSizeExtraLarge),
                               ],
                             ),
                           )

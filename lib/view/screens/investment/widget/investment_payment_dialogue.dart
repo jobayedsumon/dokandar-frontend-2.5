@@ -53,8 +53,8 @@ class _InvestmentPaymentDialogueState extends State<InvestmentPaymentDialogue> {
             borderRadius: BorderRadius.circular(Dimensions.radiusDefault),
             color: Theme.of(context).cardColor,
           ),
-          width: context.width * 0.6,
-          height: context.height * 0.6,
+          width: context.width * 0.8,
+          height: context.height * 0.5,
           padding: const EdgeInsets.all(Dimensions.paddingSizeLarge),
           child: Column(children: [
             Flexible(

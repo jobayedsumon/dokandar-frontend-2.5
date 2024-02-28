@@ -57,6 +57,8 @@ class InvestmentController extends GetxController implements GetxService {
   TextEditingController withdrawalRoutingNumberController =
       TextEditingController();
 
+  TextEditingController transferAmountController = TextEditingController();
+
   Future<void> getFlexiblePackages(int offset, {bool isUpdate = false}) async {
     if (offset == 1) {
       _flexibleInvestmentModel = null;
@@ -220,7 +222,6 @@ class InvestmentController extends GetxController implements GetxService {
     }
   }
 
-  //send withdraw request
   Future<void> sendWithdrawRequest() async {
     Map<String, dynamic> data = {
       'withdrawal_amount': withdrawalAmountController.text,
@@ -247,6 +248,22 @@ class InvestmentController extends GetxController implements GetxService {
       withdrawalBankNameController.clear();
       withdrawalBranchNameController.clear();
       withdrawalRoutingNumberController.clear();
+      getMyInvestment(1);
+    } else {
+      ApiChecker.checkApi(response);
+    }
+  }
+
+  Future<void> transferToDWallet() async {
+    Map<String, dynamic> data = {
+      'amount': transferAmountController.text,
+    };
+    Response response = await investmentRepo.transferToDWallet(data);
+    if (response.statusCode == 200) {
+      Get.back();
+      Get.snackbar('Success', 'Transferred successfully',
+          snackPosition: SnackPosition.BOTTOM);
+      transferAmountController.clear();
       getMyInvestment(1);
     } else {
       ApiChecker.checkApi(response);

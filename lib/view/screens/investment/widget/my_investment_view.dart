@@ -391,7 +391,7 @@ class MyInvestmentView extends StatelessWidget {
                                                                           0.1),
                                                                 ),
                                                                 child: Text(
-                                                                    '${PriceConverter.convertPrice(paginatedMyInvestmentModel.investments![index].package!.amount as double?)}',
+                                                                    PriceConverter.convertPrice(paginatedMyInvestmentModel.investments![index].package!.amount as double?),
                                                                     style: robotoMedium
                                                                         .copyWith(
                                                                       fontSize:

@@ -91,7 +91,7 @@ class MyInvestmentScreenState extends State<MyInvestmentScreen>
                                         ? Column(
                                             children: [
                                               Text(
-                                                  'Total Profit: ${PriceConverter.convertPrice(investmentWallet!.profit)}',
+                                                  'Total Profit: ${PriceConverter.convertPrice(investmentWallet.profit)}',
                                                   style: robotoBold.copyWith(
                                                       fontSize: 16,
                                                       color: Colors.green)),
@@ -128,7 +128,159 @@ class MyInvestmentScreenState extends State<MyInvestmentScreen>
                                     width: ResponsiveHelper.isDesktop(context)
                                         ? 200
                                         : 150,
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      showDialog(
+                                          context: context,
+                                          builder: (context) {
+                                            return Column(
+                                                mainAxisSize: MainAxisSize.min,
+                                                children: [
+                                                  Align(
+                                                    alignment:
+                                                        Alignment.topRight,
+                                                    child: InkWell(
+                                                      onTap: () {
+                                                        Get.back();
+                                                      },
+                                                      child: Container(
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          shape:
+                                                              BoxShape.circle,
+                                                          color: Theme.of(
+                                                                  context)
+                                                              .cardColor
+                                                              .withOpacity(0.5),
+                                                        ),
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .all(3),
+                                                        child: const Icon(
+                                                            Icons.clear),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  const SizedBox(
+                                                      height: Dimensions
+                                                          .paddingSizeSmall),
+                                                  GetBuilder<
+                                                          InvestmentController>(
+                                                      builder:
+                                                          (investmentController) {
+                                                    return Container(
+                                                      decoration: BoxDecoration(
+                                                        borderRadius: BorderRadius
+                                                            .circular(Dimensions
+                                                                .radiusDefault),
+                                                        color: Theme.of(context)
+                                                            .cardColor,
+                                                      ),
+                                                      width: ResponsiveHelper
+                                                              .isDesktop(
+                                                                  context)
+                                                          ? context.width * 0.3
+                                                          : context.width * 0.8,
+                                                      height: ResponsiveHelper
+                                                              .isDesktop(
+                                                                  context)
+                                                          ? context.height * 0.5
+                                                          : context.height *
+                                                              0.5,
+                                                      padding: const EdgeInsets
+                                                          .all(Dimensions
+                                                              .paddingSizeLarge),
+                                                      child: Column(children: [
+                                                        Flexible(
+                                                          flex: 1,
+                                                          child:
+                                                              SingleChildScrollView(
+                                                            child: Column(
+                                                                crossAxisAlignment:
+                                                                    CrossAxisAlignment
+                                                                        .start,
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .min,
+                                                                children: [
+                                                                  const SizedBox(
+                                                                      height: Dimensions
+                                                                          .paddingSizeLarge),
+                                                                  Center(
+                                                                    child: Text(
+                                                                        'Transfer to D-Wallet'
+                                                                            .tr,
+                                                                        style: robotoBold.copyWith(
+                                                                            fontSize:
+                                                                                22,
+                                                                            color:
+                                                                                Theme.of(context).primaryColor)),
+                                                                  ),
+                                                                  const SizedBox(
+                                                                      height: Dimensions
+                                                                          .paddingSizeSmall),
+                                                                  Text(
+                                                                      'You can transfer your investment available balance to your D-Wallet'
+                                                                          .tr,
+                                                                      style: robotoRegular.copyWith(
+                                                                          fontSize: Dimensions
+                                                                              .fontSizeSmall),
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .center),
+                                                                  const SizedBox(
+                                                                      height: Dimensions
+                                                                          .paddingSizeLarge),
+                                                                  TextFormField(
+                                                                    controller:
+                                                                        investmentController
+                                                                            .transferAmountController,
+                                                                    keyboardType:
+                                                                        TextInputType
+                                                                            .number,
+                                                                    decoration:
+                                                                        InputDecoration(
+                                                                      labelText:
+                                                                          'Amount'
+                                                                              .tr,
+                                                                      hintText:
+                                                                          'Enter amount'
+                                                                              .tr,
+                                                                    ),
+                                                                  ),
+                                                                ]),
+                                                          ),
+                                                        ),
+                                                        const SizedBox(
+                                                            height: Dimensions
+                                                                .paddingSizeLarge),
+                                                        CustomButton(
+                                                          width: 200,
+                                                          buttonText:
+                                                              'Transfer'.tr,
+                                                          onPressed: () {
+                                                            if (investmentController
+                                                                .transferAmountController
+                                                                .text
+                                                                .isEmpty) {
+                                                              Get.snackbar(
+                                                                  'Error'.tr,
+                                                                  'Enter transfer amount'
+                                                                      .tr,
+                                                                  snackPosition:
+                                                                      SnackPosition
+                                                                          .BOTTOM);
+                                                              return;
+                                                            }
+                                                            investmentController
+                                                                .transferToDWallet();
+                                                          },
+                                                        ),
+                                                      ]),
+                                                    );
+                                                  })
+                                                ]);
+                                          });
+                                    },
                                     fontSize: 16,
                                     buttonText: 'Transfer to D-Wallet'),
                                 const SizedBox(width: 10),

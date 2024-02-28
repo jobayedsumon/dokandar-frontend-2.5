@@ -50,10 +50,10 @@ class _WithdrawDialogueState extends State<WithdrawDialogue> {
           ),
           width: ResponsiveHelper.isDesktop(context)
               ? context.width * 0.4
-              : context.width,
+              : context.width * 0.8,
           height: ResponsiveHelper.isDesktop(context)
               ? context.height * 0.8
-              : context.height,
+              : context.height * 0.8,
           padding: const EdgeInsets.all(Dimensions.paddingSizeLarge),
           child: Column(children: [
             Flexible(

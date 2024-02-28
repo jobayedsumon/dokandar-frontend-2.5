@@ -46,4 +46,8 @@ class InvestmentRepo {
   Future<Response> sendWithdrawRequest(Map<String, dynamic> data) {
     return apiClient.postData(AppConstants.withdrawRequestUri, data);
   }
+
+  Future<Response> transferToDWallet(Map<String, dynamic> data) {
+    return apiClient.postData(AppConstants.transferToWalletUri, data);
+  }
 }

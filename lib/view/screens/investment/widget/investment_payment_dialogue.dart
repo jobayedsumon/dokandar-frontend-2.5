@@ -77,11 +77,11 @@ class _InvestmentPaymentDialogueState extends State<InvestmentPaymentDialogue> {
                         style: robotoBold.copyWith(
                             fontSize: Dimensions.fontSizeLarge)),
                     const SizedBox(width: Dimensions.paddingSizeExtraSmall),
-                    Expanded(
-                        child: Text('faster_and_secure_way_to_pay_bill'.tr,
-                            style: robotoRegular.copyWith(
-                                fontSize: Dimensions.fontSizeSmall,
-                                color: Theme.of(context).hintColor))),
+                    // Expanded(
+                    //     child: Text('faster_and_secure_way_to_pay_bill'.tr,
+                    //         style: robotoRegular.copyWith(
+                    //             fontSize: Dimensions.fontSizeSmall,
+                    //             color: Theme.of(context).hintColor))),
                   ]),
                   const SizedBox(height: Dimensions.paddingSizeSmall),
                   Get.find<SplashController>()
@@ -148,9 +148,10 @@ class _InvestmentPaymentDialogueState extends State<InvestmentPaymentDialogue> {
                                   Expanded(
                                     child: Text(
                                       Get.find<SplashController>()
-                                          .configModel!
-                                          .activePaymentMethodList![index]
-                                          .getWayTitle!,
+                                              .configModel!
+                                              .activePaymentMethodList![index]
+                                              .getWayTitle ??
+                                          '',
                                       style: robotoMedium.copyWith(
                                           fontSize: Dimensions.fontSizeDefault),
                                       overflow: TextOverflow.ellipsis,

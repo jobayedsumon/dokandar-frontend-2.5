@@ -110,6 +110,13 @@ class MyInvestmentScreenState extends State<MyInvestmentScreen>
                                                           .primaryColor)),
                                               const SizedBox(height: 5),
                                               Text(
+                                                  'Total Transferred: ${PriceConverter.convertPrice(investmentWallet.transfer)}',
+                                                  style: robotoBold.copyWith(
+                                                      fontSize: 16,
+                                                      color: Theme.of(context)
+                                                          .primaryColor)),
+                                              const SizedBox(height: 5),
+                                              Text(
                                                   'Current Balance: ${PriceConverter.convertPrice(investmentWallet.balance)}',
                                                   style: robotoBold.copyWith(
                                                       fontSize: 18,
@@ -183,9 +190,9 @@ class MyInvestmentScreenState extends State<MyInvestmentScreen>
                                                       height: ResponsiveHelper
                                                               .isDesktop(
                                                                   context)
-                                                          ? context.height * 0.5
+                                                          ? context.height * 0.4
                                                           : context.height *
-                                                              0.5,
+                                                              0.4,
                                                       padding: const EdgeInsets
                                                           .all(Dimensions
                                                               .paddingSizeLarge),

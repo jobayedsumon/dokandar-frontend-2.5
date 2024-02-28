@@ -357,7 +357,8 @@ class MyInvestmentDetailsScreenState extends State<MyInvestmentDetailsScreen> {
                                       ),
                                       const SizedBox(
                                           height: Dimensions.paddingSizeSmall),
-                                      Text(myInvestmentModel.package!.about!),
+                                      Text(myInvestmentModel.package!.about ??
+                                          ''),
                                       const SizedBox(
                                           height:
                                               Dimensions.paddingSizeExtraLarge),

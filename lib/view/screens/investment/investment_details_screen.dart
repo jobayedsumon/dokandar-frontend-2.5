@@ -290,7 +290,7 @@ class InvestmentDetailsScreenState extends State<InvestmentDetailsScreen> {
                                       ),
                                       const SizedBox(
                                           height: Dimensions.paddingSizeSmall),
-                                      Text(investmentModel.about!),
+                                      Text(investmentModel.about ?? ''),
                                       const SizedBox(
                                           height:
                                               Dimensions.paddingSizeExtraLarge),

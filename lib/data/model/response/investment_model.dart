@@ -190,12 +190,14 @@ class InvestmentWalletModel {
   double? profit;
   double? redeemed;
   double? withdrawal;
+  double? transfer;
   double? balance;
 
   InvestmentWalletModel({
     this.profit,
     this.redeemed,
     this.withdrawal,
+    this.transfer,
     this.balance,
   });
 
@@ -203,6 +205,7 @@ class InvestmentWalletModel {
     profit = json['profit'];
     redeemed = json['redeemed'];
     withdrawal = json['withdrawal'];
+    transfer = json['transfer'];
     balance = json['balance'];
   }
 
@@ -211,6 +214,7 @@ class InvestmentWalletModel {
     data['profit'] = profit;
     data['redeemed'] = redeemed;
     data['withdrawal'] = withdrawal;
+    data['transfer'] = transfer;
     data['balance'] = balance;
     return data;
   }

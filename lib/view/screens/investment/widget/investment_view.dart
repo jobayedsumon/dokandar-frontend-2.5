@@ -11,6 +11,7 @@ import 'package:dokandar/view/base/paginated_list_view.dart';
 import 'package:dokandar/view/screens/investment/widget/investment_shimmer.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import '../../../../helper/route_helper.dart';
 import '../investment_details_screen.dart';
 
@@ -136,37 +137,24 @@ class InvestmentView extends StatelessWidget {
                                         },
                                         hoverColor: Colors.transparent,
                                         child: Container(
-                                          padding: ResponsiveHelper.isDesktop(
-                                                  context)
-                                              ? const EdgeInsets.all(
-                                                  Dimensions.paddingSizeSmall)
-                                              : null,
-                                          margin: ResponsiveHelper.isDesktop(
-                                                  context)
-                                              ? const EdgeInsets.only(
-                                                  bottom: Dimensions
-                                                      .paddingSizeSmall)
-                                              : null,
-                                          decoration: ResponsiveHelper
-                                                  .isDesktop(context)
-                                              ? BoxDecoration(
+                                          padding: const EdgeInsets.all(
+                                              Dimensions.paddingSizeSmall),
+                                          margin: const EdgeInsets.only(
+                                              bottom:
+                                                  Dimensions.paddingSizeSmall),
+                                          decoration: BoxDecoration(
+                                            color: Theme.of(context).cardColor,
+                                            borderRadius: BorderRadius.circular(
+                                                Dimensions.radiusSmall),
+                                            boxShadow: [
+                                              BoxShadow(
                                                   color: Theme.of(context)
-                                                      .cardColor,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          Dimensions
-                                                              .radiusSmall),
-                                                  boxShadow: [
-                                                    BoxShadow(
-                                                        color: Theme.of(context)
-                                                            .primaryColor
-                                                            .withOpacity(0.05),
-                                                        blurRadius: 10,
-                                                        offset:
-                                                            const Offset(0, 5))
-                                                  ],
-                                                )
-                                              : null,
+                                                      .primaryColor
+                                                      .withOpacity(0.05),
+                                                  blurRadius: 10,
+                                                  offset: const Offset(0, 5))
+                                            ],
+                                          ),
                                           child: Column(
                                               mainAxisAlignment:
                                                   MainAxisAlignment.center,
@@ -275,7 +263,8 @@ class InvestmentView extends StatelessWidget {
                                                                               0.1),
                                                                     ),
                                                                     child: Text(
-                                                                        PriceConverter.convertPrice(paginatedInvestmentModel.packages![index].amount as double?),
+                                                                        PriceConverter.convertPrice(paginatedInvestmentModel.packages![index].amount
+                                                                            as double?),
                                                                         style: robotoMedium
                                                                             .copyWith(
                                                                           fontSize:
@@ -310,6 +299,9 @@ class InvestmentView extends StatelessWidget {
                                                               ),
                                                             ],
                                                           ),
+                                                          const SizedBox(
+                                                              height: Dimensions
+                                                                  .paddingSizeSmall),
                                                           type == 'flexible'
                                                               ? const SizedBox()
                                                               : Row(
@@ -370,7 +362,11 @@ class InvestmentView extends StatelessWidget {
                                                                           0.1),
                                                                 ),
                                                                 child: Text(
-                                                                    PriceConverter.convertPrice(paginatedInvestmentModel.packages![index].amount as double?),
+                                                                    PriceConverter.convertPrice(paginatedInvestmentModel
+                                                                            .packages![
+                                                                                index]
+                                                                            .amount
+                                                                        as double?),
                                                                     style: robotoMedium
                                                                         .copyWith(
                                                                       fontSize:
@@ -387,26 +383,6 @@ class InvestmentView extends StatelessWidget {
                                                                 .paddingSizeSmall)
                                                       ]),
                                                 ]),
-                                                (index ==
-                                                            paginatedInvestmentModel
-                                                                    .packages!
-                                                                    .length -
-                                                                1 ||
-                                                        ResponsiveHelper
-                                                            .isDesktop(context))
-                                                    ? const SizedBox()
-                                                    : Padding(
-                                                        padding:
-                                                            const EdgeInsets
-                                                                .only(left: 70),
-                                                        child: Divider(
-                                                          color: Theme.of(
-                                                                  context)
-                                                              .disabledColor,
-                                                          height: Dimensions
-                                                              .paddingSizeLarge,
-                                                        ),
-                                                      ),
                                               ]),
                                         ),
                                       );

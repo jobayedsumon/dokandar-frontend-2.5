@@ -294,28 +294,36 @@ class InvestmentDetailsScreenState extends State<InvestmentDetailsScreen> {
                                       const SizedBox(
                                           height:
                                               Dimensions.paddingSizeExtraLarge),
-                                      CustomButton(
-                                        color: Colors.green,
-                                        buttonText: 'Invest Now',
-                                        width: 200,
-                                        onPressed: () {
-                                          Get.dialog(
-                                            Dialog(
-                                              backgroundColor:
-                                                  Colors.transparent,
-                                              child: SizedBox(
-                                                width: 500,
-                                                child: SingleChildScrollView(
-                                                    child:
-                                                        InvestmentPaymentDialogue(
-                                                            packageId:
-                                                                investmentModel
-                                                                    .id)),
+                                      investmentModel.isInvestedByCurrentUser
+                                          ? const Text(
+                                              'Already Invested',
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.green,
+                                                fontSize: 16,
                                               ),
+                                            )
+                                          : CustomButton(
+                                              color: Colors.green,
+                                              buttonText: 'Invest Now',
+                                              width: 200,
+                                              onPressed: () {
+                                                Get.dialog(
+                                                  Dialog(
+                                                    backgroundColor:
+                                                        Colors.transparent,
+                                                    child: SizedBox(
+                                                      width: 500,
+                                                      child: SingleChildScrollView(
+                                                          child: InvestmentPaymentDialogue(
+                                                              packageId:
+                                                                  investmentModel
+                                                                      .id)),
+                                                    ),
+                                                  ),
+                                                );
+                                              },
                                             ),
-                                          );
-                                        },
-                                      ),
                                       const SizedBox(
                                           height:
                                               Dimensions.paddingSizeExtraLarge),

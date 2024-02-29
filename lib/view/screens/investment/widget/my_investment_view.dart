@@ -77,8 +77,8 @@ class MyInvestmentView extends StatelessWidget {
                                       // childAspectRatio: ResponsiveHelper.isDesktop(context) ? 5 : 4.5,
                                       mainAxisExtent:
                                           ResponsiveHelper.isDesktop(context)
-                                              ? 150
-                                              : 120,
+                                              ? 180
+                                              : 160,
                                       crossAxisCount:
                                           ResponsiveHelper.isMobile(context)
                                               ? 1
@@ -117,37 +117,24 @@ class MyInvestmentView extends StatelessWidget {
                                         },
                                         hoverColor: Colors.transparent,
                                         child: Container(
-                                          padding: ResponsiveHelper.isDesktop(
-                                                  context)
-                                              ? const EdgeInsets.all(
-                                                  Dimensions.paddingSizeSmall)
-                                              : null,
-                                          margin: ResponsiveHelper.isDesktop(
-                                                  context)
-                                              ? const EdgeInsets.only(
-                                                  bottom: Dimensions
-                                                      .paddingSizeSmall)
-                                              : null,
-                                          decoration: ResponsiveHelper
-                                                  .isDesktop(context)
-                                              ? BoxDecoration(
+                                          padding: const EdgeInsets.all(
+                                              Dimensions.paddingSizeSmall),
+                                          margin: const EdgeInsets.only(
+                                              bottom:
+                                                  Dimensions.paddingSizeSmall),
+                                          decoration: BoxDecoration(
+                                            color: Theme.of(context).cardColor,
+                                            borderRadius: BorderRadius.circular(
+                                                Dimensions.radiusSmall),
+                                            boxShadow: [
+                                              BoxShadow(
                                                   color: Theme.of(context)
-                                                      .cardColor,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          Dimensions
-                                                              .radiusSmall),
-                                                  boxShadow: [
-                                                    BoxShadow(
-                                                        color: Theme.of(context)
-                                                            .primaryColor
-                                                            .withOpacity(0.05),
-                                                        blurRadius: 10,
-                                                        offset:
-                                                            const Offset(0, 5))
-                                                  ],
-                                                )
-                                              : null,
+                                                      .primaryColor
+                                                      .withOpacity(0.05),
+                                                  blurRadius: 10,
+                                                  offset: const Offset(0, 5))
+                                            ],
+                                          ),
                                           child: Column(
                                               mainAxisAlignment:
                                                   MainAxisAlignment.center,
@@ -282,32 +269,41 @@ class MyInvestmentView extends StatelessWidget {
                                                               const SizedBox(
                                                                   width: Dimensions
                                                                       .paddingSizeSmall),
-                                                              Row(
-                                                                children: [
-                                                                  Text(
-                                                                    '${paginatedMyInvestmentModel.investments![index].package!.monthlyInterestRate!}%',
-                                                                    style: robotoRegular.copyWith(
-                                                                        fontSize:
-                                                                            Dimensions
-                                                                                .fontSizeSmall,
-                                                                        color: Colors
-                                                                            .grey
-                                                                            .shade600),
-                                                                  ),
-                                                                  const SizedBox(
-                                                                      width: Dimensions
-                                                                          .paddingSizeSmall),
-                                                                  Text(
-                                                                      '${PriceConverter.convertPrice(paginatedMyInvestmentModel.investments![index].profitEarned)} Total Profit Earned',
-                                                                      style: robotoMedium
-                                                                          .copyWith(
-                                                                        fontSize:
-                                                                            Dimensions.fontSizeSmall,
-                                                                        color: Colors
-                                                                            .green,
-                                                                      ))
-                                                                ],
+                                                              Text(
+                                                                '${paginatedMyInvestmentModel.investments![index].package!.monthlyInterestRate!}%',
+                                                                style: robotoRegular.copyWith(
+                                                                    fontSize:
+                                                                        Dimensions
+                                                                            .fontSizeSmall,
+                                                                    color: Colors
+                                                                        .grey
+                                                                        .shade600),
                                                               ),
+                                                            ],
+                                                          ),
+                                                          const SizedBox(
+                                                              height: Dimensions
+                                                                  .paddingSizeSmall),
+                                                          Row(
+                                                            children: [
+                                                              Icon(Icons.money,
+                                                                  size: 15,
+                                                                  color: Theme.of(
+                                                                          context)
+                                                                      .primaryColor),
+                                                              const SizedBox(
+                                                                  width: Dimensions
+                                                                      .paddingSizeSmall),
+                                                              Text(
+                                                                  '${PriceConverter.convertPrice(paginatedMyInvestmentModel.investments![index].profitEarned)} Total Profit Earned',
+                                                                  style: robotoMedium
+                                                                      .copyWith(
+                                                                    fontSize:
+                                                                        Dimensions
+                                                                            .fontSizeSmall,
+                                                                    color: Colors
+                                                                        .green,
+                                                                  )),
                                                             ],
                                                           ),
                                                           const SizedBox(
@@ -325,13 +321,27 @@ class MyInvestmentView extends StatelessWidget {
                                                                           .redeemedAt ==
                                                                       null
                                                                   ? const SizedBox()
-                                                                  : Text(
-                                                                      'Redeemed At: ${DateConverter.dateTimeStringToDateTime(paginatedMyInvestmentModel.investments![index].redeemedAt!)}',
-                                                                      style: robotoRegular.copyWith(
-                                                                          fontSize: Dimensions
-                                                                              .fontSizeSmall,
-                                                                          color:
-                                                                              Colors.red),
+                                                                  : Row(
+                                                                      children: [
+                                                                        Icon(
+                                                                            Icons
+                                                                                .timelapse,
+                                                                            size:
+                                                                                15,
+                                                                            color:
+                                                                                Theme.of(context).primaryColor),
+                                                                        const SizedBox(
+                                                                            width:
+                                                                                Dimensions.paddingSizeSmall),
+                                                                        Flexible(
+                                                                          child:
+                                                                              Text(
+                                                                            'Redeemed At: ${DateConverter.dateTimeStringToDateTime(paginatedMyInvestmentModel.investments![index].redeemedAt!)}',
+                                                                            style:
+                                                                                robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Colors.red),
+                                                                          ),
+                                                                        ),
+                                                                      ],
                                                                     )
                                                               : Row(
                                                                   children: [
@@ -391,7 +401,12 @@ class MyInvestmentView extends StatelessWidget {
                                                                           0.1),
                                                                 ),
                                                                 child: Text(
-                                                                    PriceConverter.convertPrice(paginatedMyInvestmentModel.investments![index].package!.amount as double?),
+                                                                    PriceConverter.convertPrice(paginatedMyInvestmentModel
+                                                                            .investments![
+                                                                                index]
+                                                                            .package!
+                                                                            .amount
+                                                                        as double?),
                                                                     style: robotoMedium
                                                                         .copyWith(
                                                                       fontSize:
@@ -408,26 +423,6 @@ class MyInvestmentView extends StatelessWidget {
                                                                 .paddingSizeSmall)
                                                       ]),
                                                 ]),
-                                                (index ==
-                                                            paginatedMyInvestmentModel
-                                                                    .investments!
-                                                                    .length -
-                                                                1 ||
-                                                        ResponsiveHelper
-                                                            .isDesktop(context))
-                                                    ? const SizedBox()
-                                                    : Padding(
-                                                        padding:
-                                                            const EdgeInsets
-                                                                .only(left: 70),
-                                                        child: Divider(
-                                                          color: Theme.of(
-                                                                  context)
-                                                              .disabledColor,
-                                                          height: Dimensions
-                                                              .paddingSizeLarge,
-                                                        ),
-                                                      ),
                                               ]),
                                         ),
                                       );

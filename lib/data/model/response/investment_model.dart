@@ -48,6 +48,7 @@ class InvestmentModel {
   String? about;
   double? monthlyProfit;
   double? dailyProfit;
+  bool isInvestedByCurrentUser = false;
 
   InvestmentModel({
     this.id,
@@ -63,6 +64,7 @@ class InvestmentModel {
     this.about,
     this.monthlyProfit,
     this.dailyProfit,
+    this.isInvestedByCurrentUser = false,
   });
 
   InvestmentModel.fromJson(Map<String, dynamic> json) {
@@ -79,6 +81,7 @@ class InvestmentModel {
     about = json['about'];
     monthlyProfit = json['monthly_profit'];
     dailyProfit = json['daily_profit'];
+    isInvestedByCurrentUser = json['is_invested_by_current_user'];
   }
 
   Map<String, dynamic> toJson() {
@@ -96,6 +99,7 @@ class InvestmentModel {
     data['about'] = about;
     data['monthly_profit'] = monthlyProfit;
     data['daily_profit'] = dailyProfit;
+    data['is_invested_by_current_user'] = isInvestedByCurrentUser;
     return data;
   }
 }

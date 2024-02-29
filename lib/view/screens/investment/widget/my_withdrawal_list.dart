@@ -74,7 +74,7 @@ class MyWithdrawalList extends StatelessWidget {
                                       mainAxisExtent:
                                           ResponsiveHelper.isDesktop(context)
                                               ? 150
-                                              : 120,
+                                              : 130,
                                       crossAxisCount:
                                           ResponsiveHelper.isMobile(context)
                                               ? 1
@@ -97,35 +97,24 @@ class MyWithdrawalList extends StatelessWidget {
                                               .withdrawals![index];
 
                                       return Container(
-                                        padding:
-                                            ResponsiveHelper.isDesktop(context)
-                                                ? const EdgeInsets.all(
-                                                    Dimensions.paddingSizeSmall)
-                                                : null,
-                                        margin:
-                                            ResponsiveHelper.isDesktop(context)
-                                                ? const EdgeInsets.only(
-                                                    bottom: Dimensions
-                                                        .paddingSizeSmall)
-                                                : null,
-                                        decoration: ResponsiveHelper.isDesktop(
-                                                context)
-                                            ? BoxDecoration(
-                                                color: Colors.blueGrey.shade50,
-                                                borderRadius:
-                                                    BorderRadius.circular(
-                                                        Dimensions.radiusSmall),
-                                                boxShadow: [
-                                                  BoxShadow(
-                                                      color: Theme.of(context)
-                                                          .primaryColor
-                                                          .withOpacity(0.05),
-                                                      blurRadius: 10,
-                                                      offset:
-                                                          const Offset(0, 5))
-                                                ],
-                                              )
-                                            : null,
+                                        padding: const EdgeInsets.all(
+                                            Dimensions.paddingSizeSmall),
+                                        margin: const EdgeInsets.only(
+                                            bottom:
+                                                Dimensions.paddingSizeSmall),
+                                        decoration: BoxDecoration(
+                                          color: Colors.blueGrey.shade50,
+                                          borderRadius: BorderRadius.circular(
+                                              Dimensions.radiusSmall),
+                                          boxShadow: [
+                                            BoxShadow(
+                                                color: Theme.of(context)
+                                                    .primaryColor
+                                                    .withOpacity(0.05),
+                                                blurRadius: 10,
+                                                offset: const Offset(0, 5))
+                                          ],
+                                        ),
                                         child: InkWell(
                                           onTap: () {
                                             showDialog(
@@ -262,7 +251,7 @@ class MyWithdrawalList extends StatelessWidget {
                                                                       color: Colors
                                                                           .green,
                                                                       fontSize:
-                                                                          18)),
+                                                                          16)),
                                                           Text(
                                                             DateConverter.dateTimeStringToDateTime(
                                                                 withdrawalModel
@@ -273,7 +262,7 @@ class MyWithdrawalList extends StatelessWidget {
                                                                     color: Colors
                                                                         .green,
                                                                     fontSize:
-                                                                        18),
+                                                                        16),
                                                           ),
                                                         ],
                                                       )
@@ -282,30 +271,7 @@ class MyWithdrawalList extends StatelessWidget {
                                                             robotoBold.copyWith(
                                                                 color:
                                                                     Colors.red,
-                                                                fontSize: 18)),
-                                                const SizedBox(
-                                                    width: Dimensions
-                                                        .paddingSizeSmall),
-                                                (index ==
-                                                            paginatedWithdrawalModel
-                                                                    .withdrawals!
-                                                                    .length -
-                                                                1 ||
-                                                        ResponsiveHelper
-                                                            .isDesktop(context))
-                                                    ? const SizedBox()
-                                                    : Padding(
-                                                        padding:
-                                                            const EdgeInsets
-                                                                .only(left: 70),
-                                                        child: Divider(
-                                                          color: Theme.of(
-                                                                  context)
-                                                              .disabledColor,
-                                                          height: Dimensions
-                                                              .paddingSizeLarge,
-                                                        ),
-                                                      ),
+                                                                fontSize: 16)),
                                               ]),
                                         ),
                                       );

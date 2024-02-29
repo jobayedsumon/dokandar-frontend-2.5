@@ -295,7 +295,7 @@ class MyInvestmentView extends StatelessWidget {
                                                                   width: Dimensions
                                                                       .paddingSizeSmall),
                                                               Text(
-                                                                  '${PriceConverter.convertPrice(paginatedMyInvestmentModel.investments![index].profitEarned)} Total Profit Earned',
+                                                                  '${PriceConverter.convertPrice(paginatedMyInvestmentModel.investments![index].profitEarned)} Profit Earned',
                                                                   style: robotoMedium
                                                                       .copyWith(
                                                                     fontSize:

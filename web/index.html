@@ -1,38 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <base href="/">
+    <base href="/">
 
-  <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A Multi-vendor Food. Grocery, eCommerce, Pharmacy & Parcel service.">
+    <meta charset="UTF-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta content="A Multi-vendor Food. Grocery, eCommerce, Pharmacy & Parcel service."
+          name="description">
 
-  <!-- iOS meta tags & icons -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="StackFood">
-  <link rel="apple-touch-icon" href="favicon.png">
+    <!-- iOS meta tags & icons -->
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="StackFood" name="apple-mobile-web-app-title">
+    <link href="favicon.png" rel="apple-touch-icon">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
+    <!-- Favicon -->
+    <link href="favicon.png" rel="icon" type="image/png"/>
 
-  <meta name="google-signin-client_id" content="1000163153346-48ckm2uf7h70hmgn74kg1gq02sval158.apps.googleusercontent.com">
+    <meta content="1000163153346-48ckm2uf7h70hmgn74kg1gq02sval158.apps.googleusercontent.com"
+          name="google-signin-client_id">
 
-  <script type="text/javascript" src="https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js"></script>
+    <script src="https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js"
+            type="text/javascript"></script>
 
-  <title>Dokandar</title>
-  <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Dokandar</title>
+    <link href="manifest.json" rel="manifest">
+    <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-  <!-- This script installs service_worker.js to provide PWA functionality to
-       application. For more information, see:
-       https://developers.google.com/web/fundamentals/primers/service-workers -->
+<!-- This script installs service_worker.js to provide PWA functionality to
+     application. For more information, see:
+     https://developers.google.com/web/fundamentals/primers/service-workers -->
 
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtlp2Wig-U-oi-o_psxLcwvhfT3ybuHTA"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtlp2Wig-U-oi-o_psxLcwvhfT3ybuHTA"></script>
 <!--  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>-->
 
-  <script>
+<script>
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", function () {
         navigator.serviceWorker.register("/firebase-messaging-sw.js");
@@ -41,10 +44,12 @@
         navigator.serviceWorker.register('flutter_service_worker.js');
       });
     }
-  </script>
 
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-messaging.js"></script>
+
+</script>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-messaging.js"></script>
 
 <!--  <div class="center">-->
 <!--    <img src="logo.png" alt = "logo" width="300px" />-->
@@ -52,33 +57,33 @@
 <!--    <div class="loader" style="width:300px;text-align: center;"><div class="continuous-4"></div></div>-->
 <!--  </div>-->
 
-  <div class="preloader">
+<div class="preloader">
     <div class="preloader-container">
-      <img width="50" class="preloader-img" src="favicon.png" alt="">
-      <div class="loader"></div>
+        <img alt="" class="preloader-img" src="loader.png" width="50">
+        <div class="loader"></div>
     </div>
-  </div>
+</div>
 
 
-  <header class="header">
+<header class="header">
     <div class="header-container d-flex align-items-center justify-content-between">
-      <div class="header-start d-flex gap-5 align-items-center">
-        <img class="logo" src="logo.png" alt="">
-        <div class="placeholder placeholder-wide"></div>
-        <div class="placeholder"></div>
-        <div class="placeholder"></div>
-        <div class="placeholder"></div>
-      </div>
-      <div class="header-end d-flex gap-5">
-        <div class="placeholder"></div>
-        <div class="placeholder"></div>
-        <div class="placeholder"></div>
-      </div>
+        <div class="header-start d-flex gap-5 align-items-center">
+            <img alt="" class="logo" src="logo.png">
+            <div class="placeholder placeholder-wide"></div>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+        </div>
+        <div class="header-end d-flex gap-5">
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+        </div>
     </div>
-  </header>
+</header>
 
 
-  <script>
+<script>
     var firebaseConfig = {
       apiKey: "AIzaSyDFN-73p8zKVZbA0i5DtO215XzAb-xuGSE",
       authDomain: "ammart-8885e.firebaseapp.com",
@@ -91,10 +96,12 @@
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
-  </script>
 
-  <!-- Script Goes Here -->
-  <script>
+
+</script>
+
+<!-- Script Goes Here -->
+<script>
     // Check if localStorage is supported in the browser
       if (typeof(Storage) !== "undefined") {
         // Get the item from localStorage
@@ -116,8 +123,10 @@
         console.log("localStorage is not supported in this browser");
       }
 
-  </script>
 
-  <script src="main.dart.js?version=2.5.0" type="application/javascript"></script>
+
+</script>
+
+<script src="main.dart.js?version=2.5.0" type="application/javascript"></script>
 </body>
 </html>

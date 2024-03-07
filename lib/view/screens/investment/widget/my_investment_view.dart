@@ -270,7 +270,7 @@ class MyInvestmentView extends StatelessWidget {
                                                                   width: Dimensions
                                                                       .paddingSizeSmall),
                                                               Text(
-                                                                '${paginatedMyInvestmentModel.investments![index].package!.monthlyInterestRate!}%',
+                                                                '${paginatedMyInvestmentModel.investments![index].package!.yearlyInterestRate!}%',
                                                                 style: robotoRegular.copyWith(
                                                                     fontSize:
                                                                         Dimensions

@@ -175,7 +175,7 @@ class InvestmentDetailsScreenState extends State<InvestmentDetailsScreen> {
                                                   ListTileWidget(
                                                       title: 'Return',
                                                       value:
-                                                          '${investmentModel.monthlyInterestRate!}%',
+                                                          '${investmentModel.yearlyInterestRate!}%',
                                                       icon: Icons.calculate),
                                                   const SizedBox(
                                                       height: Dimensions

@@ -166,6 +166,49 @@ class _MenuScreenNewState extends State<MenuScreenNew> {
                         left: Dimensions.paddingSizeDefault,
                         right: Dimensions.paddingSizeDefault),
                     child: Text(
+                      'Investment'.tr,
+                      style: robotoMedium.copyWith(
+                          fontSize: Dimensions.fontSizeDefault,
+                          color:
+                              Theme.of(context).primaryColor.withOpacity(0.5)),
+                    ),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).cardColor,
+                      borderRadius:
+                          BorderRadius.circular(Dimensions.radiusDefault),
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.grey[Get.isDarkMode ? 800 : 200]!,
+                            spreadRadius: 1,
+                            blurRadius: 5)
+                      ],
+                    ),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: Dimensions.paddingSizeLarge,
+                        vertical: Dimensions.paddingSizeDefault),
+                    margin: const EdgeInsets.all(Dimensions.paddingSizeDefault),
+                    child: Column(children: [
+                      PortionWidget(
+                        icon: Images.walletIcon,
+                        title: 'Investments'.tr,
+                        route: RouteHelper.getInvestmentRoute(),
+                      ),
+                      PortionWidget(
+                        icon: Images.walletIcon,
+                        title: 'My Investments'.tr,
+                        route: RouteHelper.getMyInvestmentRoute(),
+                      ),
+                    ]),
+                  )
+                ]),
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        left: Dimensions.paddingSizeDefault,
+                        right: Dimensions.paddingSizeDefault),
+                    child: Text(
                       'promotional_activity'.tr,
                       style: robotoMedium.copyWith(
                           fontSize: Dimensions.fontSizeDefault,
@@ -242,49 +285,6 @@ class _MenuScreenNewState extends State<MenuScreenNew> {
                                           : 0),
                             )
                           : const SizedBox(),
-                    ]),
-                  )
-                ]),
-                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                  Padding(
-                    padding: const EdgeInsets.only(
-                        left: Dimensions.paddingSizeDefault,
-                        right: Dimensions.paddingSizeDefault),
-                    child: Text(
-                      'Investment'.tr,
-                      style: robotoMedium.copyWith(
-                          fontSize: Dimensions.fontSizeDefault,
-                          color:
-                              Theme.of(context).primaryColor.withOpacity(0.5)),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Theme.of(context).cardColor,
-                      borderRadius:
-                          BorderRadius.circular(Dimensions.radiusDefault),
-                      boxShadow: [
-                        BoxShadow(
-                            color: Colors.grey[Get.isDarkMode ? 800 : 200]!,
-                            spreadRadius: 1,
-                            blurRadius: 5)
-                      ],
-                    ),
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: Dimensions.paddingSizeLarge,
-                        vertical: Dimensions.paddingSizeDefault),
-                    margin: const EdgeInsets.all(Dimensions.paddingSizeDefault),
-                    child: Column(children: [
-                      PortionWidget(
-                        icon: Images.walletIcon,
-                        title: 'Investments'.tr,
-                        route: RouteHelper.getInvestmentRoute(),
-                      ),
-                      PortionWidget(
-                        icon: Images.walletIcon,
-                        title: 'My Investments'.tr,
-                        route: RouteHelper.getMyInvestmentRoute(),
-                      ),
                     ]),
                   )
                 ]),

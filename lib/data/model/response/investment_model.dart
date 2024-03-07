@@ -39,7 +39,7 @@ class InvestmentModel {
   String? name;
   String? type;
   int? amount;
-  double? monthlyInterestRate;
+  double? yearlyInterestRate;
   int? durationInMonths;
   int? status;
   String? createdAt;
@@ -55,7 +55,7 @@ class InvestmentModel {
     this.name,
     this.type,
     this.amount,
-    this.monthlyInterestRate,
+    this.yearlyInterestRate,
     this.durationInMonths,
     this.status,
     this.createdAt,
@@ -72,7 +72,7 @@ class InvestmentModel {
     name = json['name'];
     type = json['type'];
     amount = json['amount'];
-    monthlyInterestRate = json['monthly_interest_rate'];
+    yearlyInterestRate = json['yearly_interest_rate'];
     durationInMonths = json['duration_in_months'];
     status = json['status'];
     createdAt = json['created_at'];
@@ -90,7 +90,7 @@ class InvestmentModel {
     data['name'] = name;
     data['type'] = type;
     data['amount'] = amount;
-    data['monthly_interest_rate'] = monthlyInterestRate;
+    data['yearly_interest_rate'] = yearlyInterestRate;
     data['duration_in_months'] = durationInMonths;
     data['status'] = status;
     data['created_at'] = createdAt;

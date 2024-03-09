@@ -212,8 +212,8 @@ class _WithdrawDialogueState extends State<WithdrawDialogue> {
                                   .withdrawalMobileNumberController,
                               keyboardType: TextInputType.number,
                               decoration: InputDecoration(
-                                labelText: 'Mobile Number'.tr,
-                                hintText: 'Enter mobile number'.tr,
+                                labelText: 'Mobile Number (Personal)'.tr,
+                                hintText: 'Enter mobile number (Personal)'.tr,
                               ),
                             )
                     ]),

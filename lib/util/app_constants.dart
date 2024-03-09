@@ -8,10 +8,11 @@ class AppConstants {
   static const double appVersion = 2.5;
 
   static const String fontFamily = 'Roboto';
-  static const bool payInWevView = false;
+  static const bool payInWevView = true;
   static const int balanceInputLen = 10;
 
   static const String webHostedUrl = 'https://dokandar.xyz';
+
   static const String baseUrl = 'https://admin.dokandar.xyz';
 
   // static const String baseUrl = 'http://dokandar-update.test';

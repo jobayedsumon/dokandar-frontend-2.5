@@ -100,7 +100,7 @@ class InvestmentView extends StatelessWidget {
                                       mainAxisExtent:
                                           ResponsiveHelper.isDesktop(context)
                                               ? 150
-                                              : 120,
+                                              : 150,
                                       crossAxisCount:
                                           ResponsiveHelper.isMobile(context)
                                               ? 1
@@ -214,18 +214,20 @@ class InvestmentView extends StatelessWidget {
                                                                 .start,
                                                         children: [
                                                           Row(children: [
-                                                            Text(
-                                                              paginatedInvestmentModel
-                                                                  .packages![
-                                                                      index]
-                                                                  .name!,
-                                                              style: robotoRegular.copyWith(
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold,
-                                                                  fontSize:
-                                                                      Dimensions
-                                                                          .fontSizeLarge),
+                                                            Flexible(
+                                                              child: Text(
+                                                                paginatedInvestmentModel
+                                                                    .packages![
+                                                                        index]
+                                                                    .name!,
+                                                                style: robotoRegular.copyWith(
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold,
+                                                                    fontSize:
+                                                                        Dimensions
+                                                                            .fontSizeLarge),
+                                                              ),
                                                             ),
                                                             const SizedBox(
                                                                 width: Dimensions
@@ -263,8 +265,11 @@ class InvestmentView extends StatelessWidget {
                                                                               0.1),
                                                                     ),
                                                                     child: Text(
-                                                                        PriceConverter.convertPrice(paginatedInvestmentModel.packages![index].amount
-                                                                            as double?),
+                                                                        PriceConverter.convertPrice(paginatedInvestmentModel
+                                                                            .packages![
+                                                                                index]
+                                                                            .amount!
+                                                                            .toDouble()),
                                                                         style: robotoMedium
                                                                             .copyWith(
                                                                           fontSize:
@@ -363,10 +368,10 @@ class InvestmentView extends StatelessWidget {
                                                                 ),
                                                                 child: Text(
                                                                     PriceConverter.convertPrice(paginatedInvestmentModel
-                                                                            .packages![
-                                                                                index]
-                                                                            .amount
-                                                                        as double?),
+                                                                        .packages![
+                                                                            index]
+                                                                        .amount!
+                                                                        .toDouble()),
                                                                     style: robotoMedium
                                                                         .copyWith(
                                                                       fontSize:

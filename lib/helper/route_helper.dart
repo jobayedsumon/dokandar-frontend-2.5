@@ -1,7 +1,5 @@
 import 'dart:convert';
 
-import 'package:flutter/foundation.dart';
-import 'package:meta_seo/meta_seo.dart';
 import 'package:dokandar/controller/auth_controller.dart';
 import 'package:dokandar/controller/location_controller.dart';
 import 'package:dokandar/controller/splash_controller.dart';
@@ -12,8 +10,8 @@ import 'package:dokandar/data/model/body/user_information_body.dart';
 import 'package:dokandar/data/model/response/address_model.dart';
 import 'package:dokandar/data/model/response/basic_campaign_model.dart';
 import 'package:dokandar/data/model/response/conversation_model.dart';
-import 'package:dokandar/data/model/response/order_model.dart';
 import 'package:dokandar/data/model/response/item_model.dart';
+import 'package:dokandar/data/model/response/order_model.dart';
 import 'package:dokandar/data/model/response/parcel_category_model.dart';
 import 'package:dokandar/data/model/response/store_model.dart';
 import 'package:dokandar/data/model/response/vehicle_model.dart';
@@ -24,15 +22,16 @@ import 'package:dokandar/view/base/not_found.dart';
 import 'package:dokandar/view/screens/address/add_address_screen.dart';
 import 'package:dokandar/view/screens/address/address_screen.dart';
 import 'package:dokandar/view/screens/auth/delivery_man_registration_screen.dart';
-import 'package:dokandar/view/screens/auth/store_registration_screen.dart';
 import 'package:dokandar/view/screens/auth/sign_in_screen.dart';
 import 'package:dokandar/view/screens/auth/sign_up_screen.dart';
+import 'package:dokandar/view/screens/auth/store_registration_screen.dart';
 import 'package:dokandar/view/screens/cart/cart_screen.dart';
 import 'package:dokandar/view/screens/category/category_item_screen.dart';
 import 'package:dokandar/view/screens/category/category_screen.dart';
 import 'package:dokandar/view/screens/chat/chat_screen.dart';
 import 'package:dokandar/view/screens/chat/conversation_screen.dart';
 import 'package:dokandar/view/screens/checkout/checkout_screen.dart';
+import 'package:dokandar/view/screens/checkout/investment_after_payment.dart';
 import 'package:dokandar/view/screens/checkout/offline_payment_screen.dart';
 import 'package:dokandar/view/screens/checkout/order_successful_screen.dart';
 import 'package:dokandar/view/screens/checkout/payment_screen.dart';
@@ -41,14 +40,14 @@ import 'package:dokandar/view/screens/coupon/coupon_screen.dart';
 import 'package:dokandar/view/screens/dashboard/dashboard_screen.dart';
 import 'package:dokandar/view/screens/digital_payment/digital_payment_screen.dart';
 import 'package:dokandar/view/screens/flash_sale/flash_sale_details_screen.dart';
-import 'package:dokandar/view/screens/item/item_campaign_screen.dart';
-import 'package:dokandar/view/screens/item/item_details_screen.dart';
-import 'package:dokandar/view/screens/item/popular_item_screen.dart';
 import 'package:dokandar/view/screens/forget/forget_pass_screen.dart';
 import 'package:dokandar/view/screens/forget/new_pass_screen.dart';
 import 'package:dokandar/view/screens/forget/verification_screen.dart';
 import 'package:dokandar/view/screens/html/html_viewer_screen.dart';
 import 'package:dokandar/view/screens/interest/interest_screen.dart';
+import 'package:dokandar/view/screens/item/item_campaign_screen.dart';
+import 'package:dokandar/view/screens/item/item_details_screen.dart';
+import 'package:dokandar/view/screens/item/popular_item_screen.dart';
 import 'package:dokandar/view/screens/language/language_screen.dart';
 import 'package:dokandar/view/screens/location/access_location_screen.dart';
 import 'package:dokandar/view/screens/location/map_screen.dart';
@@ -66,13 +65,13 @@ import 'package:dokandar/view/screens/parcel/parcel_request_screen.dart';
 import 'package:dokandar/view/screens/profile/profile_screen.dart';
 import 'package:dokandar/view/screens/profile/update_profile_screen.dart';
 import 'package:dokandar/view/screens/refer_and_earn/refer_and_earn_screen.dart';
-import 'package:dokandar/view/screens/store/all_store_screen.dart';
-import 'package:dokandar/view/screens/store/campaign_screen.dart';
-import 'package:dokandar/view/screens/store/store_item_search_screen.dart';
-import 'package:dokandar/view/screens/store/store_screen.dart';
-import 'package:dokandar/view/screens/store/review_screen.dart';
 import 'package:dokandar/view/screens/search/search_screen.dart';
 import 'package:dokandar/view/screens/splash/splash_screen.dart';
+import 'package:dokandar/view/screens/store/all_store_screen.dart';
+import 'package:dokandar/view/screens/store/campaign_screen.dart';
+import 'package:dokandar/view/screens/store/review_screen.dart';
+import 'package:dokandar/view/screens/store/store_item_search_screen.dart';
+import 'package:dokandar/view/screens/store/store_screen.dart';
 import 'package:dokandar/view/screens/support/support_screen.dart';
 import 'package:dokandar/view/screens/taxi_booking/booking_checkout_screen/booking_checkout_screen.dart';
 import 'package:dokandar/view/screens/taxi_booking/car_details_screen/car_details_screen.dart';
@@ -83,9 +82,11 @@ import 'package:dokandar/view/screens/taxi_booking/taxi_coupon_screen/taxi_coupo
 import 'package:dokandar/view/screens/taxi_booking/trip_completed_confermation/trip_completed_confirmation_screen.dart';
 import 'package:dokandar/view/screens/taxi_booking/trip_history/trip_history_screen.dart';
 import 'package:dokandar/view/screens/update/update_screen.dart';
+import 'package:dokandar/view/screens/wallet/wallet_screen.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:dokandar/view/screens/wallet/wallet_screen.dart';
+import 'package:meta_seo/meta_seo.dart';
 
 import '../view/screens/investment/investment_details_screen.dart';
 import '../view/screens/investment/investment_screen.dart';
@@ -145,6 +146,7 @@ class RouteHelper {
   static const String myInvestment = '/my-investment';
   static const String investmentDetails = '/investment-details';
   static const String myInvestmentDetails = '/my-investment-details';
+  static const String investmentAfterPayment = '/investment-after-payment';
   static const String referAndEarn = '/refer-and-earn';
   static const String messages = '/messages';
   static const String conversation = '/conversation';
@@ -264,7 +266,7 @@ class RouteHelper {
           String? contactNumber,
           String? addFundUrl,
           String? investmentPaymentUrl}) =>
-      '$payment?id=$id&user=$user&type=$type&amount=$amount&cod-delivery=$codDelivery&add-fund-url=$addFundUrl%investment-payment-url=$investmentPaymentUrl&payment-method=$paymentMethod&guest-id=$guestId&number=$contactNumber';
+      '$payment?id=$id&user=$user&type=$type&amount=$amount&cod-delivery=$codDelivery&add-fund-url=$addFundUrl&investment-payment-url=$investmentPaymentUrl&payment-method=$paymentMethod&guest-id=$guestId&number=$contactNumber';
 
   static String getCheckoutRoute(String page, {int? storeId}) =>
       '$checkout?page=$page&store-id=$storeId';
@@ -369,6 +371,8 @@ class RouteHelper {
   static String getMyInvestmentDetailsRoute(int? packageId) {
     return '$myInvestmentDetails?id=$packageId';
   }
+
+  static String getInvestmentAfterPaymentRoute() => investmentAfterPayment;
 
   static String getReferAndEarnRoute() => referAndEarn;
 
@@ -650,10 +654,15 @@ class RouteHelper {
           );
           bool isCodActive = Get.parameters['cod-delivery'] == 'true';
           String addFundUrl = '';
+          String investmentPaymentUrl = '';
           String paymentMethod = Get.parameters['payment-method']!;
           if (Get.parameters['add-fund-url'] != null &&
               Get.parameters['add-fund-url'] != 'null') {
             addFundUrl = Get.parameters['add-fund-url']!;
+          }
+          if (Get.parameters['investment-payment-url'] != null &&
+              Get.parameters['investment-payment-url'] != 'null') {
+            investmentPaymentUrl = Get.parameters['investment-payment-url']!;
           }
           String guestId = Get.parameters['guest-id']!;
           String number = Get.parameters['number']!;
@@ -665,6 +674,7 @@ class RouteHelper {
                   paymentMethod: paymentMethod,
                   guestId: guestId,
                   contactNumber: number,
+                  investmentPaymentUrl: investmentPaymentUrl,
                 )
               : PaymentScreen(
                   orderModel: order,
@@ -673,6 +683,7 @@ class RouteHelper {
                   paymentMethod: paymentMethod,
                   guestId: guestId,
                   contactNumber: number,
+                  investmentPaymentUrl: investmentPaymentUrl,
                 ));
         }),
     GetPage(
@@ -856,6 +867,13 @@ class RouteHelper {
             packageId: int.parse(Get.parameters['id']!),
             myInvestmentModel: null,
           ));
+        }),
+    GetPage(
+        name: investmentAfterPayment,
+        page: () {
+          String status = Get.parameters['status']!;
+          return InvestmentAfterPaymentScreen(
+              isSuccessful: status == 'success');
         }),
     GetPage(
         name: referAndEarn, page: () => getRoute(const ReferAndEarnScreen())),

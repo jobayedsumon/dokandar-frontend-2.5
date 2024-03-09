@@ -157,9 +157,9 @@ class MyInvestmentDetailsScreenState extends State<MyInvestmentDetailsScreen> {
                                                         PriceConverter
                                                             .convertPrice(
                                                                 myInvestmentModel
-                                                                        .package!
-                                                                        .amount!
-                                                                    as double?),
+                                                                    .package!
+                                                                    .amount!
+                                                                    .toDouble()),
                                                         style: robotoRegular
                                                             .copyWith(
                                                           fontSize: Dimensions

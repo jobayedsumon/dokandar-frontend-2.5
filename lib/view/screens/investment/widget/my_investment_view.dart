@@ -194,19 +194,21 @@ class MyInvestmentView extends StatelessWidget {
                                                                 .start,
                                                         children: [
                                                           Row(children: [
-                                                            Text(
-                                                              paginatedMyInvestmentModel
-                                                                  .investments![
-                                                                      index]
-                                                                  .package!
-                                                                  .name!,
-                                                              style: robotoRegular.copyWith(
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold,
-                                                                  fontSize:
-                                                                      Dimensions
-                                                                          .fontSizeLarge),
+                                                            Expanded(
+                                                              child: Text(
+                                                                paginatedMyInvestmentModel
+                                                                    .investments![
+                                                                        index]
+                                                                    .package!
+                                                                    .name!,
+                                                                style: robotoRegular.copyWith(
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold,
+                                                                    fontSize:
+                                                                        Dimensions
+                                                                            .fontSizeLarge),
+                                                              ),
                                                             ),
                                                             const SizedBox(
                                                                 width: Dimensions
@@ -402,11 +404,11 @@ class MyInvestmentView extends StatelessWidget {
                                                                 ),
                                                                 child: Text(
                                                                     PriceConverter.convertPrice(paginatedMyInvestmentModel
-                                                                            .investments![
-                                                                                index]
-                                                                            .package!
-                                                                            .amount
-                                                                        as double?),
+                                                                        .investments![
+                                                                            index]
+                                                                        .package!
+                                                                        .amount!
+                                                                        .toDouble()),
                                                                     style: robotoMedium
                                                                         .copyWith(
                                                                       fontSize:

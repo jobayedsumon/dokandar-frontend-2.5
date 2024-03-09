@@ -1,11 +1,12 @@
 import 'package:dokandar/data/api/api_checker.dart';
-import 'package:dokandar/helper/route_helper.dart';
+import 'package:dokandar/view/screens/checkout/investment_payment_webview.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:universal_html/html.dart' as html;
 
 import '../data/model/response/investment_model.dart';
 import '../data/repository/investment_repo.dart';
+import '../helper/route_helper.dart';
 
 class InvestmentController extends GetxController implements GetxService {
   final InvestmentRepo investmentRepo;
@@ -142,10 +143,16 @@ class InvestmentController extends GetxController implements GetxService {
       String redirectUrl = response.body['redirect_link'];
       Get.back();
       if (GetPlatform.isWeb) {
-        html.window.open(redirectUrl, "_self");
+        String? hostname = html.window.location.hostname;
+        String protocol = html.window.location.protocol;
+        redirectUrl +=
+            '&callback=$protocol//$hostname${RouteHelper.investmentAfterPayment}&status=';
+        html.window.open(redirectUrl, "_blank");
       } else {
-        Get.toNamed(RouteHelper.getPaymentRoute('0', 0, '', 0, false, '',
-            investmentPaymentUrl: redirectUrl, guestId: ''));
+        // Get.toNamed(RouteHelper.getPaymentRoute('0', 0, '', 0, false, '',
+        //     investmentPaymentUrl: redirectUrl, guestId: ''));
+        // await launchUrlString(redirectUrl);
+        Get.to(InvestmentPaymentWebView(investmentPaymentUrl: redirectUrl));
       }
     } else {
       ApiChecker.checkApi(response);

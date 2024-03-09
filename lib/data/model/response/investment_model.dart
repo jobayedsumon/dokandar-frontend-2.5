@@ -72,15 +72,15 @@ class InvestmentModel {
     name = json['name'];
     type = json['type'];
     amount = json['amount'];
-    yearlyInterestRate = json['yearly_interest_rate'];
+    yearlyInterestRate = json['yearly_interest_rate'].toDouble();
     durationInMonths = json['duration_in_months'];
     status = json['status'];
     createdAt = json['created_at'];
     updatedAt = json['updated_at'];
     image = json['image'];
     about = json['about'];
-    monthlyProfit = json['monthly_profit'];
-    dailyProfit = json['daily_profit'];
+    monthlyProfit = json['monthly_profit'].toDouble();
+    dailyProfit = json['daily_profit'].toDouble();
     isInvestedByCurrentUser = json['is_invested_by_current_user'];
   }
 
@@ -207,7 +207,7 @@ class InvestmentWalletModel {
 
   InvestmentWalletModel.fromJson(Map<String, dynamic> json) {
     profit = json['profit'];
-    redeemed = json['redeemed'];
+    redeemed = json['redeemed'].toDouble();
     withdrawal = json['withdrawal'];
     transfer = json['transfer'];
     balance = json['balance'];

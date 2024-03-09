@@ -1,49 +1,28 @@
 import 'dart:collection';
 
-import 'package:dokandar/controller/location_controller.dart';
-import 'package:dokandar/controller/order_controller.dart';
-import 'package:dokandar/controller/splash_controller.dart';
-import 'package:dokandar/data/model/response/order_model.dart';
-import 'package:dokandar/data/model/response/zone_response_model.dart';
-import 'package:dokandar/util/app_constants.dart';
 import 'package:dokandar/view/base/custom_app_bar.dart';
-import 'package:dokandar/view/screens/checkout/widget/payment_failed_dialog.dart';
-import 'package:dokandar/view/screens/wallet/widget/fund_payment_dialog.dart';
+import 'package:dokandar/view/screens/checkout/investment_after_payment.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class PaymentWebViewScreen extends StatefulWidget {
-  final OrderModel orderModel;
-  final bool isCashOnDelivery;
-  final String? addFundUrl;
-  final String paymentMethod;
-  final String guestId;
-  final String contactNumber;
-  final String? investmentPaymentUrl;
+import '../../../util/app_constants.dart';
 
-  const PaymentWebViewScreen(
-      {Key? key,
-      required this.orderModel,
-      required this.isCashOnDelivery,
-      this.addFundUrl,
-      required this.paymentMethod,
-      required this.guestId,
-      required this.contactNumber,
-      this.investmentPaymentUrl})
+class InvestmentPaymentWebView extends StatefulWidget {
+  final String investmentPaymentUrl;
+
+  const InvestmentPaymentWebView({Key? key, required this.investmentPaymentUrl})
       : super(key: key);
 
   @override
   PaymentScreenState createState() => PaymentScreenState();
 }
 
-class PaymentScreenState extends State<PaymentWebViewScreen> {
+class PaymentScreenState extends State<InvestmentPaymentWebView> {
   late String selectedUrl;
   bool _isLoading = true;
-  final bool _canRedirect = true;
-  double? _maximumCodOrderAmount;
   PullToRefreshController? pullToRefreshController;
   InAppWebViewController? webViewController;
 
@@ -51,31 +30,12 @@ class PaymentScreenState extends State<PaymentWebViewScreen> {
   void initState() {
     super.initState();
 
-    if (widget.addFundUrl == null ||
-        (widget.addFundUrl != null && widget.addFundUrl!.isEmpty)) {
-      selectedUrl =
-          '${AppConstants.baseUrl}/payment-mobile?customer_id=${widget.orderModel.userId == 0 ? widget.guestId : widget.orderModel.userId}&order_id=${widget.orderModel.id}&payment_method=${widget.paymentMethod}';
-    } else {
-      selectedUrl = widget.addFundUrl!;
-    }
+    selectedUrl = widget.investmentPaymentUrl;
 
     _initData();
   }
 
   void _initData() async {
-    if (widget.addFundUrl == null ||
-        (widget.addFundUrl != null && widget.addFundUrl!.isEmpty)) {
-      for (ZoneData zData
-          in Get.find<LocationController>().getUserAddress()!.zoneData!) {
-        for (Modules m in zData.modules!) {
-          if (m.id == Get.find<SplashController>().module!.id) {
-            _maximumCodOrderAmount = m.pivot!.maximumCodOrderAmount;
-            break;
-          }
-        }
-      }
-    }
-
     pullToRefreshController = GetPlatform.isWeb ||
             ![TargetPlatform.iOS, TargetPlatform.android]
                 .contains(defaultTargetPlatform)
@@ -123,13 +83,26 @@ class PaymentScreenState extends State<PaymentWebViewScreen> {
               },
               onLoadStart: (controller, url) async {
                 // _redirect(url.toString());
-                Get.find<OrderController>().paymentRedirect(
-                    url: url.toString(),
-                    canRedirect: _canRedirect,
-                    onClose: () {},
-                    addFundUrl: widget.addFundUrl,
-                    orderID: widget.orderModel.id.toString(),
-                    contactNumber: widget.contactNumber);
+
+                String urlString = url.toString();
+
+                bool isSuccess = urlString.contains('success') &&
+                    urlString.contains(AppConstants.baseUrl);
+                bool isFailed = urlString.contains('fail') &&
+                    urlString.contains(AppConstants.baseUrl);
+                bool isCancel = urlString.contains('cancel') &&
+                    urlString.contains(AppConstants.baseUrl);
+
+                if (isSuccess) {
+                  Get.to(const InvestmentAfterPaymentScreen(
+                    isSuccessful: true,
+                  ));
+                } else if (isFailed || isCancel) {
+                  Get.to(const InvestmentAfterPaymentScreen(
+                    isSuccessful: false,
+                  ));
+                }
+
                 setState(() {
                   _isLoading = true;
                 });
@@ -157,13 +130,24 @@ class PaymentScreenState extends State<PaymentWebViewScreen> {
                 setState(() {
                   _isLoading = false;
                 });
-                Get.find<OrderController>().paymentRedirect(
-                    url: url.toString(),
-                    canRedirect: _canRedirect,
-                    onClose: () {},
-                    addFundUrl: widget.addFundUrl,
-                    orderID: widget.orderModel.id.toString(),
-                    contactNumber: widget.contactNumber);
+
+                String urlString = url.toString();
+
+                bool isSuccess = urlString.contains('success') &&
+                    urlString.contains(AppConstants.baseUrl);
+                bool isFailed = urlString.contains('fail') &&
+                    urlString.contains(AppConstants.baseUrl);
+                bool isCancel = urlString.contains('cancel') &&
+                    urlString.contains(AppConstants.baseUrl);
+
+                if (isSuccess) {
+                  Get.to(
+                      const InvestmentAfterPaymentScreen(isSuccessful: true));
+                } else if (isFailed || isCancel) {
+                  Get.to(
+                      const InvestmentAfterPaymentScreen(isSuccessful: false));
+                }
+
                 // _redirect(url.toString());
               },
               onProgressChanged: (controller, progress) {
@@ -192,21 +176,12 @@ class PaymentScreenState extends State<PaymentWebViewScreen> {
   }
 
   Future<bool?> _exitApp() async {
-    if ((widget.addFundUrl == null ||
-            (widget.addFundUrl != null && widget.addFundUrl!.isEmpty)) ||
-        !Get.find<SplashController>()
-            .configModel!
-            .digitalPaymentInfo!
-            .pluginPaymentGateways!) {
-      return Get.dialog(PaymentFailedDialog(
-        orderID: widget.orderModel.id.toString(),
-        orderAmount: widget.orderModel.orderAmount,
-        maxCodOrderAmount: _maximumCodOrderAmount,
-        orderType: widget.orderModel.orderType,
-        isCashOnDelivery: widget.isCashOnDelivery,
-      ));
-    } else {
-      return Get.dialog(const FundPaymentDialog());
+    if (webViewController != null) {
+      if (await webViewController!.canGoBack()) {
+        webViewController!.goBack();
+        return Future.value(false);
+      }
     }
+    return null;
   }
 }

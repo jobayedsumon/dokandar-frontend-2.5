@@ -210,8 +210,8 @@ class MyWithdrawalList extends StatelessWidget {
                                                     Text(
                                                       PriceConverter.convertPrice(
                                                           withdrawalModel
-                                                                  .withdrawalAmount
-                                                              as double?),
+                                                              .withdrawalAmount!
+                                                              .toDouble()),
                                                       style: robotoBold.copyWith(
                                                           color: Theme.of(
                                                                   context)

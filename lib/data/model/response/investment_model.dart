@@ -168,7 +168,7 @@ class MyInvestmentModel {
     redeemedAt = json['redeemed_at'];
     createdAt = json['created_at'];
     updatedAt = json['updated_at'];
-    profitEarned = json['profit_earned'];
+    profitEarned = json['profit_earned'].toDouble();
     package = json['package'] != null
         ? InvestmentModel.fromJson(json['package'])
         : null;
@@ -195,6 +195,7 @@ class InvestmentWalletModel {
   double? redeemed;
   double? withdrawal;
   double? transfer;
+  double? investmentPayment;
   double? balance;
 
   InvestmentWalletModel({
@@ -206,11 +207,12 @@ class InvestmentWalletModel {
   });
 
   InvestmentWalletModel.fromJson(Map<String, dynamic> json) {
-    profit = json['profit'];
+    profit = json['profit'].toDouble();
     redeemed = json['redeemed'].toDouble();
-    withdrawal = json['withdrawal'];
-    transfer = json['transfer'];
-    balance = json['balance'];
+    withdrawal = json['withdrawal'].toDouble();
+    transfer = json['transfer'].toDouble();
+    investmentPayment = json['investment_payment'].toDouble();
+    balance = json['balance'].toDouble();
   }
 
   Map<String, dynamic> toJson() {
@@ -219,6 +221,7 @@ class InvestmentWalletModel {
     data['redeemed'] = redeemed;
     data['withdrawal'] = withdrawal;
     data['transfer'] = transfer;
+    data['investment_payment'] = investmentPayment;
     data['balance'] = balance;
     return data;
   }

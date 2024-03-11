@@ -142,6 +142,12 @@ class InvestmentController extends GetxController implements GetxService {
     if (response.statusCode == 200) {
       String redirectUrl = response.body['redirect_link'];
       Get.back();
+      if (redirectUrl == '') {
+        Get.snackbar('Success', 'Investment successful',
+            snackPosition: SnackPosition.BOTTOM);
+        getMyInvestment(1);
+        return;
+      }
       if (GetPlatform.isWeb) {
         String? hostname = html.window.location.hostname;
         String protocol = html.window.location.protocol;
@@ -246,7 +252,8 @@ class InvestmentController extends GetxController implements GetxService {
     Response response = await investmentRepo.sendWithdrawRequest(data);
     if (response.statusCode == 200) {
       Get.back();
-      Get.snackbar('Success', 'Withdrawal request sent successfully',
+      Get.snackbar('Success',
+          'Withdrawal request sent successfully. You can check the transaction on your wallet transaction history.',
           snackPosition: SnackPosition.BOTTOM);
       withdrawalAmountController.clear();
       withdrawalMobileNumberController.clear();

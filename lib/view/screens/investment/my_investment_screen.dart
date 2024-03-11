@@ -109,6 +109,13 @@ class MyInvestmentScreenState extends State<MyInvestmentScreen>
                                                       .primaryColor)),
                                           const SizedBox(height: 5),
                                           Text(
+                                              'Investment Payment: ${PriceConverter.convertPrice(investmentWallet.investmentPayment)}',
+                                              style: robotoBold.copyWith(
+                                                  fontSize: 15,
+                                                  color: Theme.of(context)
+                                                      .primaryColor)),
+                                          const SizedBox(height: 5),
+                                          Text(
                                               'Current Balance: ${PriceConverter.convertPrice(investmentWallet.balance)}',
                                               style: robotoBold.copyWith(
                                                   fontSize: 17,

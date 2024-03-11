@@ -164,6 +164,53 @@ class _InvestmentPaymentDialogueState extends State<InvestmentPaymentDialogue> {
                           })
                       : Text('no_payment_method_is_available'.tr,
                           style: robotoMedium),
+                  InkWell(
+                    onTap: () {
+                      investmentController
+                          .changeDigitalPaymentName('investment_balance');
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: investmentController.digitalPaymentName ==
+                                  'investment_balance'
+                              ? Colors.blue.withOpacity(0.05)
+                              : Colors.transparent,
+                          borderRadius:
+                              BorderRadius.circular(Dimensions.radiusDefault)),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: Dimensions.paddingSizeSmall,
+                          vertical: Dimensions.paddingSizeLarge),
+                      child: Row(children: [
+                        Container(
+                          height: 20,
+                          width: 20,
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: investmentController.digitalPaymentName ==
+                                      'investment_balance'
+                                  ? Theme.of(context).primaryColor
+                                  : Theme.of(context).cardColor,
+                              border: Border.all(
+                                  color: Theme.of(context).disabledColor)),
+                          child: Icon(Icons.check,
+                              color: Theme.of(context).cardColor, size: 16),
+                        ),
+                        const SizedBox(width: Dimensions.paddingSizeDefault),
+                        Icon(Icons.account_balance_wallet,
+                            color: Theme.of(context).primaryColor, size: 20),
+                        const SizedBox(width: Dimensions.paddingSizeSmall),
+                        Expanded(
+                          child: Text(
+                            'Investment Balance',
+                            style: robotoMedium.copyWith(
+                                fontSize: Dimensions.fontSizeDefault),
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 1,
+                          ),
+                        ),
+                      ]),
+                    ),
+                  ),
                   const SizedBox(height: Dimensions.paddingSizeLarge),
                 ]),
               ),

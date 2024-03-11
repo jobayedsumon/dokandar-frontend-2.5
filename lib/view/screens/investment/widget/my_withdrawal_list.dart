@@ -8,7 +8,6 @@ import 'package:dokandar/util/styles.dart';
 import 'package:dokandar/view/base/footer_view.dart';
 import 'package:dokandar/view/base/no_data_screen.dart';
 import 'package:dokandar/view/base/paginated_list_view.dart';
-import 'package:dokandar/view/screens/investment/widget/investment_shimmer.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
@@ -284,7 +283,7 @@ class MyWithdrawalList extends StatelessWidget {
                         )),
                   )
                 : NoDataScreen(text: 'No Withdrawal Found'.tr, showFooter: true)
-            : InvestmentShimmer(investmentController: investmentController);
+            : const Center(child: CircularProgressIndicator());
       }),
     );
   }

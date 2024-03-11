@@ -8,7 +8,6 @@ import 'package:dokandar/view/base/custom_image.dart';
 import 'package:dokandar/view/base/footer_view.dart';
 import 'package:dokandar/view/base/no_data_screen.dart';
 import 'package:dokandar/view/base/paginated_list_view.dart';
-import 'package:dokandar/view/screens/investment/widget/investment_shimmer.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -401,7 +400,7 @@ class InvestmentView extends StatelessWidget {
                   )
                 : NoDataScreen(
                     text: 'No Investment Project Found'.tr, showFooter: true)
-            : InvestmentShimmer(investmentController: investmentController);
+            : const Center(child: CircularProgressIndicator());
       }),
     );
   }

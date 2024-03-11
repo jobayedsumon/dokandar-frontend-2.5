@@ -12,7 +12,6 @@ class AppConstants {
   static const int balanceInputLen = 10;
 
   static const String webHostedUrl = 'https://dokandar.xyz';
-
   static const String baseUrl = 'https://admin.dokandar.xyz';
 
   // static const String baseUrl = 'http://dokandar-update.test';

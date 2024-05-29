@@ -249,7 +249,7 @@ class AuthController extends GetxController implements GetxService {
     Response response = await authRepo.loginWithSocialMedia(socialLogInBody, 60);
     if (response.statusCode == 200) {
       String? token = response.body['token'];
-      if(token != null && token.isNotEmpty) {
+      if(token!.isNotEmpty) {
         if(Get.find<SplashController>().configModel!.customerVerification! && response.body['is_phone_verified'] == 0) {
           Get.toNamed(RouteHelper.getVerificationRoute(response.body['phone'] ?? socialLogInBody.email, token, RouteHelper.signUp, ''));
         }else {

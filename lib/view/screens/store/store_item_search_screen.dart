@@ -103,11 +103,11 @@ class _StoreItemSearchScreenState extends State<StoreItemSearchScreen> {
               onPaginate: (int? offset) => storeController.getStoreSearchItemList(
                 storeController.searchText, widget.storeID, offset!, storeController.searchType,
               ),
-              totalSize: storeController.storeSearchItemModel != null ? storeController.storeSearchItemModel!.totalSize : null,
-              offset: storeController.storeSearchItemModel != null ? storeController.storeSearchItemModel!.offset : null,
+              totalSize: storeController.storeSearchItemModel?.totalSize,
+              offset: storeController.storeSearchItemModel?.offset,
               itemView: ItemsView(
                   isStore: false, stores: null,
-                  items: storeController.storeSearchItemModel != null ? storeController.storeSearchItemModel!.items : null,
+                  items: storeController.storeSearchItemModel?.items,
                   inStorePage: true,
               ),
             ))),

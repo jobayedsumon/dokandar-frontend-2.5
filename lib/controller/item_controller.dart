@@ -635,7 +635,7 @@ class ItemController extends GetxController implements GetxService {
 
         CartModel cartModel = CartModel(
           null, price, discount, [], [], (price - discountPrice), 1, [], [], isCampaign,
-          item.stock, item, item.quantityLimit != null ? item.quantityLimit! : null,
+          item.stock, item, item.quantityLimit,
         );
 
         OnlineCart onlineCart = OnlineCart(

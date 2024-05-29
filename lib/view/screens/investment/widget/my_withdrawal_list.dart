@@ -20,7 +20,7 @@ class MyWithdrawalList extends StatelessWidget {
     final ScrollController scrollController = ScrollController();
 
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       body: GetBuilder<InvestmentController>(builder: (investmentController) {
         PaginatedWithdrawalModel? paginatedWithdrawalModel;
         if (investmentController.withdrawalModel != null) {

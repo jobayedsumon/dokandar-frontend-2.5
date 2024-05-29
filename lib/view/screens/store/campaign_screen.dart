@@ -221,7 +221,7 @@ class _CampaignScreenState extends State<CampaignScreen> {
                 ItemsView(
                   isStore: true, items: null,
                   padding: EdgeInsets.zero,
-                  stores: campaignController.campaign != null ? campaignController.campaign!.store : null,
+                  stores: campaignController.campaign?.store,
                 ),
 
               ]),

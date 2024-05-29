@@ -58,7 +58,7 @@ class MyInvestmentDetailsScreenState extends State<MyInvestmentDetailsScreen> {
           }),
       endDrawer: const MenuDrawer(),
       endDrawerEnableOpenDragGesture: false,
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       body: SafeArea(
         child:
             GetBuilder<InvestmentController>(builder: (investmentController) {

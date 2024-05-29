@@ -105,7 +105,7 @@ class _StoreScreenState extends State<StoreScreen> {
     return Scaffold(
       appBar: ResponsiveHelper.isDesktop(context) ? const WebMenuBar() : null,
       endDrawer: const MenuDrawer(),endDrawerEnableOpenDragGesture: false,
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       body: GetBuilder<StoreController>(builder: (storeController) {
         return GetBuilder<CategoryController>(builder: (categoryController) {
           Store? store;
@@ -554,15 +554,15 @@ class _StoreScreenState extends State<StoreScreen> {
                                   }
                                 },
                                 totalSize: storeController.isSearching
-                                    ? storeController.storeSearchItemModel != null ? storeController.storeSearchItemModel!.totalSize : null
-                                    : storeController.storeItemModel != null ? storeController.storeItemModel!.totalSize : null,
+                                    ? storeController.storeSearchItemModel?.totalSize
+                                    : storeController.storeItemModel?.totalSize,
                                 offset: storeController.isSearching
-                                    ? storeController.storeSearchItemModel != null ? storeController.storeSearchItemModel!.offset : null
-                                    : storeController.storeItemModel != null ? storeController.storeItemModel!.offset : null,
+                                    ? storeController.storeSearchItemModel?.offset
+                                    : storeController.storeItemModel?.offset,
                                 itemView: WebItemsView(
                                   isStore: false, stores: null, fromStore: true,
                                   items: storeController.isSearching
-                                      ? storeController.storeSearchItemModel != null ? storeController.storeSearchItemModel!.items : null
+                                      ? storeController.storeSearchItemModel?.items
                                       : (storeController.categoryList!.isNotEmpty && storeController.storeItemModel != null) ? storeController.storeItemModel!.items : null,
                                   inStorePage: true,
                                   padding: const EdgeInsets.symmetric(
@@ -724,13 +724,13 @@ class _StoreScreenState extends State<StoreScreen> {
               SliverToBoxAdapter(child: Container(
                 width: Dimensions.webMaxWidth,
                 decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.background,
+                  color: Theme.of(context).colorScheme.surface,
                 ),
                 child: PaginatedListView(
                   scrollController: scrollController,
                   onPaginate: (int? offset) => storeController.getStoreItemList(widget.store!.id, offset!, storeController.type, false),
-                  totalSize: storeController.storeItemModel != null ? storeController.storeItemModel!.totalSize : null,
-                  offset: storeController.storeItemModel != null ? storeController.storeItemModel!.offset : null,
+                  totalSize: storeController.storeItemModel?.totalSize,
+                  offset: storeController.storeItemModel?.offset,
                   itemView: ItemsView(
                     isStore: false, stores: null,
                     items: (storeController.categoryList!.isNotEmpty && storeController.storeItemModel != null)

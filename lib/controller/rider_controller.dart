@@ -111,12 +111,8 @@ class RiderController extends GetxController implements GetxService {
         lastDate: DateTime(2101)
     );
 
-    if(pickedDate != null ){
-      _tripDate = DateConverter.dateToReadableDate(pickedDate);
-    }else{
-      debugPrint("Date is not selected");
-    }
-    update();
+    _tripDate = DateConverter.dateToReadableDate(pickedDate!);
+      update();
   }
 
   Future<void> setTime(BuildContext context) async {

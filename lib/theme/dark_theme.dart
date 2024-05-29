@@ -10,5 +10,5 @@ ThemeData dark({Color color = const Color(0xFFdd3135)}) => ThemeData(
   brightness: Brightness.dark,
   hintColor: const Color(0xFFbebebe),
   cardColor: const Color(0xFF30313C),
-  textButtonTheme: TextButtonThemeData(style: TextButton.styleFrom(foregroundColor: color)), colorScheme: ColorScheme.dark(primary: color, secondary: color).copyWith(background: const Color(0xFF191A26)).copyWith(error: const Color(0xFFdd3135)),
+  textButtonTheme: TextButtonThemeData(style: TextButton.styleFrom(foregroundColor: color)), colorScheme: ColorScheme.dark(primary: color, secondary: color).copyWith(surface: const Color(0xFF191A26)).copyWith(error: const Color(0xFFdd3135)),
 );

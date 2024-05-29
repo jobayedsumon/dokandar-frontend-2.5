@@ -43,7 +43,7 @@ class _PopularItemScreenState extends State<PopularItemScreen> {
     return GetBuilder<ItemController>(
       builder: (itemController) {
         return Scaffold(
-          backgroundColor: Theme.of(context).colorScheme.background,
+          backgroundColor: Theme.of(context).colorScheme.surface,
           appBar: CustomAppBar(
             key: scaffoldKey,
             title: widget.isPopular ? isShop ? 'most_popular_products'.tr : 'most_popular_items'.tr : widget.isSpecial ? 'special_offer'.tr : 'best_reviewed_item'.tr,

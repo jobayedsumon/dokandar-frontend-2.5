@@ -143,7 +143,7 @@ class _WebConversationListViewState extends State<WebConversationListView> {
                         }
 
                       },
-                      highlightColor: Theme.of(context).colorScheme.background.withOpacity(0.1),
+                      highlightColor: Theme.of(context).colorScheme.surface.withOpacity(0.1),
                       radius: Dimensions.radiusSmall,
                       child: Stack(children: [
                         Padding(
@@ -159,7 +159,7 @@ class _WebConversationListViewState extends State<WebConversationListView> {
 
                               user != null ? Text(
                                 '${user?.fName} ${user?.lName}', style: robotoMedium,
-                              ) : Text('${type!.tr} ${'deleted'.tr}', style: robotoMedium),
+                              ) : Text('${type?.tr} ${'deleted'.tr}', style: robotoMedium),
                               const SizedBox(height: Dimensions.paddingSizeExtraSmall),
 
                               widget.conversation!.conversations![index]!.lastMessage != null ? Text(

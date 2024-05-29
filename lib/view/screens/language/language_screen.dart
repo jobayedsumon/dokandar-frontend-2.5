@@ -28,7 +28,7 @@ class _ChooseLanguageScreenState extends State<ChooseLanguageScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: (widget.fromMenu || ResponsiveHelper.isDesktop(context)) ? CustomAppBar(title: 'language'.tr, backButton: true) : null,
       endDrawer: const MenuDrawer(),endDrawerEnableOpenDragGesture: false,
       body: SafeArea(

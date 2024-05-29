@@ -137,8 +137,8 @@ class _ChatScreenState extends State<ChatScreen> {
                       child: PaginatedListView(
                         scrollController: _scrollController,
                         reverse: true,
-                        totalSize: chatController.messageModel != null ? chatController.messageModel!.totalSize : null,
-                        offset: chatController.messageModel != null ? chatController.messageModel!.offset : null,
+                        totalSize: chatController.messageModel?.totalSize,
+                        offset: chatController.messageModel?.offset,
                         onPaginate: (int? offset) async => await chatController.getMessages(
                           offset!, widget.notificationBody, widget.user, widget.conversationID,
                         ),

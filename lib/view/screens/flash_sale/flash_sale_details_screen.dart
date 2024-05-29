@@ -77,10 +77,8 @@ class _FlashSaleDetailsScreenState extends State<FlashSaleDetailsScreen> {
                         width: Dimensions.webMaxWidth,
                         child: PaginatedListView(
                           scrollController: _scrollController,
-                          totalSize: flashSaleController.productFlashSale != null ? flashSaleController.productFlashSale!.totalSize : null,
-                          offset: flashSaleController.productFlashSale != null
-                              ? flashSaleController.productFlashSale!.offset
-                              : null,
+                          totalSize: flashSaleController.productFlashSale?.totalSize,
+                          offset: flashSaleController.productFlashSale?.offset,
                           onPaginate: (int? offset) async => await flashSaleController.getFlashSaleWithId(offset!, false, widget.id),
                           itemView: flashSaleController.productFlashSale != null ? GridView.builder(
                             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

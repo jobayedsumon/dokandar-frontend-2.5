@@ -76,7 +76,7 @@ class _AccessLocationScreenState extends State<AccessLocationScreen> {
       child: Scaffold(
         appBar: CustomAppBar(title: 'set_location'.tr, backButton: widget.fromHome),
         endDrawer: const MenuDrawer(),endDrawerEnableOpenDragGesture: false,
-        backgroundColor: Theme.of(context).colorScheme.background,
+        backgroundColor: Theme.of(context).colorScheme.surface,
         body: SafeArea(child: Padding(
           padding: ResponsiveHelper.isDesktop(context) ? EdgeInsets.zero : const EdgeInsets.all(Dimensions.paddingSizeSmall),
           child: GetBuilder<LocationController>(builder: (locationController) {

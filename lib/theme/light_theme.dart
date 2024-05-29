@@ -11,5 +11,5 @@ ThemeData light({Color color = const Color(0xFFdd3135)}) => ThemeData(
   hintColor: const Color(0xFF9F9F9F),
   cardColor: Colors.white,
   textButtonTheme: TextButtonThemeData(style: TextButton.styleFrom(foregroundColor: color)),
-  colorScheme: ColorScheme.light(primary: color, secondary: color).copyWith(background: const Color(0xFFFCFCFC)).copyWith(error: const Color(0xFFdd3135)),
+  colorScheme: ColorScheme.light(primary: color, secondary: color).copyWith(surface: const Color(0xFFFCFCFC)).copyWith(error: const Color(0xFFdd3135)),
 );

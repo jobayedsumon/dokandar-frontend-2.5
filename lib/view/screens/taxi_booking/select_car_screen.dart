@@ -104,10 +104,10 @@ class _SelectCarScreenState extends State<SelectCarScreen> {
                       child: SingleChildScrollView(
                         controller: scrollController,
                         child: PaginatedListView(
-                          offset: carSelectionController.vehicleModel != null ? carSelectionController.vehicleModel!.offset : null,
+                          offset: carSelectionController.vehicleModel?.offset,
                           onPaginate: (int? offset) async => await carSelectionController.getVehiclesList(widget.filterBody, offset!),
                           scrollController: scrollController,
-                          totalSize: carSelectionController.vehicleModel != null ? carSelectionController.vehicleModel!.totalSize : null,
+                          totalSize: carSelectionController.vehicleModel?.totalSize,
                           itemView: RiderCarList(vehicleModel: carSelectionController.vehicleModel, filterBody: widget.filterBody),
                         ),
                       ),

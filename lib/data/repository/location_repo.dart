@@ -35,7 +35,7 @@ class LocationRepo {
     apiClient.updateHeader(
       sharedPreferences.getString(AppConstants.token), zoneIDs, areaIDs,
       sharedPreferences.getString(AppConstants.languageCode),
-      Get.find<SplashController>().module != null ? Get.find<SplashController>().module!.id : null,
+      Get.find<SplashController>().module?.id,
       latitude, longitude
     );
     return await sharedPreferences.setString(AppConstants.userAddress, address);

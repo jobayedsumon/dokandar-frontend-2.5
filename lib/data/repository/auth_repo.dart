@@ -120,13 +120,13 @@ class AuthRepo {
       AddressModel? addressModel = AddressModel.fromJson(jsonDecode(sharedPreferences.getString(AppConstants.userAddress)!));
       apiClient.updateHeader(
           token, addressModel.zoneIds, addressModel.areaIds, sharedPreferences.getString(AppConstants.languageCode),
-          Get.find<SplashController>().module != null ? Get.find<SplashController>().module!.id : null,
+          Get.find<SplashController>().module?.id,
           addressModel.latitude, addressModel.longitude,
       );
     }else{
       apiClient.updateHeader(
           token, null, null, sharedPreferences.getString(AppConstants.languageCode),
-          Get.find<SplashController>().module != null ? Get.find<SplashController>().module!.id : null,
+          Get.find<SplashController>().module?.id,
           null, null
       );
     }

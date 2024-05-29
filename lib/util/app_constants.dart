@@ -12,9 +12,9 @@ class AppConstants {
   static const int balanceInputLen = 10;
 
   static const String webHostedUrl = 'https://dokandar.xyz';
-  static const String baseUrl = 'https://admin.dokandar.xyz';
+//   static const String baseUrl = 'https://admin.dokandar.xyz';
 
-  // static const String baseUrl = 'http://dokandar-update.test';
+  static const String baseUrl = 'http://dokandar-backend-2.5.test';
   // static const String baseUrl = 'http://staging.admin.dokandar.xyz';
 
   static const String categoryUri = '/api/v1/categories';

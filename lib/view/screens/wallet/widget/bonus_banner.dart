@@ -79,7 +79,7 @@ class BonusBanner extends StatelessWidget {
                 return TabPageSelectorIndicator(
                   backgroundColor: index == walletController.currentIndex ? Theme.of(context).primaryColor
                       : Theme.of(context).primaryColor.withOpacity(0.5),
-                  borderColor: Theme.of(context).colorScheme.background,
+                  borderColor: Theme.of(context).colorScheme.surface,
                   size: index == walletController.currentIndex ? 10 : 7,
                 );
               }).toList(),

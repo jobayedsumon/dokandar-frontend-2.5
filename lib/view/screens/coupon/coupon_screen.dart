@@ -42,7 +42,7 @@ class _CouponScreenState extends State<CouponScreen> {
   Widget build(BuildContext context) {
     bool isLoggedIn = Get.find<AuthController>().isLoggedIn();
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: CustomAppBar(title: 'coupon'.tr),
       endDrawer: const MenuDrawer(),endDrawerEnableOpenDragGesture: false,
       body: isLoggedIn ? GetBuilder<CouponController>(builder: (couponController) {

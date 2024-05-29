@@ -25,7 +25,7 @@ class OrderView extends StatelessWidget {
     final ScrollController scrollController = ScrollController();
 
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       body: GetBuilder<OrderController>(builder: (orderController) {
         PaginatedOrderModel? paginatedOrderModel;
         if(orderController.runningOrderModel != null && orderController.historyOrderModel != null) {

@@ -735,7 +735,7 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
             showCustomSnackBar('please_enter_the_phone_number'.tr);
           } else {
             AddressModel addressModel = AddressModel(
-              id: widget.address != null ? widget.address!.id : null,
+              id: widget.address?.id,
               addressType: addressType,
               contactPersonName: _contactPersonNameController.text,
               contactPersonNumber: _countryDialCode! + _contactPersonNumberController.text,

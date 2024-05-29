@@ -287,12 +287,12 @@ class _WebNewHomeScreenState extends State<WebNewHomeScreen> {
             GetBuilder<StoreController>(builder: (storeController) {
               return PaginatedListView(
                 scrollController: widget.scrollController,
-                totalSize: storeController.storeModel != null ? storeController.storeModel!.totalSize : null,
-                offset: storeController.storeModel != null ? storeController.storeModel!.offset : null,
+                totalSize: storeController.storeModel?.totalSize,
+                offset: storeController.storeModel?.offset,
                 onPaginate: (int? offset) async => await storeController.getStoreList(offset!, false),
                 itemView: ItemsView(
                   isStore: true, items: null,
-                  stores: storeController.storeModel != null ? storeController.storeModel!.stores : null,
+                  stores: storeController.storeModel?.stores,
                   padding: EdgeInsets.symmetric(
                     horizontal: ResponsiveHelper.isDesktop(context) ? Dimensions.paddingSizeExtraSmall : Dimensions.paddingSizeSmall,
                     vertical: ResponsiveHelper.isDesktop(context) ? Dimensions.paddingSizeExtraSmall : 0,

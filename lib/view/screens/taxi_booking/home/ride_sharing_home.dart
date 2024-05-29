@@ -66,7 +66,7 @@ class _RiderHomeScreenState extends State<RiderHomeScreen> {
 
                 Container(
                   height: 50, width: Dimensions.webMaxWidth,
-                  color: Theme.of(context).colorScheme.background,
+                  color: Theme.of(context).colorScheme.surface,
                   child: InkWell(
                     onTap: () => Get.toNamed(RouteHelper.getSelectRideMapLocationRoute("initial", null, null)),
                     child: Container(

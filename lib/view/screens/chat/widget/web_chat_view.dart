@@ -345,8 +345,8 @@ class _WebChatViewState extends State<WebChatView> with TickerProviderStateMixin
                         child: PaginatedListView(
                           scrollController: _scrollControllerChat,
                           reverse: true,
-                          totalSize: widget.chatController.messageModel != null ? widget.chatController.messageModel!.totalSize : null,
-                          offset: widget.chatController.messageModel != null ? widget.chatController.messageModel!.offset : null,
+                          totalSize: widget.chatController.messageModel?.totalSize,
+                          offset: widget.chatController.messageModel?.offset,
                           onPaginate: (int? offset) async => await widget.chatController.getMessages(
                             offset!, NotificationBody(
                             type: widget.chatController.notificationBody!.type,

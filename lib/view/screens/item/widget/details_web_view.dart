@@ -153,7 +153,7 @@ class DetailsWebView extends StatelessWidget {
                                       alignment: Alignment.center,
                                       padding: const EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeExtraSmall),
                                       decoration: BoxDecoration(
-                                        color: itemController.variationIndex![index] != i ? Theme.of(context).colorScheme.background : Theme.of(context).primaryColor,
+                                        color: itemController.variationIndex![index] != i ? Theme.of(context).colorScheme.surface : Theme.of(context).primaryColor,
                                         borderRadius: BorderRadius.circular(Dimensions.radiusSmall),
                                         border: itemController.variationIndex![index] != i ? Border.all(color: Theme.of(context).disabledColor, width: 1) : null,
                                       ),

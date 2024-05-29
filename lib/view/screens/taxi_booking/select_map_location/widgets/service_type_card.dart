@@ -16,7 +16,7 @@ class ServiceTypeCard extends StatelessWidget {
     return Expanded(
       child: Container(
         decoration: BoxDecoration(
-          color: isSelected ?  Theme.of(context).primaryColor.withOpacity(0.1) : Theme.of(context).colorScheme.background.withOpacity(.5),
+          color: isSelected ?  Theme.of(context).primaryColor.withOpacity(0.1) : Theme.of(context).colorScheme.surface.withOpacity(.5),
           borderRadius: const BorderRadius.all(Radius.circular(Dimensions.paddingSizeExtraSmall)),
           border:isSelected ?  Border.all(color: Theme.of(context).primaryColor.withOpacity(.5)):null,
         ),

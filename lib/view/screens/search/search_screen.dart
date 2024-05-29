@@ -87,7 +87,7 @@ class SearchScreenState extends State<SearchScreen> with TickerProviderStateMixi
                               ? 'search_food_or_restaurant'.tr : 'search_item_or_store'.tr,
                           suffixIcon: searchController.searchHomeText!.isNotEmpty ? Icons.cancel : Icons.search,
                           iconColor: Theme.of(context).disabledColor,
-                          filledColor: Theme.of(context).colorScheme.background,
+                          filledColor: Theme.of(context).colorScheme.surface,
                           iconPressed: () {
                             if(searchController.searchHomeText!.isNotEmpty) {
                               _searchController.text = '';

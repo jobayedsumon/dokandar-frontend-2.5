@@ -49,7 +49,7 @@ class MyInvestmentScreenState extends State<MyInvestmentScreen>
   Widget build(BuildContext context) {
     _isLoggedIn = Get.find<AuthController>().isLoggedIn();
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: CustomAppBar(
           title: 'My Investment',
           backButton: ResponsiveHelper.isDesktop(context)),

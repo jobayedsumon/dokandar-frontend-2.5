@@ -104,7 +104,7 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                   null, price, priceWithDiscount, variation != null ? [variation] : [], [],
                   (price! - PriceConverter.convertWithDiscount(price, discount, discountType)!),
                   itemController.quantity, addOnIdList, addOnsList, itemController.item!.availableDateStarts != null, stock, itemController.item,
-                  itemController.item!.quantityLimit != null ? itemController.item!.quantityLimit! : null
+                  itemController.item!.quantityLimit
               );
 
               List<int?> listOfAddOnId = CartHelper.getSelectedAddonIds(addOnIdList: addOnIdList);

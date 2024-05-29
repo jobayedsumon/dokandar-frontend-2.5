@@ -15,7 +15,7 @@ class RiderAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return ResponsiveHelper.isDesktop(context) ? const WebMenuBar() : Container(
-      width: Dimensions.webMaxWidth, height: 70, color: Theme.of(context).colorScheme.background,
+      width: Dimensions.webMaxWidth, height: 70, color: Theme.of(context).colorScheme.surface,
       padding: const EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeSmall),
       child: GetBuilder<SplashController>(
         builder: (splashController) {

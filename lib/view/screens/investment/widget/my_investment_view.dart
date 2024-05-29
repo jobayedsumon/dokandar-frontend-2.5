@@ -23,7 +23,7 @@ class MyInvestmentView extends StatelessWidget {
     final ScrollController scrollController = ScrollController();
 
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       body: GetBuilder<InvestmentController>(builder: (investmentController) {
         PaginatedMyInvestmentModel? paginatedMyInvestmentModel;
         if (investmentController.myInvestmentModel != null) {

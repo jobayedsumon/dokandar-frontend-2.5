@@ -76,9 +76,9 @@ class _StoreRegistrationScreenState extends State<StoreRegistrationScreen> with 
     Get.find<AuthController>().getZoneList();
     Get.find<AuthController>().selectModuleIndex(-1, canUpdate: false);
 
-    _languageList?.forEach((language) {
+    for (var language in _languageList!) {
       _tabs.add(Tab(text: language.value));
-    });
+    }
 
     if(Get.find<AuthController>().showPassView){
       Get.find<AuthController>().showHidePass(isUpdate: false);
@@ -255,7 +255,7 @@ class _StoreRegistrationScreenState extends State<StoreRegistrationScreen> with 
                             return Padding(
                               padding: const EdgeInsets.only(bottom: Dimensions.paddingSizeExtraLarge),
                               child: CustomTextField(
-                                titleText: '${'store_name'.tr} (${_languageList![index].value!})',
+                                titleText: '${'store_name'.tr} (${_languageList?[index].value!})',
                                 controller: _nameController[index],
                                 focusNode: _nameFocus[index],
                                 nextFocus: index != _languageList!.length-1 ? _nameFocus[index+1] : _addressFocus[0],
@@ -270,14 +270,14 @@ class _StoreRegistrationScreenState extends State<StoreRegistrationScreen> with 
                       const SizedBox(height: Dimensions.paddingSizeLarge),
 
                       ListView.builder(
-                          itemCount: _languageList!.length,
+                          itemCount: _languageList?.length,
                           shrinkWrap: true,
                           physics: const NeverScrollableScrollPhysics(),
                           itemBuilder: (context, index) {
                             return Padding(
                               padding: const EdgeInsets.only(bottom: Dimensions.paddingSizeExtraLarge),
                               child: CustomTextField(
-                                titleText: '${'store_address'.tr} (${_languageList![index].value!})',
+                                titleText: '${'store_address'.tr} (${_languageList?[index].value!})',
                                 controller: _addressController[index],
                                 focusNode: _addressFocus[index],
                                 nextFocus: index != _languageList!.length-1 ? _addressFocus[index+1] : _vatFocus,
@@ -478,7 +478,7 @@ class _StoreRegistrationScreenState extends State<StoreRegistrationScreen> with 
                 const SizedBox(height: Dimensions.paddingSizeSmall),
 
                 CustomTextField(
-                  titleText: '${'store_address'.tr} (${_languageList![_tabController!.index].value!})',
+                  titleText: '${'store_address'.tr} (${_languageList?[_tabController!.index].value!})',
                   controller: _addressController[_tabController!.index],
                   focusNode: _addressFocus[_tabController!.index],
                   nextFocus: _tabController!.index != _languageList!.length-1 ? _addressFocus[_tabController!.index+1] : _vatFocus,
@@ -884,7 +884,7 @@ class _StoreRegistrationScreenState extends State<StoreRegistrationScreen> with 
         onPressed: () {
           bool defaultDataNull = false;
           for(int index=0; index<_languageList!.length; index++) {
-            if(_languageList![index].key == 'en') {
+            if(_languageList?[index].key == 'en') {
               if (_nameController[index].text.trim().isEmpty || _addressController[index].text.trim().isEmpty) {
                 defaultDataNull = true;
               }
@@ -982,12 +982,12 @@ class _StoreRegistrationScreenState extends State<StoreRegistrationScreen> with 
               List<Translation> translation = [];
               for(int index=0; index<_languageList!.length; index++) {
                 translation.add(Translation(
-                  locale: _languageList![index].key, key: 'name',
+                  locale: _languageList?[index].key, key: 'name',
                   value: _nameController[index].text.trim().isNotEmpty ? _nameController[index].text.trim()
                       : _nameController[0].text.trim(),
                 ));
                 translation.add(Translation(
-                  locale: _languageList![index].key, key: 'address',
+                  locale: _languageList?[index].key, key: 'address',
                   value: _addressController[index].text.trim().isNotEmpty ? _addressController[index].text.trim()
                       : _addressController[0].text.trim(),
                 ));

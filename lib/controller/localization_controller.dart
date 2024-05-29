@@ -42,7 +42,7 @@ class LocalizationController extends GetxController implements GetxService {
     apiClient.updateHeader(
       sharedPreferences.getString(AppConstants.token), addressModel?.zoneIds,
       addressModel?.areaIds,
-      locale.languageCode, Get.find<SplashController>().module != null ? Get.find<SplashController>().module!.id : null,
+      locale.languageCode, Get.find<SplashController>().module?.id,
       addressModel?.latitude, addressModel?.longitude,
     );
     saveLanguage(_locale);

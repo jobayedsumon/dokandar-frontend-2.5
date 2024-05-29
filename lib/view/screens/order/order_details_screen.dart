@@ -100,7 +100,7 @@ class OrderDetailsScreenState extends State<OrderDetailsScreen> {
         }),
         endDrawer: const MenuDrawer(),
         endDrawerEnableOpenDragGesture: false,
-        backgroundColor: Theme.of(context).colorScheme.background,
+        backgroundColor: Theme.of(context).colorScheme.surface,
         body: SafeArea(child: GetBuilder<OrderController>(builder: (orderController) {
           double deliveryCharge = 0;
           double itemsPrice = 0;

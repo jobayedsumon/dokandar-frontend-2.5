@@ -129,7 +129,7 @@ class _HomeScreenState extends State<HomeScreen> {
       return Scaffold(
         appBar: ResponsiveHelper.isDesktop(context) ? const WebMenuBar() : null,
         endDrawer: const MenuDrawer(), endDrawerEnableOpenDragGesture: false,
-        backgroundColor: Theme.of(context).colorScheme.background,
+        backgroundColor: Theme.of(context).colorScheme.surface,
         body: /*isTaxiBooking ? const RiderHomeScreen() :*/ isParcel ? const ParcelCategoryScreen() : SafeArea(
           child: RefreshIndicator(
             onRefresh: () async {
@@ -183,9 +183,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 /// App Bar
                 SliverAppBar(
                   floating: true, elevation: 0, automaticallyImplyLeading: false,
-                  backgroundColor: ResponsiveHelper.isDesktop(context) ? Colors.transparent : Theme.of(context).colorScheme.background,
+                  backgroundColor: ResponsiveHelper.isDesktop(context) ? Colors.transparent : Theme.of(context).colorScheme.surface,
                   title: Center(child: Container(
-                    width: Dimensions.webMaxWidth, height: Get.find<LocalizationController>().isLtr ? 60 : 70, color: Theme.of(context).colorScheme.background,
+                    width: Dimensions.webMaxWidth, height: Get.find<LocalizationController>().isLtr ? 60 : 70, color: Theme.of(context).colorScheme.surface,
                     child: Row(children: [
                       (splashController.module != null && splashController.configModel!.module == null) ? InkWell(
                         onTap: () => splashController.removeModule(),

@@ -34,7 +34,7 @@ class TripHistoryList extends StatelessWidget {
                 child: PaginatedListView(
                   scrollController: scrollController,
                   onPaginate: (int? offset) => Get.find<RiderController>().getRunningTripList(offset!, isUpdate: true),
-                  totalSize: riderController.runningTrip != null ? riderController.runningTrip!.totalSize : null,
+                  totalSize: riderController.runningTrip?.totalSize,
                   offset: riderController.runningTrip != null ? int.parse(riderController.runningTrip!.offset!) : null,
                   itemView: ListView.builder(
                     padding: const EdgeInsets.all(Dimensions.paddingSizeSmall),

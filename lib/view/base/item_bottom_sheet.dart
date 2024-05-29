@@ -91,7 +91,7 @@ class _ItemBottomSheetState extends State<ItemBottomSheet> {
         int? stock = widget.item!.stock ?? 0;
 
         if(discountType == 'amount'){
-          discount = discount! * itemController.quantity!;
+          discount = (discount! * itemController.quantity!)!;
         }
 
         if(_newVariation) {
@@ -434,7 +434,7 @@ class _ItemBottomSheetState extends State<ItemBottomSheet> {
                                     CartModel cartModel = CartModel(
                                       null, price, priceWithDiscountAndAddons, variation != null ? [variation] : [], itemController.selectedVariations,
                                       (price! - PriceConverter.convertWithDiscount(price, discount, discountType)!),
-                                      itemController.quantity, addOnIdList, addOnsList, widget.isCampaign, stock, widget.item,  widget.item!.quantityLimit != null ? widget.item!.quantityLimit! : null
+                                      itemController.quantity, addOnIdList, addOnsList, widget.isCampaign, stock, widget.item,  widget.item!.quantityLimit
                                     );
 
                                     List<OrderVariation> variations = CartHelper.getSelectedVariations(
@@ -445,7 +445,7 @@ class _ItemBottomSheetState extends State<ItemBottomSheet> {
                                     List<int?> listOfAddOnQty = CartHelper.getSelectedAddonQtnList(addOnIdList: addOnIdList);
 
                                     OnlineCart onlineCart = OnlineCart(
-                                      widget.cart != null ? widget.cart!.id : null, widget.isCampaign ? null : widget.item!.id, widget.isCampaign ? widget.item!.id : null,
+                                      widget.cart?.id, widget.isCampaign ? null : widget.item!.id, widget.isCampaign ? widget.item!.id : null,
                                       priceWithDiscountAndAddons.toString(), '', variation != null ? [variation] : null,
                                       Get.find<SplashController>().getModuleConfig(widget.item!.moduleType).newVariation! ? variations : null,
                                       itemController.quantity, listOfAddOnId, addOnsList, listOfAddOnQty, 'Item'

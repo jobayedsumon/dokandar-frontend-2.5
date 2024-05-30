@@ -91,7 +91,7 @@ class _ItemBottomSheetState extends State<ItemBottomSheet> {
         int? stock = widget.item!.stock ?? 0;
 
         if(discountType == 'amount'){
-          discount = (discount! * itemController.quantity!)!;
+          discount = (discount! * itemController.quantity!);
         }
 
         if(_newVariation) {

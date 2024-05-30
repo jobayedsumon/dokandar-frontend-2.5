@@ -190,28 +190,23 @@ class MyInvestmentDetailsScreenState extends State<MyInvestmentDetailsScreen> {
                                                                   .package!
                                                                   .type ==
                                                               'flexible'
-                                                          ? 'Flexible'
-                                                          : 'Locked In',
+                                                          ? 'Short Term'
+                                                          : 'Long Term',
                                                       icon: Icons
                                                           .settings_applications),
-                                                  myInvestmentModel
-                                                              .package!.type ==
-                                                          'locked-in'
-                                                      ? Padding(
+                                                  Padding(
                                                           padding:
                                                               const EdgeInsets
                                                                   .only(
                                                                   top: 8.0),
                                                           child: ListTileWidget(
                                                               title: 'Duration',
-                                                              value: myInvestmentModel
+                                                              value: '${myInvestmentModel
                                                                   .package!
-                                                                  .durationInMonths
-                                                                  .toString(),
+                                                                  .durationInMonths} Months',
                                                               icon: Icons
                                                                   .calendar_today),
-                                                        )
-                                                      : Container(),
+                                                        ),
                                                   const SizedBox(
                                                       height: Dimensions
                                                           .paddingSizeLarge),
@@ -359,61 +354,61 @@ class MyInvestmentDetailsScreenState extends State<MyInvestmentDetailsScreen> {
                                           height: Dimensions.paddingSizeSmall),
                                       Text(myInvestmentModel.package!.about ??
                                           ''),
-                                      const SizedBox(
-                                          height:
-                                              Dimensions.paddingSizeExtraLarge),
-                                      myInvestmentModel.redeemedAt == null &&
-                                              myInvestmentModel.package!.type ==
-                                                  'flexible'
-                                          ? CustomButton(
-                                              buttonText: 'Redeem Now'.tr,
-                                              width: 200,
-                                              onPressed: () {
-                                                showDialog(
-                                                  context: context,
-                                                  builder:
-                                                      (BuildContext context) {
-                                                    return AlertDialog(
-                                                      title: const Text(
-                                                          'Redeem Now'),
-                                                      content: const Text(
-                                                          'Are you sure you want to redeem this investment?'),
-                                                      actions: [
-                                                        Row(
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceEvenly,
-                                                          children: <Widget>[
-                                                            CustomButton(
-                                                              color: Theme.of(
-                                                                      context)
-                                                                  .disabledColor,
-                                                              width: 50,
-                                                              buttonText: 'No',
-                                                              onPressed: () {
-                                                                Get.back();
-                                                              },
-                                                            ),
-                                                            CustomButton(
-                                                              width: 50,
-                                                              buttonText: 'Yes',
-                                                              onPressed: () {
-                                                                investmentController
-                                                                    .redeemInvestment(
-                                                                        myInvestmentModel
-                                                                            .id!);
-                                                                Get.back();
-                                                              },
-                                                            ),
-                                                          ],
-                                                        ),
-                                                      ],
-                                                    );
-                                                  },
-                                                );
-                                              },
-                                            )
-                                          : Container(),
+                                      // const SizedBox(
+                                      //     height:
+                                      //         Dimensions.paddingSizeExtraLarge),
+                                      // myInvestmentModel.redeemedAt == null &&
+                                      //         myInvestmentModel.package!.type ==
+                                      //             'flexible'
+                                      //     ? CustomButton(
+                                      //         buttonText: 'Redeem Now'.tr,
+                                      //         width: 200,
+                                      //         onPressed: () {
+                                      //           showDialog(
+                                      //             context: context,
+                                      //             builder:
+                                      //                 (BuildContext context) {
+                                      //               return AlertDialog(
+                                      //                 title: const Text(
+                                      //                     'Redeem Now'),
+                                      //                 content: const Text(
+                                      //                     'Are you sure you want to redeem this investment?'),
+                                      //                 actions: [
+                                      //                   Row(
+                                      //                     mainAxisAlignment:
+                                      //                         MainAxisAlignment
+                                      //                             .spaceEvenly,
+                                      //                     children: <Widget>[
+                                      //                       CustomButton(
+                                      //                         color: Theme.of(
+                                      //                                 context)
+                                      //                             .disabledColor,
+                                      //                         width: 50,
+                                      //                         buttonText: 'No',
+                                      //                         onPressed: () {
+                                      //                           Get.back();
+                                      //                         },
+                                      //                       ),
+                                      //                       CustomButton(
+                                      //                         width: 50,
+                                      //                         buttonText: 'Yes',
+                                      //                         onPressed: () {
+                                      //                           investmentController
+                                      //                               .redeemInvestment(
+                                      //                                   myInvestmentModel
+                                      //                                       .id!);
+                                      //                           Get.back();
+                                      //                         },
+                                      //                       ),
+                                      //                     ],
+                                      //                   ),
+                                      //                 ],
+                                      //               );
+                                      //             },
+                                      //           );
+                                      //         },
+                                      //       )
+                                      //     : Container(),
                                       const SizedBox(
                                           height:
                                               Dimensions.paddingSizeExtraLarge),

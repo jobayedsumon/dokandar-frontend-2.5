@@ -241,12 +241,22 @@ class InvestmentController extends GetxController implements GetxService {
       'method_type': withdrawalMethod,
     };
     if (withdrawalMethod == 'bank') {
+      if(withdrawalAccountNumberController.text.isEmpty && withdrawalBankNameController.text.isEmpty) {
+        Get.snackbar('Error', 'Account number and bank name is required',
+            snackPosition: SnackPosition.BOTTOM);
+        return;
+      }
       data['account_number'] = withdrawalAccountNumberController.text;
       data['account_name'] = withdrawalAccountNameController.text;
       data['bank_name'] = withdrawalBankNameController.text;
       data['branch_name'] = withdrawalBranchNameController.text;
       data['routing_number'] = withdrawalRoutingNumberController.text;
     } else {
+      if(withdrawalMobileNumberController.text.isEmpty) {
+        Get.snackbar('Error', 'Mobile number is required',
+            snackPosition: SnackPosition.BOTTOM);
+        return;
+      }
       data['mobile_number'] = withdrawalMobileNumberController.text;
     }
     Response response = await investmentRepo.sendWithdrawRequest(data);

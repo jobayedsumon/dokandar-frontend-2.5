@@ -14,8 +14,8 @@ class AppConstants {
   static const String webHostedUrl = 'https://dokandar.xyz';
 //   static const String baseUrl = 'https://admin.dokandar.xyz';
 
-  static const String baseUrl = 'http://dokandar-backend-2.5.test';
-  // static const String baseUrl = 'http://staging.admin.dokandar.xyz';
+  // static const String baseUrl = 'http://localhost:8000';
+  static const String baseUrl = 'http://staging.admin.dokandar.xyz';
 
   static const String categoryUri = '/api/v1/categories';
   static const String bannerUri = '/api/v1/banners';

@@ -310,18 +310,34 @@ class MyInvestmentView extends StatelessWidget {
                                                           const SizedBox(
                                                               height: Dimensions
                                                                   .paddingSizeSmall),
-                                                          paginatedMyInvestmentModel
-                                                                      .investments![
-                                                                          index]
-                                                                      .package!
-                                                                      .type ==
-                                                                  'flexible'
-                                                              ? paginatedMyInvestmentModel
+                                                        paginatedMyInvestmentModel
                                                                           .investments![
                                                                               index]
                                                                           .redeemedAt ==
                                                                       null
-                                                                  ? const SizedBox()
+                                                                  ? Row(
+                                                          children: [
+                                                            Icon(
+                                                                Icons
+                                                                    .calendar_month,
+                                                                size:
+                                                                15,
+                                                                color: Theme.of(context)
+                                                                    .primaryColor),
+                                                            const SizedBox(
+                                                                width: Dimensions
+                                                                    .paddingSizeSmall),
+                                                            Text(
+                                                              '${paginatedMyInvestmentModel.investments![index].package!.durationInMonths!} Months',
+                                                              style: robotoRegular.copyWith(
+                                                                  fontSize: Dimensions
+                                                                      .fontSizeSmall,
+                                                                  color: Colors
+                                                                      .grey
+                                                                      .shade600),
+                                                            ),
+                                                          ],
+                                                        )
                                                                   : Row(
                                                                       children: [
                                                                         Icon(
@@ -343,30 +359,7 @@ class MyInvestmentView extends StatelessWidget {
                                                                           ),
                                                                         ),
                                                                       ],
-                                                                    )
-                                                              : Row(
-                                                                  children: [
-                                                                    Icon(
-                                                                        Icons
-                                                                            .calendar_month,
-                                                                        size:
-                                                                            15,
-                                                                        color: Theme.of(context)
-                                                                            .primaryColor),
-                                                                    const SizedBox(
-                                                                        width: Dimensions
-                                                                            .paddingSizeSmall),
-                                                                    Text(
-                                                                      '${paginatedMyInvestmentModel.investments![index].package!.durationInMonths!} Months',
-                                                                      style: robotoRegular.copyWith(
-                                                                          fontSize: Dimensions
-                                                                              .fontSizeSmall,
-                                                                          color: Colors
-                                                                              .grey
-                                                                              .shade600),
                                                                     ),
-                                                                  ],
-                                                                ),
                                                         ]),
                                                   ),
                                                   const SizedBox(

@@ -97,8 +97,8 @@ class InvestmentScreenState extends State<InvestmentScreen>
                                     fontSize: Dimensions.fontSizeSmall,
                                     color: Theme.of(context).primaryColor),
                                 tabs: [
-                                  Tab(text: 'Flexible'.tr),
-                                  Tab(text: 'Locked In'.tr),
+                                  Tab(text: 'Short Term'.tr),
+                                  Tab(text: 'Long Term'.tr),
                                 ],
                               ),
                             ),

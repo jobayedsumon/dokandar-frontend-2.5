@@ -185,26 +185,22 @@ class InvestmentDetailsScreenState extends State<InvestmentDetailsScreen> {
                                                       value: investmentModel
                                                                   .type ==
                                                               'flexible'
-                                                          ? 'Flexible'
-                                                          : 'Locked In',
+                                                          ? 'Short Term'
+                                                          : 'Long Term',
                                                       icon: Icons
                                                           .settings_applications),
-                                                  investmentModel.type ==
-                                                          'locked-in'
-                                                      ? Padding(
+                                                 Padding(
                                                           padding:
                                                               const EdgeInsets
                                                                   .only(
                                                                   top: 8.0),
                                                           child: ListTileWidget(
                                                               title: 'Duration',
-                                                              value: investmentModel
-                                                                  .durationInMonths
-                                                                  .toString(),
+                                                              value: '${investmentModel
+                                                                  .durationInMonths} Months',
                                                               icon: Icons
                                                                   .calendar_today),
-                                                        )
-                                                      : Container(),
+                                                        ),
                                                   const SizedBox(
                                                       height: Dimensions
                                                           .paddingSizeLarge),

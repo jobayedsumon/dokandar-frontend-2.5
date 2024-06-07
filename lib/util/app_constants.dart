@@ -11,11 +11,10 @@ class AppConstants {
   static const bool payInWevView = true;
   static const int balanceInputLen = 10;
 
-  static const String webHostedUrl = 'https://dokandar.xyz';
-  static const String baseUrl = 'https://admin.dokandar.xyz';
+  static const String webHostedUrl = 'https://dokandar.online';
+  static const String baseUrl = 'https://admin.dokandar.online';
 
   // static const String baseUrl = 'http://127.0.0.1:8000';
-  // static const String baseUrl = 'http://staging.admin.dokandar.xyz';
 
   static const String categoryUri = '/api/v1/categories';
   static const String bannerUri = '/api/v1/banners';

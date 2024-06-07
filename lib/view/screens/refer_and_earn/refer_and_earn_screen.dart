@@ -93,13 +93,10 @@ class _ReferAndEarnScreenState extends State<ReferAndEarnScreen> {
                         const SizedBox(height: Dimensions.paddingSizeSmall),
 
                         ResponsiveHelper.isDesktop(context) ? Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                          Text(
-                            '${'one_referral'.tr}= ', style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeSmall),
-                          ),
-                          Text(
-                            PriceConverter.convertPrice(Get.find<SplashController>().configModel != null
-                                ? Get.find<SplashController>().configModel!.refEarningExchangeRate!.toDouble() : 0.0),
-                            style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeSmall), textDirection: TextDirection.ltr,
+                          Flexible(
+                            child: _config!.investmentReferralBonus > 0 ? Text(
+                              'Get ${_config!.investmentReferralBonus}% of the first investment of your referred users! ', style: robotoBold.copyWith(fontSize: Dimensions.fontSizeDefault), textAlign: TextAlign.center,
+                            ) : const Text('Referral bonus is not available right now!'),
                           ),
                         ]) : const SizedBox(),
                         ResponsiveHelper.isDesktop(context) ?  const SizedBox(height: 40) : const SizedBox(),

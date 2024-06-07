@@ -20,6 +20,8 @@ import 'package:dokandar/view/base/not_logged_in_screen.dart';
 import 'package:dokandar/view/base/web_page_title_widget.dart';
 import 'package:dokandar/view/screens/refer_and_earn/widget/bottom_sheet_view.dart';
 
+import '../../../data/model/response/config_model.dart';
+
 enum ShareType {
   facebook,
   messenger,
@@ -49,6 +51,8 @@ class _ReferAndEarnScreenState extends State<ReferAndEarnScreen> {
     }
   }
 
+  final ConfigModel? _config = Get.find<SplashController>().configModel;
+
   @override
   Widget build(BuildContext context) {
     bool isLoggedIn = Get.find<AuthController>().isLoggedIn();
@@ -77,13 +81,10 @@ class _ReferAndEarnScreenState extends State<ReferAndEarnScreen> {
                         ResponsiveHelper.isDesktop(context) ? const SizedBox() : const SizedBox(height: Dimensions.paddingSizeExtraSmall),
 
                         ResponsiveHelper.isDesktop(context) ? const SizedBox() : Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                          Text(
-                            '${'one_referral'.tr}= ', style: robotoBold.copyWith(fontSize: Dimensions.fontSizeDefault),
-                          ),
-                          Text(
-                            PriceConverter.convertPrice(Get.find<SplashController>().configModel != null
-                                ? Get.find<SplashController>().configModel!.refEarningExchangeRate!.toDouble() : 0.0),
-                            style: robotoBold.copyWith(fontSize: Dimensions.fontSizeDefault), textDirection: TextDirection.ltr,
+                          Flexible(
+                            child: _config!.investmentReferralBonus > 0 ? Text(
+                              'Get ${_config!.investmentReferralBonus}% of the first investment of your referred users! ', style: robotoBold.copyWith(fontSize: Dimensions.fontSizeDefault), textAlign: TextAlign.center,
+                            ) : const Text('Referral bonus is not available right now!'),
                           ),
                         ]),
                         ResponsiveHelper.isDesktop(context) ? const SizedBox() : const SizedBox(height: 40),

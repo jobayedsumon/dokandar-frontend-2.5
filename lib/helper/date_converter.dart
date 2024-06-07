@@ -32,6 +32,10 @@ class DateConverter {
     return DateFormat('dd MMM yyyy  ${_timeFormatter()}').format(DateFormat('yyyy-MM-dd HH:mm:ss').parse(dateTime));
   }
 
+  static String dateTimeStringToDateTimeWithMonths(String dateTime, int months) {
+    return DateFormat('dd MMM yyyy  ${_timeFormatter()}').format(DateFormat('yyyy-MM-dd HH:mm:ss').parse(dateTime).add(Duration(days: (30 * months) + 5)));
+  }
+
   static String dateTimeStringToDateOnly(String dateTime) {
     return DateFormat('dd MMM yyyy').format(DateFormat('yyyy-MM-dd HH:mm:ss').parse(dateTime));
   }
@@ -198,6 +202,4 @@ class DateConverter {
       return DateConverter.localDateToIsoStringAMPM(createdAtDate);
     }
   }
-
-
 }

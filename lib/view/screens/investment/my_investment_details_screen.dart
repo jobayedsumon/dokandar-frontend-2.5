@@ -5,7 +5,6 @@ import 'package:dokandar/helper/responsive_helper.dart';
 import 'package:dokandar/util/dimensions.dart';
 import 'package:dokandar/util/styles.dart';
 import 'package:dokandar/view/base/custom_app_bar.dart';
-import 'package:dokandar/view/base/custom_button.dart';
 import 'package:dokandar/view/base/menu_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -305,12 +304,39 @@ class MyInvestmentDetailsScreenState extends State<MyInvestmentDetailsScreen> {
                                   ),
                                 ),
                                 const SizedBox(height: 20),
-                                myInvestmentModel.redeemedAt != null
-                                    ? SizedBox(
-                                        width: Dimensions.webMaxWidth,
-                                        child: Column(
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Column(
+                                      crossAxisAlignment:
+                                      CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Invested At',
+                                          style: TextStyle(
+                                              fontSize: Dimensions
+                                                  .fontSizeDefault,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                        const SizedBox(
+                                            height: Dimensions
+                                                .paddingSizeSmall),
+                                        Text(
+                                            DateConverter
+                                                .dateTimeStringToDateTime(
+                                                myInvestmentModel
+                                                    .createdAt!),
+                                            style: TextStyle(
+                                                fontSize: Dimensions
+                                                    .fontSizeDefault,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.red)),
+                                      ],
+                                    ),
+                                    myInvestmentModel.redeemedAt != null
+                                        ? Column(
                                           crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                          CrossAxisAlignment.start,
                                           children: [
                                             Text(
                                               'Redeemed At',
@@ -325,17 +351,43 @@ class MyInvestmentDetailsScreenState extends State<MyInvestmentDetailsScreen> {
                                             Text(
                                                 DateConverter
                                                     .dateTimeStringToDateTime(
-                                                        myInvestmentModel
-                                                            .redeemedAt!),
+                                                    myInvestmentModel
+                                                        .redeemedAt!),
                                                 style: TextStyle(
                                                     fontSize: Dimensions
                                                         .fontSizeDefault,
                                                     fontWeight: FontWeight.bold,
                                                     color: Colors.red)),
                                           ],
+                                        )
+                                        : Column(
+                                      crossAxisAlignment:
+                                      CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Redemption Time',
+                                          style: TextStyle(
+                                              fontSize: Dimensions
+                                                  .fontSizeDefault,
+                                              fontWeight: FontWeight.bold),
                                         ),
-                                      )
-                                    : Container(),
+                                        const SizedBox(
+                                            height: Dimensions
+                                                .paddingSizeSmall),
+                                        Text(
+                                            DateConverter
+                                                .dateTimeStringToDateTimeWithMonths(
+                                                myInvestmentModel
+                                                    .createdAt!, myInvestmentModel.package!.durationInMonths ?? 0),
+                                            style: TextStyle(
+                                                fontSize: Dimensions
+                                                    .fontSizeDefault,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.red)),
+                                      ],
+                                    ),
+                                  ],
+                                ),
                                 const SizedBox(
                                     height: Dimensions.paddingSizeLarge),
                                 SizedBox(

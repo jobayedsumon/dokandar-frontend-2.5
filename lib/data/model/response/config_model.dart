@@ -1,3 +1,4 @@
+
 import 'package:dokandar/data/model/response/module_model.dart';
 
 class ConfigModel {
@@ -72,6 +73,8 @@ class ConfigModel {
   bool? addFundStatus;
   bool? offlinePaymentStatus;
   bool? guestCheckoutStatus;
+  double investmentReferralBonus = 0;
+  double investmentWithdrawalCharge = 0;
 
   ConfigModel(
       {this.businessName,
@@ -145,6 +148,8 @@ class ConfigModel {
         this.addFundStatus,
         this.offlinePaymentStatus,
         this.guestCheckoutStatus,
+        this.investmentReferralBonus = 0,
+        this.investmentWithdrawalCharge = 0,
       });
 
   ConfigModel.fromJson(Map<String, dynamic> json) {
@@ -254,6 +259,8 @@ class ConfigModel {
     addFundStatus = json['add_fund_status'] == 1;
     offlinePaymentStatus = json['offline_payment_status'] == 1;
     guestCheckoutStatus = json['guest_checkout_status'] == 1;
+    investmentReferralBonus = json['investment_referral_bonus']?.toDouble() ?? 0;
+    investmentWithdrawalCharge = json['investment_withdrawal_charge']?.toDouble() ?? 0;
   }
 
   Map<String, dynamic> toJson() {
@@ -349,6 +356,8 @@ class ConfigModel {
     data['add_fund_status'] = addFundStatus;
     data['offline_payment_status'] = offlinePaymentStatus;
     data['guest_checkout_status'] = guestCheckoutStatus;
+    data['investment_referral_bonus'] = investmentReferralBonus;
+    data['investment_withdrawal_charge'] = investmentWithdrawalCharge;
     return data;
   }
 }

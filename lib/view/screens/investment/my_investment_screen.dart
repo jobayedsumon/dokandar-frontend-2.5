@@ -326,9 +326,9 @@ class MyInvestmentScreenState extends State<MyInvestmentScreen>
                                 indicatorWeight: 3,
                                 labelColor: Theme.of(context).primaryColor,
                                 unselectedLabelColor:
-                                    Theme.of(context).disabledColor,
+                                    Theme.of(context).primaryColor,
                                 unselectedLabelStyle: robotoRegular.copyWith(
-                                    color: Theme.of(context).disabledColor,
+                                    color: Theme.of(context).primaryColor,
                                     fontSize: Dimensions.fontSizeSmall),
                                 labelStyle: robotoBold.copyWith(
                                     fontSize: Dimensions.fontSizeSmall,

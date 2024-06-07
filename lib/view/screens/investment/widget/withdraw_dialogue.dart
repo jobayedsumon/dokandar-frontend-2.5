@@ -7,6 +7,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
+import '../../../../controller/splash_controller.dart';
+import '../../../../data/model/response/config_model.dart';
+
 class WithdrawDialogue extends StatefulWidget {
   const WithdrawDialogue({Key? key}) : super(key: key);
 
@@ -21,6 +24,8 @@ class _WithdrawDialogueState extends State<WithdrawDialogue> {
     Get.find<InvestmentController>()
         .changeDigitalPaymentName('', isUpdate: false);
   }
+
+  final ConfigModel? _config = Get.find<SplashController>().configModel;
 
   @override
   Widget build(BuildContext context) {
@@ -233,6 +238,10 @@ class _WithdrawDialogueState extends State<WithdrawDialogue> {
                 investmentController.sendWithdrawRequest();
               },
             ),
+            const SizedBox(height: Dimensions.paddingSizeSmall),
+            _config!.investmentWithdrawalCharge > 0 ? Text('Note: ${_config!.investmentWithdrawalCharge}% withdrawal charge is applicable.', style: robotoRegular.copyWith(
+                fontSize: Dimensions.fontSizeSmall,
+                color: Theme.of(context).primaryColor)) : const SizedBox(),
           ]),
         );
       })

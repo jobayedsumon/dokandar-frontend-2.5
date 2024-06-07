@@ -296,7 +296,7 @@ class MyInvestmentView extends StatelessWidget {
                                                                   width: Dimensions
                                                                       .paddingSizeSmall),
                                                               Text(
-                                                                  '${PriceConverter.convertPrice(paginatedMyInvestmentModel.investments![index].profitEarned)} Profit Earned',
+                                                                  '${PriceConverter.convertPrice(paginatedMyInvestmentModel.investments![index].profitEarned)} Profit',
                                                                   style: robotoMedium
                                                                       .copyWith(
                                                                     fontSize:
@@ -353,7 +353,7 @@ class MyInvestmentView extends StatelessWidget {
                                                                         Flexible(
                                                                           child:
                                                                               Text(
-                                                                            'Redeemed At: ${DateConverter.dateTimeStringToDateTime(paginatedMyInvestmentModel.investments![index].redeemedAt!)}',
+                                                                            'Redeemed',
                                                                             style:
                                                                                 robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Colors.red),
                                                                           ),

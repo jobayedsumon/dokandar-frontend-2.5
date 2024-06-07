@@ -12,10 +12,10 @@ class AppConstants {
   static const int balanceInputLen = 10;
 
   static const String webHostedUrl = 'https://dokandar.xyz';
-//   static const String baseUrl = 'https://admin.dokandar.xyz';
+  static const String baseUrl = 'https://admin.dokandar.xyz';
 
-  // static const String baseUrl = 'http://localhost:8000';
-  static const String baseUrl = 'http://staging.admin.dokandar.xyz';
+  // static const String baseUrl = 'http://127.0.0.1:8000';
+  // static const String baseUrl = 'http://staging.admin.dokandar.xyz';
 
   static const String categoryUri = '/api/v1/categories';
   static const String bannerUri = '/api/v1/banners';
@@ -226,6 +226,7 @@ class AppConstants {
   static final dataList = [
     'invite_your_friends_and_business'.tr,
     '${'they_register'.tr} ${AppConstants.appName} ${'with_special_offer'.tr}',
+    'They make their first investment',
     'you_made_your_earning'.tr,
   ];
 

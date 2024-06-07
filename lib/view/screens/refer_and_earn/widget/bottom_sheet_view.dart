@@ -68,7 +68,7 @@ class BottomSheetView extends StatelessWidget {
                 ),
                 const SizedBox(width: Dimensions.paddingSizeSmall),
 
-                Text(AppConstants.dataList[index].tr, style: robotoRegular),
+                Flexible(child: Text(AppConstants.dataList[index].tr, style: robotoRegular)),
 
               ]),
             );

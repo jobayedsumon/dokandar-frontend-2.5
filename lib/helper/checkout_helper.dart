@@ -57,8 +57,8 @@ class CheckoutHelper {
 
       if(deliveryCharge < minimumCharge) {
         deliveryCharge = minimumCharge;
-      }else if(deliveryCharge > maximumCharge!) {
-        deliveryCharge = maximumCharge;
+      }else if(deliveryCharge > (maximumCharge ?? 0)) {
+        deliveryCharge = maximumCharge ?? 0;
       }
     }
 

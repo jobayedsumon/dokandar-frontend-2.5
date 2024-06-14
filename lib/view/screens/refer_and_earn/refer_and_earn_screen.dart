@@ -7,7 +7,6 @@ import 'package:share_plus/share_plus.dart';
 import 'package:dokandar/controller/auth_controller.dart';
 import 'package:dokandar/controller/splash_controller.dart';
 import 'package:dokandar/controller/user_controller.dart';
-import 'package:dokandar/helper/price_converter.dart';
 import 'package:dokandar/helper/responsive_helper.dart';
 import 'package:dokandar/util/dimensions.dart';
 import 'package:dokandar/util/images.dart';

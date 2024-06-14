@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyBqLvqgSlPYuv1FhbEoSQrpAZKepGJgSa0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>610443387774</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>user.dokandar.online</string>
+	<key>PROJECT_ID</key>
+	<string>dokandar-316216</string>
+	<key>STORAGE_BUCKET</key>
+	<string>dokandar-316216.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:610443387774:ios:e1487eb73f21802960892f</string>
+</dict>
+</plist>

@@ -121,6 +121,9 @@ class PaymentScreenState extends State<PaymentWebViewScreen> {
               onWebViewCreated: (controller) async {
                 webViewController = controller;
               },
+              onReceivedServerTrustAuthRequest: (controller, challenge) async {
+                return ServerTrustAuthResponse(action: ServerTrustAuthResponseAction.PROCEED);
+              },
               onLoadStart: (controller, url) async {
                 // _redirect(url.toString());
                 Get.find<OrderController>().paymentRedirect(

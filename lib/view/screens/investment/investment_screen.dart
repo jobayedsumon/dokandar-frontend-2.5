@@ -45,8 +45,9 @@ class InvestmentScreenState extends State<InvestmentScreen>
     _isLoggedIn = Get.find<AuthController>().isLoggedIn();
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
-      appBar: CustomAppBar(
-          title: 'Investment', backButton: ResponsiveHelper.isDesktop(context)),
+      appBar: const CustomAppBar(
+          title: 'Investment'
+      ),
       endDrawer: const MenuDrawer(),
       endDrawerEnableOpenDragGesture: false,
       body: GetBuilder<InvestmentController>(

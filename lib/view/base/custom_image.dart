@@ -13,10 +13,11 @@ class CustomImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CachedNetworkImage(
+    Image customPlaceHolder = Image.asset(placeholder.isNotEmpty ? placeholder : isNotification ? Images.notificationPlaceholder : Images.placeholder, height: height, width: width, fit: fit);
+    return image != 'null' ? CachedNetworkImage(
       imageUrl: image, height: height, width: width, fit: fit,
-      placeholder: (context, url) => Image.asset(placeholder.isNotEmpty ? placeholder : isNotification ? Images.notificationPlaceholder : Images.placeholder, height: height, width: width, fit: fit),
-      errorWidget: (context, url, error) => Image.asset(placeholder.isNotEmpty ? placeholder : isNotification ? Images.notificationPlaceholder : Images.placeholder, height: height, width: width, fit: fit),
-    );
+      placeholder: (context, url) => customPlaceHolder,
+      errorWidget: (context, url, error) => customPlaceHolder,
+    ) : customPlaceHolder;
   }
 }

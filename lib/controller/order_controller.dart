@@ -963,7 +963,7 @@ class OrderController extends GetxController implements GetxService {
             Get.back();
           }
           Get.back();
-          Get.toNamed(RouteHelper.getWalletRoute(true, fundStatus: isSuccess ? 'success' : isFailed ? 'fail' : 'cancel', token: UniqueKey().toString()));
+          Get.toNamed(RouteHelper.getWalletRoute(true, fundStatus: isSuccess ? 'success' : isFailed ? 'fail' : 'cancel', token: DateTime.now().millisecondsSinceEpoch.toString()));
         }
       }
 

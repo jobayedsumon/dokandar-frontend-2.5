@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:dokandar/util/styles.dart';
 
 void showCustomSnackBar(String? message, {bool isError = true, bool getXSnackBar = false}) {
-  if(message != null && message.isNotEmpty) {
+  if(message != null && message.isNotEmpty && message != 'Too Many Requests') {
     if(getXSnackBar) {
       Get.showSnackbar(GetSnackBar(
         backgroundColor: isError ? Colors.red : Colors.green,

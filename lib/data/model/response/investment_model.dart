@@ -266,7 +266,7 @@ class PaginatedWithdrawalModel {
 class WithdrawalModel {
   int? id;
   int? customerId;
-  int? withdrawalAmount;
+  double? withdrawalAmount;
   String? withdrawalMethodDetails;
   String? paidAt;
   String? createdAt;
@@ -287,7 +287,7 @@ class WithdrawalModel {
   WithdrawalModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     customerId = json['customer_id'];
-    withdrawalAmount = json['withdrawal_amount'];
+    withdrawalAmount = json['withdrawal_amount'].toDouble();
     withdrawalMethodDetails = json['withdrawal_method_details'];
     paidAt = json['paid_at'];
     createdAt = json['created_at'];

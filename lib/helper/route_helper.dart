@@ -835,8 +835,8 @@ class RouteHelper {
         name: wallet,
         page: () {
           return getRoute(WalletScreen(
-            fromWallet: Get.parameters['flag'] != null ||
-                Get.parameters['page'] == 'wallet',
+            fromWallet: (Get.parameters['flag'] != null ||
+                Get.parameters['page'] == 'wallet'),
             fundStatus:
                 Get.parameters['flag'] ?? Get.parameters['payment_status'],
             token: Get.parameters['token'],

@@ -49,10 +49,16 @@ class _WalletScreenState extends State<WalletScreen> {
       Get.find<WalletController>().setWalletFilerType('all', isUpdate: false);
 
       if((widget.fundStatus == 'success' || widget.fundStatus == 'fail' || widget.fundStatus == 'cancel') && Get.find<WalletController>().getWalletAccessToken() != widget.token){
+
+        if(widget.fundStatus == 'success') {
+          Get.find<UserController>().getUserInfo();
+          Get.find<WalletController>().getWalletTransactionList('1', true, widget.fromWallet, 'all');
+        }
+
         Future.delayed(const Duration(seconds: 2), () {
 
           Get.showSnackbar(GetSnackBar(
-            backgroundColor: widget.fundStatus == 'fail' || widget.fundStatus == 'cancel' ? Colors.red : Colors.green,
+            backgroundColor: widget.fundStatus == 'success' ? Colors.green : Colors.red,
             message: widget.fundStatus == 'success' ? 'fund_successfully_added_to_wallet'.tr : 'fund_not_added_to_wallet'.tr,
             maxWidth: 500,
             duration: const Duration(seconds: 3),
@@ -65,13 +71,14 @@ class _WalletScreenState extends State<WalletScreen> {
         }).then((value) {
           Get.find<WalletController>().setWalletAccessToken(widget.token ?? '');
         });
+
       }
+
       Get.find<UserController>().getUserInfo();
       if(widget.fromWallet){
         Get.find<WalletController>().getWalletBonusList(isUpdate: false);
       }
       Get.find<WalletController>().getWalletTransactionList('1', false, widget.fromWallet, Get.find<WalletController>().type);
-
       Get.find<WalletController>().setOffset(1);
 
       scrollController.addListener(() {

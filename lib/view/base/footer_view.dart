@@ -55,16 +55,6 @@ class _FooterViewState extends State<FooterView> {
                 const SizedBox(height: Dimensions.paddingSizeExtraLarge),
                 Image.asset(Images.logo, width: 126, height: 40),
                 const SizedBox(height: Dimensions.paddingSizeSmall),
-
-                // SizedBox(
-                //   width: 280,
-                //   child: Text('Best information about the company gies here but now lorem ipsum is', style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor))
-                // ),
-                // const SizedBox(height: Dimensions.paddingSizeSmall),
-
-                // Text('news_letter'.tr, style: robotoBold.copyWith(color: _color, fontSize: Dimensions.fontSizeSmall)),
-                // const SizedBox(height: Dimensions.paddingSizeSmall),
-                //
                 Text('subscribe_to_out_new_channel_to_get_latest_updates'.tr, style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall)),
                 const SizedBox(height: Dimensions.paddingSizeSmall),
 
